@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.8"></script>
-<script>window.__DALOS_ACCESS_CHECK={fn:'has_product_access',args:{p_product:'mango'}};</script>
+<script>window.__DALOS_ACCESS_CHECK={fn:'has_product_access',args:{p_product:'finance'}};</script>
 <script src="gate.js"></script>
 <script>
 (function(){
@@ -23,7 +23,7 @@
       var userJwt=window.__DALOS_TOKEN;
       if(!userJwt){return;}
       var authH={apikey:SB_ANON,Authorization:'Bearer '+userJwt};
-      var PRODUCT='mango';
+      var PRODUCT='finance';
 
       // Admin — unlock shipments and return (QC/Harvest stay Coming Soon until built)
       var uRes=await fetch(SB_URL+'/rest/v1/users?id=eq.'+userId+'&select=role&limit=1',{headers:authH});
@@ -31,10 +31,8 @@
       var wsRole=(uData&&uData[0]&&uData[0].role)||'';
       if(!wsRole){var meta=(sess&&sess.user&&sess.user.user_metadata)||{};wsRole=meta.role||meta.user_role||'';}
       if(wsRole.toLowerCase()==='admin'){
-        var dsa=document.getElementById('dc-shipments');
-        if(dsa){dsa.classList.remove('locked');dsa.setAttribute('href','mango_overview.html');}
-        var dba=document.getElementById('dc-budget');
-        if(dba){dba.classList.remove('locked');dba.setAttribute('href','labor_budget.html?product=Mango');}
+        var dsa=document.getElementById('dc-labor-budget');
+        if(dsa){dsa.classList.remove('locked');dsa.setAttribute('href','labor_budget.html');}
         return;
       }
 
@@ -61,8 +59,7 @@
       // QC / Harvest / Budget remain Coming Soon (dashboards not built yet) — their
       // permission plumbing is ready; when the files exist, give them ids
       // dc-qc / dc-harvest and add to this map.
-      var LIVE={shipments:{id:'dc-shipments',href:'mango_overview.html',name:'Shipments'},
-                budget:{id:'dc-budget',href:'labor_budget.html?product=Mango',name:'Budgeting'}};
+      var LIVE={budget:{id:'dc-labor-budget',href:'labor_budget.html',name:'Labor Budget'}};
 
       Object.keys(LIVE).forEach(function(db){
         var meta=LIVE[db];var card=document.getElementById(meta.id);
@@ -108,7 +105,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Mango · Daltex Analytics</title>
+<title>Finance · Daltex Analytics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -231,10 +228,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <div class="logo-divider" style="margin:0 12px"></div>
     <a href="index.html" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);transition:all .15s" onmouseover="this.style.background='rgba(255,255,255,.18)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.1)';this.style.color='rgba(255,255,255,.75)'"><i class="ti ti-arrow-left" style="font-size:12px"></i>Home</a>
     <span style="color:rgba(255,255,255,.2);margin:0 8px;font-size:14px">/</span>
-    <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,.9)">Mango</span>
+    <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,.9)">Finance</span>
   </div>
   <div style="display:flex;align-items:center;gap:12px">
-    <div class="topbar-badge"><i class="ti ti-circle-dot" style="font-size:10px"></i> Season 2024/25</div>
+    <div class="topbar-badge"><i class="ti ti-circle-dot" style="font-size:10px"></i> FY 2025/26 · Oct–Sep</div>
     <div style="display:flex;align-items:center;gap:8px">
       <div id="dalos-avatar" style="width:32px;height:32px;border-radius:50%;background:#DC6428;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;font-weight:700;color:#fff;letter-spacing:.5px;flex-shrink:0" title="Profile">??</div>
       <button onclick="dalSignOut()" style="display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:8px;background:rgba(255,100,100,.1);border:1px solid rgba(255,100,100,.3);color:#ffb3b3;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s" onmouseover="this.style.background='rgba(255,100,100,.2)'" onmouseout="this.style.background='rgba(255,100,100,.1)'"><i class="ti ti-logout" style="font-size:12px"></i> Sign out</button>
@@ -250,14 +247,14 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
       <div class="hero-breadcrumb">
         <a href="index.html">Home</a>
         <i class="ti ti-chevron-right"></i>
-        <span style="color:rgba(255,255,255,.7)">Mango</span>
+        <span style="color:rgba(255,255,255,.7)">Finance</span>
       </div>
-      <span class="hero-icon">🥭</span>
-      <div class="hero-title">Mango Dashboards</div>
-      <div class="hero-sub">Export shipments, quality control and harvest planning for Daltex mango operations.</div>
+      <span class="hero-icon">💰</span>
+      <div class="hero-title">Finance Dashboards</div>
+      <div class="hero-sub">Budget vs actual performance across the company — starting with orchards labor cost, expanding to revenue and margin analysis.</div>
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-val">1</div><div class="hstat-lbl">Live</div></div>
-        <div class="hstat"><div class="hstat-val">3</div><div class="hstat-lbl">Coming Soon</div></div>
+        <div class="hstat"><div class="hstat-val" style="font-size:20px">Oct–Sep</div><div class="hstat-lbl">Fiscal Year</div></div>
       </div>
     </div>
   </div>
@@ -265,71 +262,83 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 <!-- CONTENT -->
 <div class="content">
-  <div class="section-title">Available Dashboards</div>
-  <div class="section-sub">Click any live dashboard to open it</div>
+
+  <div class="section-title">Budget</div>
+  <div class="section-sub">Budget vs Actual tracking · Orchards</div>
 
   <div class="dash-grid">
 
-    <!-- SHIPMENTS — LIVE -->
-    <a class="dash-card" id="dc-shipments" href="mango_overview.html">
+    <a class="dash-card" id="dc-labor-budget" href="labor_budget.html">
       <div class="dc-stripe" style="background:linear-gradient(90deg,#142850,#DC6428)"></div>
       <div class="dc-body">
         <div class="dc-header">
-          <div class="dc-icon" style="background:#f0fdf4">📦</div>
+          <div class="dc-icon" style="background:#f0fdf4">👷</div>
           <span class="dc-badge badge-live"><i class="ti ti-circle-dot" style="font-size:9px"></i> Live</span>
         </div>
-        <div class="dc-name">Shipments</div>
-        <div class="dc-desc">Full export shipment analysis — markets, farms, varieties, clients and carton types. Season 2024/25 data loaded.</div>
+        <div class="dc-name">Orchards · Labor Budget</div>
+        <div class="dc-desc">Labor cost budget vs actual across all products — operational buckets, farms, varieties and operations, with variance in EGP and %. FY 2025/26 loaded and validated.</div>
       </div>
       <div class="dc-footer">
-        <div class="dc-footer-left"><span class="dc-tag">Markets</span><span class="dc-tag">Farms</span><span class="dc-tag">Varieties</span></div>
+        <div class="dc-footer-left"><span class="dc-tag">Buckets</span><span class="dc-tag">Farms</span><span class="dc-tag">Operations</span></div>
         <span class="dc-open">Open <i class="ti ti-arrow-right"></i></span>
       </div>
     </a>
 
-    <!-- QC — COMING SOON -->
-    <div class="dash-card coming">
-      <div class="dc-stripe" style="background:linear-gradient(90deg,#142850,#DC6428)"></div>
-      <div class="dc-body">
-        <div class="dc-header">
-          <div class="dc-icon" style="background:#eff6ff">🔬</div>
-          <span class="dc-badge badge-coming">Coming Soon</span>
-        </div>
-        <div class="dc-name">Quality Control</div>
-        <div class="dc-desc">Inspection results, defect analysis and quality benchmarking across shipments.</div>
-      </div>
-    </div>
+  </div>
 
-    <!-- HARVEST — COMING SOON -->
-    <div class="dash-card coming">
-      <div class="dc-stripe" style="background:linear-gradient(90deg,#142850,#DC6428)"></div>
-      <div class="dc-body">
-        <div class="dc-header">
-          <div class="dc-icon" style="background:#f0fdf4">🌱</div>
-          <span class="dc-badge badge-coming">Coming Soon</span>
-        </div>
-        <div class="dc-name">Harvest Funnel</div>
-        <div class="dc-desc">Harvest to packhouse to export conversion tracking and budget vs actual analysis.</div>
-      </div>
-    </div>
+  <div class="section-title" style="margin-top:36px">Board Review</div>
+  <div class="section-sub">Consolidated budget vs actual · company-wide · passphrase-protected</div>
 
-    <!-- BUDGETING — COMING SOON -->
-    <a class="dash-card" id="dc-budget" href="labor_budget.html?product=Mango">
+  <div class="dash-grid">
+
+    <a class="dash-card" id="dc-budget-2026" href="budget-2026-board-review.html">
       <div class="dc-stripe" style="background:linear-gradient(90deg,#142850,#DC6428)"></div>
       <div class="dc-body">
         <div class="dc-header">
-          <div class="dc-icon" style="background:#fef2f2">💰</div>
-          <span class="dc-open">Open<i class="ti ti-arrow-right"></i></span>
+          <div class="dc-icon" style="background:#eef2fb">📊</div>
+          <span class="dc-badge badge-beta"><i class="ti ti-lock" style="font-size:9px"></i> Protected</span>
         </div>
-        <div class="dc-name">Budgeting</div>
-        <div class="dc-desc">Labor budget vs actual for Mango — cost per feddan, buckets, operations, and monthly tracking.</div>
-        <div class="dc-footer"><div class="dc-footer-left"><span class="dc-tag">Cost/Feddan</span><span class="dc-tag">Buckets</span><span class="dc-tag">Operations</span></div></div>
+        <div class="dc-name">Budget 2026 · Board Review</div>
+        <div class="dc-desc">Consolidated FY26 plan vs FY25 actual — executive P&amp;L, revenue &amp; mix, profitability, cost base, red flags and board asks. Opens to a passphrase prompt; the passphrase is distributed separately.</div>
+      </div>
+      <div class="dc-footer">
+        <div class="dc-footer-left"><span class="dc-tag">P&amp;L</span><span class="dc-tag">Red Flags</span><span class="dc-tag">Board Asks</span></div>
+        <span class="dc-open">Open <i class="ti ti-arrow-right"></i></span>
       </div>
     </a>
 
   </div>
+
 </div>
 
+<script>
+/* Populate avatar initials from the active session (matches main dashboards) */
+(function(){
+  var SKEY='sb-sfyjvgjwvtwkrnqrvqyc-auth-token';
+  function getInitials(){
+    try{
+      var raw=localStorage.getItem(SKEY);
+      if(!raw) return '?';
+      var s=JSON.parse(raw);
+      var sess=(s&&s.access_token)?s:((s&&s.currentSession)?s.currentSession:null);
+      var meta=(sess&&sess.user&&sess.user.user_metadata)||{};
+      var name=(meta.full_name||meta.name||'').trim();
+      if(!name){
+        var email=(sess&&sess.user&&sess.user.email)||'';
+        name=email.split('@')[0].replace(/[._-]/g,' ');
+      }
+      var parts=name.trim().split(/\s+/).filter(Boolean);
+      if(parts.length>=2) return (parts[0][0]+parts[1][0]).toUpperCase();
+      if(parts.length===1) return parts[0].slice(0,2).toUpperCase();
+    }catch(e){}
+    return '?';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var av=document.getElementById('dalos-avatar');
+    if(av){ av.textContent=getInitials(); }
+  });
+})();
+</script>
 <script src="switcher.js" defer></script>
 </body>
 </html>
