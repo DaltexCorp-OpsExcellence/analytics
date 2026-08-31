@@ -54,7 +54,7 @@
   function bounce(){
     var nx=encodeURIComponent(location.pathname.split('/').pop()+location.search+location.hash);
     var dev=location.pathname.indexOf('-dev/')>-1;
-    location.replace((dev?'https://daltexcorp-opsexcellence.github.io/dalos-workspace-dev/':'https://daloshq.com/dalos-workspace/')+'?next='+nx);
+    location.replace((dev?'https://daltexcorp-opsexcellence.github.io/dalos-workspace-dev/':'https://daloshq.com/workspace/')+'?next='+nx);
   }
 
   // Supabase data requests are held on this promise until we have a
