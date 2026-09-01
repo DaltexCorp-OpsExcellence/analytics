@@ -105,6 +105,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .pc-info{flex:1;min-width:0}
 .pc-name{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:3px}
 .pc-desc{font-size:12px;color:var(--text3);line-height:1.5}
+.pc-counts{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.pc-count{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600;background:var(--bg);color:var(--text2);border:1px solid var(--border)}
+.pc-count i{font-size:9px}
+.pc-count.live{background:#f0fdf4;color:#16a34a;border-color:#bbf7d0}
 .pc-badge{position:absolute;top:14px;right:14px;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .badge-live{background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0}
 .badge-coming{background:#f4f6fb;color:#8a95b0;border:1px solid var(--border)}
@@ -126,6 +130,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .dept-name{font-size:13px;font-weight:600;color:var(--navy)}
 .dept-sub{font-size:11px;color:var(--text3);margin-top:2px}
 .dept-badge{margin-left:auto;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;background:#f4f6fb;color:#8a95b0;border:1px solid var(--border);flex-shrink:0}
+.badge-new{background:#DC6428;color:#fff;border-color:#DC6428}
 
 /* ── RECENT ACTIVITY ── */
 .activity-list{display:flex;flex-direction:column;gap:10px}
@@ -278,6 +283,27 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .sm-mx-dchk.on{background:var(--orange);border-color:var(--orange);color:#fff}
 .sm-mx-dchk.disabled{opacity:.3;cursor:not-allowed;background:var(--bg)}
 .sm-mx-note{padding:8px 11px;font-size:10px;color:var(--muted);display:flex;align-items:center;gap:5px;background:var(--bg)}
+/* simplified wizard — collapsible dashboard groups */
+.sm-glabel{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text3);margin:2px 2px 8px}
+.sm-glabel:not(:first-child){margin-top:14px}
+.sm-grp{border:1px solid var(--border);border-radius:10px;margin-bottom:9px;overflow:hidden}
+.sm-ghead{display:flex;align-items:center;gap:9px;padding:11px 13px;background:var(--bg);cursor:pointer}
+.sm-ghead:hover{background:#eef1f8}
+.sm-gname{font-size:13.5px;font-weight:700;color:var(--navy);flex:1}
+.sm-gcnt{font-size:11px;color:var(--text3);font-family:var(--mono);margin-right:4px}
+.sm-gchev{transition:transform .2s;color:var(--text3)}
+.sm-grp.open .sm-gchev{transform:rotate(90deg)}
+.sm-gbody{display:none}
+.sm-grp.open .sm-gbody{display:block}
+.sm-selall{display:flex;align-items:center;gap:9px;padding:9px 13px;border-top:1px solid var(--border);cursor:pointer;font-size:12px;font-weight:700;color:var(--navy)}
+.sm-dbrow{display:flex;align-items:center;gap:9px;padding:9px 13px 9px 30px;border-top:1px solid var(--border);cursor:pointer}
+.sm-dbrow:hover{background:var(--bg)}
+.sm-dbrow .dn{font-size:13px;color:var(--text2);font-weight:500}
+.sm-master{display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px solid var(--border);border-radius:10px;margin-bottom:12px;cursor:pointer;font-size:13px;font-weight:700;color:var(--navy);background:#f8fafc}
+.sm-master:hover{background:#eef1f8}
+.sm-master-cnt{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--text3);font-weight:600}
+.sm-gchk{display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:5px;padding:1px}
+.sm-gchk:hover{background:#e6ebf5}
 
 .sm-pname{font-size:12px;font-weight:600;color:var(--navy);flex:1}
 .sm-dbrow{display:flex;align-items:center;gap:8px;padding:7px 11px;cursor:pointer;border-bottom:1px solid var(--border);transition:background .1s}
@@ -346,7 +372,6 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 <div class="topbar">
   <div class="topbar-left">
   <div class="logo">
-    <div class="logo-icon"><svg viewBox="0 0 64 64" width="100%" height="100%" aria-label="DalOS Analytics"><rect width="64" height="64" rx="14" fill="#142850"/><rect x="14" y="32" width="8.5" height="18" rx="4" fill="#f08a4b"/><rect x="27.75" y="24" width="8.5" height="26" rx="4" fill="#DC6428"/><rect x="41.5" y="15" width="8.5" height="35" rx="4" fill="#DC6428"/><circle cx="45.75" cy="15" r="4.3" fill="#f7c948"/></svg></div>
     <div>
       <span class="logo-name">Dal<span style="color:#DC6428">OS</span> Analytics</span>
       <span class="logo-sub">Business Intelligence Platform</span>
@@ -358,11 +383,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <span class="staging-badge" id="dalStgBadge" style="display:none"><span class="staging-dot"></span>Staging</span><script>if(location.pathname.indexOf("/dalos-analytics-dev/")===0){var _b=document.getElementById("dalStgBadge");if(_b)_b.style.display="inline-flex";}</script>
     <div class="topbar-badge"><i class="ti ti-circle-dot" style="font-size:10px"></i> Season 2025/26</div>
     <button id="manage-access-btn" class="manage-access-btn" onclick="openPanel('all')" style="display:none;position:relative"><i class="ti ti-shield-lock" style="font-size:13px"></i>Manage access<span id="ma-badge" style="display:none;position:absolute;top:-6px;right:-6px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:#dc2626;color:#fff;font-size:10px;font-weight:700;line-height:17px;text-align:center;box-shadow:0 0 0 2px #142850"></span></button>
-    <div style="display:flex;align-items:center;gap:8px">
-      <!-- Account + sign out now live on the left rail (rail.js). Keep a hidden avatar for scripts that read initials. -->
+    <!-- Account + sign out now live on the left rail (rail.js). Keep a hidden avatar for scripts that read initials. -->
     <div id="dalos-avatar" style="display:none">??</div>
-      <button onclick="dalSignOut()" style="display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:8px;background:rgba(255,100,100,.1);border:1px solid rgba(255,100,100,.3);color:#ffb3b3;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s" onmouseover="this.style.background='rgba(255,100,100,.2)'" onmouseout="this.style.background='rgba(255,100,100,.1)'"><i class="ti ti-logout" style="font-size:12px"></i> Sign out</button>
-    </div>
   </div>
 </div>
 
@@ -373,7 +395,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <div class="hero-title">Welcome to<br><span style="color:#fff">Dal</span><span style="color:#DC6428">OS</span><span style="color:#fff"> Analytics</span></div>
     <div class="hero-sub">Your central hub for data-driven decisions across products, operations, and departments. Select a product or department below to explore its dashboards.</div>
     <div class="hero-stats">
-      <div class="hstat"><div class="hstat-val">1</div><div class="hstat-lbl">Live Product</div></div>
+      <div class="hstat"><div class="hstat-val">3</div><div class="hstat-lbl">Live Products</div></div>
       <div class="hstat"><div class="hstat-val">4</div><div class="hstat-lbl">Products Planned</div></div>
       <div class="hstat"><div class="hstat-val" id="h-nw-top">—</div><div class="hstat-lbl">Season NW</div></div>
       <div class="hstat"><div class="hstat-val">2025/26</div><div class="hstat-lbl">Active Season</div></div>
@@ -402,6 +424,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
         <div class="pc-info">
           <div class="pc-name">Grapes</div>
           <div class="pc-desc">Export shipments, variety analysis, market performance and supply chain tracking.</div>
+          <div class="pc-counts">
+            <span class="pc-count live"><i class="ti ti-circle-dot"></i>4 Live</span>
+          </div>
         </div>
       </div>
       <div class="pc-divider"></div>
@@ -425,6 +450,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
         <div class="pc-info">
           <div class="pc-name">Citrus</div>
           <div class="pc-desc">Orange, lemon and grapefruit export tracking, quality control and market analytics.</div>
+          <div class="pc-counts">
+            <span class="pc-count"><i class="ti ti-clock"></i>3 Coming Soon</span>
+          </div>
         </div>
       </div>
       <div class="pc-divider"></div>
@@ -439,11 +467,16 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
     <!-- MANGO -->
     <div class="product-card" id="pc-mango" onclick="window.location='mango_hub.html'">
+      <span class="pc-badge badge-live"><i class="ti ti-circle-dot" style="font-size:9px"></i> Live</span>
       <div class="pc-header">
         <div class="pc-icon" style="background:#fffbeb">🥭</div>
         <div class="pc-info">
           <div class="pc-name">Mango</div>
           <div class="pc-desc">Mango export performance, seasonal analysis and destination market insights.</div>
+          <div class="pc-counts">
+            <span class="pc-count live"><i class="ti ti-circle-dot"></i>2 Live</span>
+            <span class="pc-count"><i class="ti ti-clock"></i>2 Coming Soon</span>
+          </div>
         </div>
       </div>
       <div class="pc-divider"></div>
@@ -452,28 +485,35 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
           <span class="pc-dash-chip live" data-db="shipments">Shipments</span>
           <span class="pc-dash-chip" data-db="qc">QC</span>
           <span class="pc-dash-chip" data-db="harvest">Harvest</span>
-          <span class="pc-dash-chip" data-db="budget">Budgeting</span>
+          <span class="pc-dash-chip live" data-db="budget">Budgeting</span>
         </div>
         <div class="pc-arrow"><i class="ti ti-arrow-right"></i></div>
       </div>
     </div>
 
-    <!-- POMEGRANATE — COMING SOON -->
-    <div class="product-card coming">
-      <span class="pc-badge badge-coming">Coming Soon</span>
+    <!-- POMEGRANATE -->
+    <div class="product-card" id="pc-pomegranate" onclick="window.location='pom_hub.html'">
+      <span class="pc-badge badge-live"><i class="ti ti-circle-dot" style="font-size:9px"></i> Live</span>
       <div class="pc-header">
         <div class="pc-icon" style="background:#fdf2f8">🍎</div>
         <div class="pc-info">
           <div class="pc-name">Pomegranate</div>
           <div class="pc-desc">Pomegranate export tracking and quality benchmarking across seasons.</div>
+          <div class="pc-counts">
+            <span class="pc-count live"><i class="ti ti-circle-dot"></i>2 Live</span>
+            <span class="pc-count"><i class="ti ti-clock"></i>2 Coming Soon</span>
+          </div>
         </div>
       </div>
       <div class="pc-divider"></div>
       <div class="pc-footer">
         <div class="pc-dashboards">
-          <span class="pc-dash-chip">Shipments</span>
-          <span class="pc-dash-chip">QC</span>
+          <span class="pc-dash-chip live" data-db="shipments">Shipments</span>
+          <span class="pc-dash-chip" data-db="qc">QC</span>
+          <span class="pc-dash-chip" data-db="harvest">Harvest</span>
+          <span class="pc-dash-chip live" data-db="budget">Budgeting</span>
         </div>
+        <div class="pc-arrow"><i class="ti ti-arrow-right"></i></div>
       </div>
     </div>
 
@@ -483,7 +523,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   <div class="section-header">
     <div>
       <div class="section-title">Departments</div>
-      <div class="section-sub">Cross-product operational dashboards — coming soon</div>
+      <div class="section-sub">Cross-product operational dashboards</div>
     </div>
   </div>
 
@@ -493,10 +533,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
       <div><div class="dept-name">Logistics</div><div class="dept-sub">Shipping & containers</div></div>
       <span class="dept-badge">Soon</span>
     </div>
-    <div class="dept-card" onclick="window.location='finance_hub.html'" style="cursor:pointer;opacity:1" onmouseover="this.style.boxShadow='var(--shadow2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+    <div class="dept-card" onclick="window.location='finance_hub.html'" style="cursor:pointer;opacity:1;align-items:flex-start" onmouseover="this.style.boxShadow='var(--shadow2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
       <div class="dept-icon" style="background:#f0fdf4"><i class="ti ti-currency-dollar" style="color:#16a34a;font-size:20px"></i></div>
-      <div><div class="dept-name">Finance</div><div class="dept-sub">Budget vs actual · Labor</div></div>
-      <span class="dept-badge" style="background:#f0fdf4;color:#16a34a;border-color:#bbf7d0">Live</span>
+      <div style="flex:1;min-width:0"><div class="dept-name">Finance</div><div class="dept-sub">Budget vs actual · Labor</div></div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0">
+        <span class="dept-badge badge-new" style="margin-left:0">New</span>
+        <span class="dept-badge" style="background:#f0fdf4;color:#16a34a;border-color:#bbf7d0;margin-left:0">Live</span>
+      </div>
     </div>
     <div class="dept-card" onclick="window.location='project_management_hub.html'" style="cursor:pointer;opacity:1;align-items:flex-start" onmouseover="this.style.boxShadow='var(--shadow2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
       <div class="dept-icon" style="background:#eef2fb"><i class="ti ti-clipboard-list" style="color:#142850;font-size:20px"></i></div>
@@ -614,13 +657,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <div class="sm-steps" id="sm-steps">
       <div class="sm-step active" id="ss1"><div class="sm-snum" id="sn1">1</div><span>User</span></div>
       <div class="sm-line" id="sl1"></div>
-      <div class="sm-step" id="ss2"><div class="sm-snum" id="sn2">2</div><span>Role</span></div>
-      <div class="sm-line" id="sl2"></div>
-      <div class="sm-step" id="ss3"><div class="sm-snum" id="sn3">3</div><span>Products</span></div>
-      <div class="sm-line" id="sl3"></div>
-      <div class="sm-step" id="ss4"><div class="sm-snum" id="sn4">4</div><span>Filters</span></div>
-      <div class="sm-line" id="sl4"></div>
-      <div class="sm-step" id="ss5"><div class="sm-snum" id="sn5">5</div><span>Tabs</span></div>
+      <div class="sm-step" id="ss2"><div class="sm-snum" id="sn2">2</div><span>Dashboards</span></div>
     </div>
     <div class="sm-body">
       <!-- STEP 1: USER -->
@@ -667,25 +704,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
         </div>
         <div class="sm-info-note"><i class="ti ti-info-circle" style="font-size:14px;color:var(--orange)"></i>Role pre-fills products, filters and tabs. Override anything in the next steps.</div>
       </div>
-      <!-- STEP 3: PRODUCTS & DASHBOARDS -->
+      <!-- STEP 2: DASHBOARDS (per product / department, collapsible + select all) -->
       <div class="sm-panel" id="smp3">
-        <div class="sm-label"><span class="sm-lpill lp2">Layer 2</span>Products & dashboards</div>
-        <div class="sm-prefill"><i class="ti ti-wand" style="font-size:13px"></i><span id="p3note">Pre-filled from role. Adjust as needed.</span></div>
-        <div class="sm-matrix" id="sm-matrix">
-          <div class="sm-mx-head">
-            <div class="sm-mx-prod"><i class="ti ti-package" style="font-size:12px"></i> Product</div>
-            <div class="sm-mx-dbs">
-              <span class="sm-mx-dbh">Shipments</span>
-              <span class="sm-mx-dbh">QC</span>
-              <span class="sm-mx-dbh">Harvest</span>
-              <span class="sm-mx-dbh">Budget</span>
-              <span class="sm-mx-dbh">Inventory</span>
-              <span class="sm-mx-dbh">Board Review</span>
-            </div>
-          </div>
-          <div id="sm-matrix-rows"></div>
-          <div class="sm-mx-note"><i class="ti ti-info-circle" style="font-size:11px"></i> Tick a product to enable it, then choose which dashboards that product can access.</div>
-        </div>
+        <div class="sm-label">Choose dashboards</div>
+        <div class="sm-mx-note" style="background:none;padding:0 0 12px"><i class="ti ti-info-circle" style="font-size:13px;color:var(--orange)"></i> Pick dashboards per product or department. Use “Select all” to grant a whole group.</div>
+        <div id="sm-matrix-rows"></div>
       </div>
       <!-- STEP 4: FILTERS -->
       <div class="sm-panel" id="smp4">
@@ -1042,17 +1065,15 @@ async function approveRequest(reqId, userId, name, prod){
   var steps=document.getElementById('sm-steps');if(steps)steps.style.display='';
   var foot=document.getElementById('sm-foot');if(foot)foot.style.display='';
   document.getElementById('share-modal-wrap').classList.add('open');
-  // Pre-select the requested product only (match on the base product, not the dashboard-suffixed value)
-  smProds.forEach(function(p){
-    var el=document.getElementById('mpc-'+p);
-    if(!el) return;
-    var row=el.closest('.sm-prow');
-    var on=(p===baseProd);
-    el.className='sm-chk'+(on?' on':'');
-    el.innerHTML=on?'<i class="ti ti-check" style="font-size:10px"></i>':'';
-    on?row.classList.add('sel'):row.classList.remove('sel');
-  });
-  smStep=2; smShowP('smp2'); smUpdateBar();
+  // Pre-select the requested dashboards for the base product (whole product if no specific dashboard).
+  smAccess=smBlankAccess();
+  if(smAccess[baseProd]){
+    if(reqDash&&smProdDbs(baseProd).indexOf(reqDash)>-1){ smAccess[baseProd][reqDash]=true; }
+    else { smProdDbs(baseProd).forEach(function(d){smAccess[baseProd][d]=true;}); }
+  }
+  smOpenG={}; if(baseProd) smOpenG[baseProd]=true;
+  smRenderMatrix();
+  smStep=3; smShowP('smp3'); smUpdateBar();
   window._pendingReqId=reqId;
   // Remove from pending immediately for instant feedback
   var pendingRow=document.getElementById('preq-'+reqId);
@@ -1125,9 +1146,9 @@ function editUser(permId, name, role, config, expiresAt, email){
   document.querySelector('.sm-title').innerHTML='<i class="ti ti-edit" style="font-size:13px;margin-right:5px"></i>Edit access — '+escH(name);
   document.getElementById('sm-nx').textContent='Next';
   document.getElementById('sm-nx').disabled=false;
-  // Skip step 1 (user already chosen) — go straight to step 2
-  smStep=2;
-  smShowP('smp2');
+  // Skip step 1 (user already chosen) — go straight to the Dashboards step
+  smStep=3;
+  smShowP('smp3');
   smUpdateBar();
   // pre-fill role — set smRole directly, highlight card WITHOUT applying defaults
   smRole = role || 'viewer';
@@ -1177,7 +1198,7 @@ function editUser(permId, name, role, config, expiresAt, email){
 }
 
 function openModal(){
-  _editPermId=null;
+  smReset();
   // reset modal title for new grant
   document.querySelector('.sm-title').innerHTML='<i class="ti ti-shield-lock" style="font-size:13px;margin-right:5px"></i>Share dashboard access';
   document.getElementById('share-modal-wrap').classList.add('open');
@@ -1246,22 +1267,45 @@ function smBlankAccess(){var o={};smProds.forEach(function(p){o[p]={shipments:fa
 function smProdDbs(p){return p==='finance'?['budget','board_review']:(p==='operations'?['inventory']:['shipments','qc','harvest','budget']);}
 function smProdOn(p){var a=smAccess[p];return !!(a&&(a.shipments||a.qc||a.harvest||a.budget||a.inventory||a.board_review));}
 // Build the matrix rows UI from smAccess
+const smDbLabels={shipments:'Shipments',qc:'Quality Control',harvest:'Harvest Funnel',budget:'Labor Budget',inventory:'Inventory',board_review:'Board Review 2026'};
+const smGroups=[{label:'Products',keys:['grapes','mango','pomegranate','citrus','potatoes']},{label:'Departments',keys:['finance','operations']}];
+let smOpenG={};
+function smTogGroup(p){smOpenG[p]=!smOpenG[p];smRenderMatrix();}
+// All [product,dashboard] pairs across every group (for the master "Select all").
+function smAllPairs(){var out=[];smGroups.forEach(function(g){g.keys.forEach(function(p){if(smProds.indexOf(p)<0)return;smProdDbs(p).forEach(function(d){out.push([p,d]);});});});return out;}
+// Master toggle: turn every dashboard on, or all off if already all on.
+function smMxTogAll(){
+  var pairs=smAllPairs();
+  var allOn=pairs.length>0&&pairs.every(function(pd){return (smAccess[pd[0]]||{})[pd[1]];});
+  pairs.forEach(function(pd){ if(!smAccess[pd[0]])smAccess[pd[0]]={shipments:false,qc:false,harvest:false,budget:false,inventory:false,board_review:false}; smAccess[pd[0]][pd[1]]=!allOn; });
+  smRenderMatrix();
+}
 function smRenderMatrix(){
   var host=document.getElementById('sm-matrix-rows');if(!host)return;
-  host.innerHTML=smProds.map(function(p){
-    var a=smAccess[p]||{};var on=smProdOn(p);
-    function cell(db){var c=a[db]?' on':'';return '<div class="sm-mx-dchk'+c+'" data-prod="'+p+'" data-db="'+db+'" onclick="smMxTog(this)">'+(a[db]?'<i class=\'ti ti-check\' style=\'font-size:11px\'></i>':'')+'</div>';}
-    var pchk='<div class="sm-chk'+(on?' on':'')+'" >'+(on?'<i class=\'ti ti-check\' style=\'font-size:10px\'></i>':'')+'</div>';
-    return '<div class="sm-mxrow'+(on?' on':'')+'" data-prod="'+p+'">'+
-      '<div class="sm-mx-pcell" onclick="smMxTogProd(\''+p+'\')">'+pchk+'<span class="sm-pname">'+smProdLabels[p]+'</span></div>'+
-      '<div class="sm-mx-dcells">'+['shipments','qc','harvest','budget','inventory','board_review'].map(function(db){return smProdDbs(p).indexOf(db)>-1?cell(db):'<div style="visibility:hidden" class="sm-mx-dchk"></div>';}).join('')+'</div>'+
-    '</div>';
+  function chk(on){return '<div class="sm-chk'+(on?' on':'')+'">'+(on?'<i class="ti ti-check" style="font-size:10px"></i>':'')+'</div>';}
+  var pairs=smAllPairs(), onCnt=pairs.filter(function(pd){return (smAccess[pd[0]]||{})[pd[1]];}).length;
+  var masterOn=pairs.length>0&&onCnt===pairs.length;
+  var master='<div class="sm-master" onclick="smMxTogAll()">'+chk(masterOn)+'<span>Select all dashboards</span><span class="sm-master-cnt">'+onCnt+'/'+pairs.length+'</span></div>';
+  var groups=smGroups.map(function(g){
+    var rows=g.keys.filter(function(p){return smProds.indexOf(p)>-1;}).map(function(p){
+      var dbs=smProdDbs(p),a=smAccess[p]||{},cnt=dbs.filter(function(d){return a[d];}).length;
+      var allOn=dbs.length>0&&cnt===dbs.length,open=!!smOpenG[p];
+      return '<div class="sm-grp'+(open?' open':'')+'">'
+        +'<div class="sm-ghead" onclick="smTogGroup(\''+p+'\')">'
+          +'<div class="sm-gchk" title="Select all '+smProdLabels[p]+' dashboards" onclick="event.stopPropagation();smMxTogProd(\''+p+'\')">'+chk(allOn)+'</div>'
+          +'<span class="sm-gname">'+smProdLabels[p]+'</span><span class="sm-gcnt">'+cnt+'/'+dbs.length+'</span><i class="ti ti-chevron-right sm-gchev" style="font-size:15px"></i></div>'
+        +'<div class="sm-gbody">'
+        +dbs.map(function(d){return '<div class="sm-dbrow" data-prod="'+p+'" data-db="'+d+'" onclick="smMxTog(this)">'+chk(!!a[d])+'<span class="dn">'+(smDbLabels[d]||d)+'</span></div>';}).join('')
+        +'</div></div>';
+    }).join('');
+    return '<div class="sm-glabel">'+g.label+'</div>'+rows;
   }).join('');
+  host.innerHTML=master+groups;
 }
 // Toggle a single product-dashboard cell
 function smMxTog(el){var p=el.dataset.prod,db=el.dataset.db;if(!smAccess[p])smAccess[p]={shipments:false,qc:false,harvest:false,budget:false,inventory:false,board_review:false};smAccess[p][db]=!smAccess[p][db];smRenderMatrix();}
-// Toggle a whole product row: if any on -> turn all off; if all off -> turn all on
-function smMxTogProd(p){var on=smProdOn(p);var v=!on;smAccess[p]={shipments:false,qc:false,harvest:false,budget:false,inventory:false,board_review:false};smProdDbs(p).forEach(function(d){smAccess[p][d]=v;});smRenderMatrix();}
+// "Select all" toggle for a group: if every dashboard is on -> turn all off; else turn all on.
+function smMxTogProd(p){var dbs=smProdDbs(p);var a=smAccess[p]||{};var allOn=dbs.length>0&&dbs.every(function(d){return a[d];});smAccess[p]={shipments:false,qc:false,harvest:false,budget:false,inventory:false,board_review:false};if(!allOn)dbs.forEach(function(d){smAccess[p][d]=true;});smOpenG[p]=true;smRenderMatrix();}
 // Convert smAccess -> compact map {product:[dbs]} for saving; also legacy flat arrays for back-compat
 function smAccessToConfig(){
   var access={},prods=[],dbsSet={};
@@ -1282,6 +1326,7 @@ function smConfigToAccess(cfg){
     var prods=cfg.products||[],dbs=cfg.dashboards||[];
     prods.forEach(function(p){if(!smAccess[p])return;smDbs.forEach(function(d){smAccess[p][d]=dbs.indexOf(d)>-1;});});
   }
+  smOpenG={};smProds.forEach(function(p){if(smProdOn(p))smOpenG[p]=true;});
   smRenderMatrix();
 }
 const roleDefaults={
@@ -1296,31 +1341,29 @@ const roleLabels={director:'Director',product_manager:'Product manager',farm_man
 const roleNotes={director:'Director — full access pre-filled.',product_manager:'Product manager pre-filled.',farm_manager:'Farm manager — Farm A pre-filled.',qc_analyst:'QC analyst pre-filled.',export_manager:'Export manager pre-filled.',finance:'Finance pre-filled.'};
 
 function smUpdateBar(){
-  [1,2,3,4,5].forEach(i=>{
-    const s=document.getElementById('ss'+i),n=document.getElementById('sn'+i);
-    s.className='sm-step'+(i===smStep?' active':i<smStep?' done':'');
-    n.innerHTML=i<smStep?'<i class="ti ti-check" style="font-size:10px"></i>':i;
-  });
-  [1,2,3,4].forEach(i=>document.getElementById('sl'+i).className='sm-line'+(i<smStep?' done':''));
-  document.getElementById('sm-bk').style.visibility=smStep>1?'visible':'hidden';
+  // Two steps only: 1 = User, (anything else) = Dashboards.
+  var onDash=(smStep!==1);
+  var s1=document.getElementById('ss1'),n1=document.getElementById('sn1');
+  var s2=document.getElementById('ss2'),n2=document.getElementById('sn2');
+  var l1=document.getElementById('sl1');
+  if(s1)s1.className='sm-step'+(onDash?' done':' active');
+  if(n1)n1.innerHTML=onDash?'<i class="ti ti-check" style="font-size:10px"></i>':'1';
+  if(s2)s2.className='sm-step'+(onDash?' active':'');
+  if(n2)n2.innerHTML='2';
+  if(l1)l1.className='sm-line'+(onDash?' done':'');
+  document.getElementById('sm-bk').style.visibility=onDash?'visible':'hidden';
   const nx=document.getElementById('sm-nx');
-  if(smStep===5){nx.className='sm-btn-grant';nx.textContent=_editPermId?'Update access':'Grant access';}
+  if(onDash){nx.className='sm-btn-grant';nx.textContent=_editPermId?'Update access':'Grant access';}
   else{nx.className='sm-btn-n';nx.textContent='Next';}
 }
 function smShowP(id){document.querySelectorAll('.sm-panel').forEach(p=>p.className='sm-panel');document.getElementById(id).className='sm-panel active';}
 function smNext(){
-  console.log('smNext called — step:',smStep,'role:',smRole,'editPermId:',_editPermId,'user:',smUser);
+  // Simplified 2-step flow: User (1) -> Dashboards (3) -> grant. Role defaults to viewer.
   if(smStep===1&&!smUser){console.warn('smNext blocked: step 1 with no user');return;}
-  // Step 2 = role. Never dead-end: if no role chosen yet, default to viewer so Next always advances.
-  if(smStep===2&&!smRole&&!_editPermId){ smRole='viewer'; }
-  if(smStep===5){smGrant();return;}
-  smStep++;
-  try{ smShowP('smp'+smStep); }
-  catch(e){ console.warn('smShowP failed for step',smStep,e); }
-  try{ smUpdateBar(); }
-  catch(e){ console.warn('smUpdateBar failed at step',smStep,e); }
+  if(smStep===1){ smStep=3; smShowP('smp3'); smUpdateBar(); return; }
+  smGrant();
 }
-function smBack(){if(smStep<=1)return;smStep--;smShowP('smp'+smStep);smUpdateBar();}
+function smBack(){ if(smStep!==1){ smStep=1; smShowP('smp1'); smUpdateBar(); } }
 
 function smSelU(row){
   document.querySelectorAll('.sm-urow').forEach(r=>{r.classList.remove('sel');const c=r.querySelector('.sm-chk');c.className='sm-chk';c.innerHTML='';});
@@ -1478,7 +1521,7 @@ function smReset(){
   var _nx=document.getElementById('sm-nx');if(_nx){_nx.disabled=false;_nx.textContent='Next';}
   smStep=1;smUser=null;smRole=null;smAllTabs=true;
   smTabs.forEach(t=>{smTabSt[t]=true;smSyncTab(t);});
-  smAccess=smBlankAccess();smAccess.grapes={shipments:true,qc:true,harvest:true,budget:true};smRenderMatrix();
+  smAccess=smBlankAccess();smAccess.grapes={shipments:true,qc:true,harvest:true,budget:true};smOpenG={grapes:true};smRenderMatrix();
   document.querySelectorAll('.sm-urow').forEach(r=>{r.classList.remove('sel');const c=r.querySelector('.sm-chk');c.className='sm-chk';c.innerHTML='';});
   document.querySelectorAll('.sm-rcard').forEach(c=>{const f=c.classList.contains('full');c.className=f?'sm-rcard full':'sm-rcard';const chk=c.querySelector('.sm-chk');if(chk){chk.className='sm-chk';chk.innerHTML='';}});
   const ucnt=document.getElementById('sm-ucnt');if(ucnt)ucnt.textContent='No user selected';
@@ -1490,7 +1533,7 @@ function smReset(){
   /* product/dashboard reset handled via smAccess above */
   smShowP('smp1');smUpdateBar();
 }
-smAccess=smBlankAccess();smAccess.grapes={shipments:true,qc:true,harvest:true,budget:true};smRenderMatrix();smUpdateBar();
+smAccess=smBlankAccess();smAccess.grapes={shipments:true,qc:true,harvest:true,budget:true};smOpenG={grapes:true};smRenderMatrix();smUpdateBar();
 </script>
 
 <script>
@@ -1539,7 +1582,7 @@ updateDate();
 
   // ── Shipments ──
   try{
-    const r=await fetch(SB_URL+'/rest/v1/grapes_shipments_view?season_id=eq.'+SID+'&select=net_weight,container_number,receiving_country,variety,shipping_week',{headers:H()});
+    const r=await fetch(SB_URL+'/rest/v1/grapes_shipments_view?season_id=eq.'+SID+'&product_id=eq.grapes&select=net_weight,container_number,receiving_country,variety,shipping_week',{headers:H()});
     if(r.ok){
       const rows=await r.json();
       if(rows&&rows.length){
@@ -1737,9 +1780,19 @@ updateDate();
 
       // Has permission — show permitted cards, dim locked ones
       var cfg=perm.config||{};
-      var allowedProds=cfg.products||[];
-      // Color the Grapes dashboard chips green by the user's accessible dashboards
-      colorGrapesChips(allowedProds.indexOf('grapes')>-1?(cfg.dashboards||[]):[]);
+      // Derive allowed products from new nested access map, falling back to legacy flat products[]
+      function _dbsFor(cfg,prod){
+        if(cfg.access&&typeof cfg.access==='object'){return cfg.access[prod]||[];}
+        // legacy: flat dashboards apply to every listed product
+        return (cfg.products||[]).indexOf(prod)>-1?(cfg.dashboards||[]):[];
+      }
+      function _allowedProds(cfg){
+        if(cfg.access&&typeof cfg.access==='object'){return Object.keys(cfg.access).filter(function(p){return (cfg.access[p]||[]).length>0;});}
+        return cfg.products||[];
+      }
+      var allowedProds=_allowedProds(cfg);
+      // Color the Grapes dashboard chips green by the user's grapes-accessible dashboards
+      colorGrapesChips(allowedProds.indexOf('grapes')>-1?_dbsFor(cfg,'grapes'):[]);
 
       // Map product name to card id and display name
       var cardMap={
@@ -1798,5 +1851,12 @@ updateDate();
 </script>
 <script src="switcher.js" defer></script>
 <script src="rail.js" defer></script>
+<script>
+/* Auto-expire the "New" badge 15 days after launch (2026-08-05 → 2026-08-20) */
+(function(){
+  var expires=new Date('2026-08-20T23:59:59');
+  if(new Date()>expires){document.querySelectorAll('.badge-new').forEach(function(b){b.remove();});}
+})();
+</script>
 </body>
 </html>
