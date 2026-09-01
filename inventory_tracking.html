@@ -147,6 +147,50 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
 .gtoggle button{font-family:var(--font);font-size:10.5px;font-weight:700;color:var(--text2);background:var(--white);border:none;padding:4px 12px;cursor:pointer;transition:.12s}
 .gtoggle button:hover{background:var(--bg)}
 .gtoggle button.on{background:var(--navy);color:#fff}
+/* per-chart EGP <-> Qty metric toggle (same shape as .gtoggle, orange active) */
+.mtoggle{display:inline-flex;border:1px solid var(--border);border-radius:20px;overflow:hidden;flex-shrink:0}
+.mtoggle button{font-family:var(--font);font-size:10.5px;font-weight:700;color:var(--text2);background:var(--white);border:none;padding:4px 12px;cursor:pointer;transition:.12s}
+.mtoggle button:hover{background:var(--bg)}
+.mtoggle button.on{background:var(--orange);color:#fff}
+.infowrap{position:relative;display:inline-block}
+.infobtn{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--text2);font-size:10px;font-weight:800;cursor:pointer;line-height:1;vertical-align:middle;margin-left:4px;padding:0;font-family:Georgia,serif;font-style:italic}
+.infobtn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.infopop{position:fixed;z-index:9999;width:310px;max-width:calc(100vw - 24px);background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 26px rgba(20,40,80,.22);padding:13px 15px;font-size:12px;line-height:1.55;color:var(--text2);font-weight:400;display:none;text-align:left;white-space:normal;text-transform:none;letter-spacing:normal}
+.infopop.open{display:block}
+.infopop h5{font-size:12.5px;font-weight:800;color:var(--navy);margin:0 0 7px}
+.infopop p{margin:0 0 7px}.infopop p:last-child{margin-bottom:0}
+.infopop b{color:var(--navy);font-weight:700}
+.infopop .eq{font-family:'IBM Plex Mono',monospace;background:var(--bg);border-radius:5px;padding:1px 6px;font-size:11px;color:var(--navy)}
+.infopop ul{margin:0 0 4px;padding-left:16px}.infopop li{margin-bottom:3px}
+.flowmodal{position:fixed;inset:0;z-index:9998;display:flex;align-items:center;justify-content:center}
+.flowmodal-bg{position:absolute;inset:0;background:rgba(10,20,40,.5);backdrop-filter:blur(1px)}
+.flowmodal-box{position:relative;background:var(--white);border-radius:14px;box-shadow:0 24px 70px rgba(20,40,80,.4);width:min(760px,94vw);max-height:88vh;overflow:auto}
+.flowmodal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--white);z-index:2}
+.flowmodal-title{font-size:15px;font-weight:800;color:var(--navy)}
+.flowmodal-x{border:1px solid var(--border);background:var(--white);border-radius:8px;width:30px;height:30px;cursor:pointer;font-size:13px;color:var(--text2);flex-shrink:0}
+.flowmodal-x:hover{background:var(--bg);color:var(--navy)}
+.flowmodal-body{padding:16px 20px}
+.fm-sec{margin-bottom:18px}.fm-sec:last-child{margin-bottom:4px}
+.fm-sec h4{font-size:11px;font-weight:800;color:var(--navy);margin:0 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.fm-tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.fm-tbl td{padding:5px 8px;border-bottom:1px solid var(--border);color:var(--text2)}
+.fm-tbl td.b{color:var(--navy);font-weight:600}
+.fm-tbl td.n{text-align:right;font-family:var(--mono),monospace;color:var(--navy);font-weight:600;white-space:nowrap}
+.fm-tbl td.p{text-align:right;font-family:var(--mono),monospace;color:var(--text2);white-space:nowrap;width:52px}
+.fm-bar{height:7px;border-radius:4px;min-width:2px}
+/* compare tiles */
+.cmp-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+.cmp-tile{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);box-shadow:var(--shadow);padding:16px 18px}
+.cmp-tile .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text3)}
+.cmp-tile .a{font-family:var(--mono);font-size:23px;font-weight:700;color:var(--navy);margin-top:6px;letter-spacing:-.5px}
+.cmp-tile .b{font-size:11.5px;color:var(--text2);margin-top:4px}
+.cmp-tile .d{font-weight:700;font-family:var(--mono)}
+.cmp-up{color:#16a34a}.cmp-dn{color:#dc2626}.cmp-flat{color:var(--text3)}
+.cmpsel{font-family:var(--font);font-size:10.5px;font-weight:600;color:var(--text2);border:1px solid var(--border);border-radius:20px;padding:3px 9px;background:var(--white);cursor:pointer;flex-shrink:0}
+.cmpsel:focus{outline:none;border-color:var(--orange)}
+.h3ctl{display:inline-flex;gap:8px;align-items:center;flex-shrink:0}
+@media(max-width:1100px){.cmp-tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.cmp-tiles{grid-template-columns:1fr}}
 .fsel,.fsearch{font-family:inherit;font-size:12px;padding:7px 10px;border:1px solid var(--border);border-radius:var(--r);background:var(--white);color:var(--text);height:32px}
 .fsearch{min-width:190px}
 .freset{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:7px 12px;border-radius:var(--r);border:1px solid var(--orange);color:var(--orange);background:#fff;cursor:pointer;font-family:inherit;height:32px}
@@ -209,7 +253,7 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
   </div>
   <div class="tb-right">
     <div class="staging-badge" id="stagingBadge" style="display:none"><span class="staging-dot"></span>Staging</div>
-    <div class="tb-badge"><i class="ti ti-circle-dot" style="font-size:10px"></i> Season 26 · as of 11 Jul 2026</div>
+    <div class="tb-badge" id="tbBadge"><i class="ti ti-circle-dot" style="font-size:10px"></i> <span id="tbBadgeTxt">Season 26</span></div>
   </div>
 </div>
 
@@ -219,7 +263,7 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
       <div class="hero-breadcrumb"><a href="index.html" style="color:inherit;text-decoration:none">Home</a><i class="ti ti-chevron-right"></i><a href="project_management_hub.html" style="color:inherit;text-decoration:none">Project Management</a><i class="ti ti-chevron-right"></i><a href="procurement_hub.html" style="color:inherit;text-decoration:none">Procurement</a><i class="ti ti-chevron-right"></i><span style="color:rgba(255,255,255,.7)">Inventory Tracking</span></div>
       <span class="hero-icon">📦</span>
       <div class="hero-title">Main <span style="color:var(--orange)">Inventory</span> Tracking</div>
-      <div class="hero-sub">On-hand value, movement and stock health across 4 categories and 14 sites — computed live from 266,654 transaction lines (Jan 2023 → Jul 2026).</div>
+      <div class="hero-sub" id="heroSub">On-hand value, movement and stock health across 4 categories — computed live from the full transaction history.</div>
     </div>
     <div class="hero-season">
       <div class="hs-title">Snapshot</div>
@@ -239,8 +283,9 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
     <button class="tab-btn" data-tab="site" onclick="setTab(this)"><i class="ti ti-map-pin"></i>By Site</button>
     <button class="tab-btn" data-tab="brand" onclick="setTab(this)"><i class="ti ti-tags"></i>By Brand</button>
     <button class="tab-btn" data-tab="movement" onclick="setTab(this)"><i class="ti ti-arrows-exchange"></i>Movement</button>
-    <button class="tab-btn" data-tab="forecast" onclick="setTab(this)"><i class="ti ti-chart-line"></i>Forecast<span class="soon">soon</span></button>
     <button class="tab-btn" data-tab="health" onclick="setTab(this)"><i class="ti ti-heartbeat"></i>Health</button>
+    <button class="tab-btn" data-tab="abc" onclick="setTab(this)"><i class="ti ti-abc"></i>ABC Analysis</button>
+    <button class="tab-btn" data-tab="reorder" onclick="setTab(this)"><i class="ti ti-refresh-alert"></i>Reorder &amp; Safety Stock</button>
   </div>
 </div>
 
@@ -269,12 +314,12 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
     <div class="sec-sub">Headline inventory position and season movement</div>
     <div class="kpis" id="kpiRow"></div>
     <div class="grid g2" style="margin-bottom:14px">
-      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-chart-bar"></i><span id="h-season">Season 26 · Stock Value / Month (M EGP)</span></span><span class="gtoggle" data-chart="season"><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span></h3><div class="chart-box"><canvas id="c-season"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-chart-bar"></i><span id="h-season">Season 26 · Stock Value / Month (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="season"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span><select class="cmpsel" data-cc="season"><option value="off">Compare…</option><option value="ly">vs same period last year</option></select><span class="gtoggle" data-chart="season"><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span></span></h3><div class="chart-box"><canvas id="c-season"></canvas></div></div>
       <div class="card"><h3><i class="ti ti-chart-donut"></i>Category Share of On-Hand Value</h3><div class="chart-box"><canvas id="c-share"></canvas></div></div>
     </div>
     <div class="grid g2">
-      <div class="card"><h3><i class="ti ti-arrows-exchange"></i><span id="h-iocat">Inbound vs Outbound by Category (Season, M EGP)</span></h3><div class="chart-box"><canvas id="c-io-cat"></canvas></div></div>
-      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-calendar-stats"></i><span id="h-iomonth">Inbound vs Outbound Monthly (M EGP)</span></span><span class="gtoggle" data-chart="iomonth"><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span></h3><div class="chart-box"><canvas id="c-io-month"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-arrows-exchange"></i><span id="h-iocat">Inbound vs Outbound by Category (Season, M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="iocat"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span><select class="cmpsel" data-cc="iocat"><option value="off">Compare…</option><option value="ly">vs same period last year</option></select></span></h3><div class="chart-box"><canvas id="c-io-cat"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-calendar-stats"></i><span id="h-iomonth">Inbound vs Outbound Monthly (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="iomonth"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span><select class="cmpsel" data-cc="iomonth"><option value="off">Compare…</option><option value="ly">vs same period last year</option></select><span class="gtoggle" data-chart="iomonth"><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span></span></h3><div class="chart-box"><canvas id="c-io-month"></canvas></div></div>
     </div>
   </div>
 
@@ -288,7 +333,7 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
       <div class="card"><h3><i class="ti ti-building-factory"></i>On-Hand by Department (M EGP)</h3><div class="chart-box sm"><canvas id="c-exp-dept"></canvas></div></div>
     </div>
     <div class="card" style="margin-bottom:14px"><h3><i class="ti ti-stack-2"></i>Stock Tier by Category (M EGP)</h3><div class="chart-box"><canvas id="c-exp-tier"></canvas></div></div>
-    <div class="card"><h3><i class="ti ti-list-search"></i><span id="itCount">0</span> items <span style="font-weight:400;color:var(--text3);font-size:11px">· click a bar above to filter · showing top 200 by value</span></h3>
+    <div class="card"><h3 style="justify-content:space-between;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-list-search"></i><span id="itCount">0</span> items <span style="font-weight:400;color:var(--text3);font-size:11px">· click a bar above to filter · top 200 by value</span></span><span style="display:inline-flex;align-items:center;gap:6px"><div class="gsearch" style="min-width:180px;max-width:240px;padding:6px 10px"><i class="ti ti-search" style="color:var(--text3);font-size:14px"></i><input id="itemSearch" placeholder="Search items…"></div><button class="freset" id="itemSearchBtn"><i class="ti ti-search" style="font-size:13px"></i>Search</button><button class="freset" id="itemSearchClear" title="Clear" style="background:var(--white);color:var(--text2)"><i class="ti ti-x" style="font-size:13px"></i></button><button class="freset" id="itemExport" title="Export all filtered items to CSV"><i class="ti ti-download" style="font-size:13px"></i>Export CSV</button></span></h3>
       <div style="overflow:auto;max-height:540px"><table class="itable" id="itemTable"></table></div>
     </div>
   </div>
@@ -298,12 +343,11 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
     <div class="sec-title">By Category</div>
     <div class="sec-sub">SP · IRR · Oil · Invest — value, share and monthly trend</div>
     <div class="grid g2" style="margin-bottom:14px">
-      <div class="card"><h3><i class="ti ti-chart-bar"></i>On-Hand Value by Category (M EGP)</h3><div class="chart-box"><canvas id="c-cat-oh"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-chart-bar"></i><span id="h-catoh">On-Hand Value by Category (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="catoh"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span><select class="cmpsel" data-cc="catoh"><option value="off">Compare…</option><option value="ly">vs same period last year</option></select></span></h3><div class="chart-box"><canvas id="c-cat-oh"></canvas></div></div>
       <div class="card"><h3><i class="ti ti-chart-donut"></i>Category Share</h3><div class="chart-box"><canvas id="c-cat-share"></canvas></div></div>
     </div>
-    <div class="card" style="margin-bottom:14px"><h3><i class="ti ti-rotate-clockwise"></i>Inventory Turnover by Category (× · season outbound ÷ on-hand)</h3><div class="chart-box sm"><canvas id="c-cat-turn"></canvas></div></div>
-    <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-chart-line"></i><span id="h-cattrend">Total On-Hand Value — Monthly Trend (M EGP)</span></span><span class="gtoggle" data-chart="cattrend"><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span></h3><div class="chart-box tall"><canvas id="c-cat-trend"></canvas></div></div>
-    <div class="card" style="margin-top:14px"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-chart-bar"></i><span id="h-catmonthly">Stock Value / Month — Per Category (M EGP)</span></span><span class="gtoggle" data-chart="catmonthly"><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span></h3><div class="chart-box tall"><canvas id="c-cat-monthly"></canvas></div></div>
+    <div class="card" style="margin-bottom:14px"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-rotate-clockwise"></i>Inventory Turnover by Category (× · season outbound ÷ on-hand)</span><span class="h3ctl"><span class="mtoggle" data-mchart="catturn"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span><select class="cmpsel" data-cc="catturn"><option value="off">Compare…</option><option value="ly">vs same period last year</option></select></span></h3><div class="chart-box sm"><canvas id="c-cat-turn"></canvas></div></div>
+    <div class="card" style="margin-top:14px"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-chart-bar"></i><span id="h-catmonthly">Stock Value / Month — Per Category (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="catmonthly"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span><span class="gtoggle" data-chart="catmonthly"><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span></span></h3><div class="chart-box tall"><canvas id="c-cat-monthly"></canvas></div></div>
     <div class="card" style="margin-top:14px"><h3><i class="ti ti-arrows-up-down"></i>Month-over-Month Stock Value Variance (M EGP · Δ and %)</h3><div style="overflow-x:auto"><table class="mom" id="momTable"></table></div></div>
   </div>
 
@@ -312,12 +356,12 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
     <div class="sec-title">By Site</div>
     <div class="sec-sub">On-hand distribution and concentration across sites</div>
     <div class="grid g3" style="margin-bottom:14px">
-      <div class="card"><h3><i class="ti ti-map-pin"></i>On-Hand Value by Site (M EGP)</h3><div class="chart-box tall"><canvas id="c-site"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-map-pin"></i><span id="h-site">On-Hand Value by Site (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="site"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span></span></h3><div class="chart-box tall"><canvas id="c-site"></canvas></div></div>
       <div class="conc" id="concPanel"></div>
     </div>
-    <div class="card"><h3><i class="ti ti-grid-dots"></i>Stock Value Heat Map — Location × Category (M EGP)</h3>
+    <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-grid-dots"></i><span id="h-heat">Stock Value Heat Map — Location × Category (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="heat"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span></span></h3>
       <div style="overflow-x:auto"><table class="heat" id="heatTable"></table></div>
-      <div class="legend">
+      <div class="legend" id="heatLegend">
         <span><i style="background:#7f1d1d"></i>&gt;80M</span><span><i style="background:#dc2626"></i>20–80M</span>
         <span><i style="background:#d97706"></i>5–20M</span><span><i style="background:#2563eb"></i>&lt;5M</span>
       </div>
@@ -329,8 +373,8 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
     <div class="sec-title">By Brand</div>
     <div class="sec-sub">Top brands by on-hand value and by issues this season</div>
     <div class="grid g2" style="margin-bottom:14px">
-      <div class="card"><h3><i class="ti ti-trophy"></i>Top 12 Brands by On-Hand Value (M EGP)</h3><div class="chart-box tall"><canvas id="c-brand-oh"></canvas></div></div>
-      <div class="card"><h3><i class="ti ti-arrow-up-circle"></i><span id="h-brandiss">Top 10 Brands by Issues — Season (M EGP)</span></h3><div class="chart-box tall"><canvas id="c-brand-iss"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-trophy"></i><span id="h-brandoh">Top 12 Brands by On-Hand Value (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="brandoh"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span></span></h3><div class="chart-box tall"><canvas id="c-brand-oh"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-arrow-up-circle"></i><span id="h-brandiss">Top 10 Brands by Issues — Season (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="brandiss"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span></span></h3><div class="chart-box tall"><canvas id="c-brand-iss"></canvas></div></div>
     </div>
     <div class="card"><h3><i class="ti ti-table"></i>Top Brands — On-Hand Value &amp; Share</h3><div style="overflow-x:auto"><table class="dtable" id="brandTable"></table></div></div>
   </div>
@@ -339,18 +383,40 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
   <div class="panel" id="movement">
     <div class="sec-title">Movement</div>
     <div class="sec-sub">Inbound (Or Ty 1P/2P/FF) vs Outbound (Do Ty #) over the season</div>
-    <div class="card" style="margin-bottom:14px"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-arrows-exchange"></i><span id="h-mvmonth">Monthly Inbound vs Outbound (M EGP)</span></span><span class="gtoggle" data-chart="mvmonth"><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span></h3><div class="chart-box tall"><canvas id="c-mv-month"></canvas></div></div>
+    <div class="card" style="margin-bottom:14px"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-arrows-exchange"></i><span id="h-mvmonth">Monthly Inbound vs Outbound (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="mvmonth"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span><select class="cmpsel" data-cc="mvmonth"><option value="off">Compare…</option><option value="ly">vs same period last year</option></select><span class="gtoggle" data-chart="mvmonth"><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span></span></h3><div class="chart-box tall"><canvas id="c-mv-month"></canvas></div></div>
     <div class="grid g2">
-      <div class="card"><h3><i class="ti ti-arrow-down-circle" style="color:var(--green)"></i><span id="h-mvin">Inbound by Category — Season (M EGP)</span></h3><div class="chart-box sm"><canvas id="c-mv-in"></canvas></div></div>
-      <div class="card"><h3><i class="ti ti-arrow-up-circle" style="color:var(--red)"></i><span id="h-mvout">Outbound by Category — Season (M EGP)</span></h3><div class="chart-box sm"><canvas id="c-mv-out"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-arrow-down-circle" style="color:var(--green)"></i><span id="h-mvin">Inbound by Category — Season (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="mvin"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span><select class="cmpsel" data-cc="mvin"><option value="off">Compare…</option><option value="ly">vs same period last year</option></select></span></h3><div class="chart-box sm"><canvas id="c-mv-in"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-arrow-up-circle" style="color:var(--red)"></i><span id="h-mvout">Outbound by Category — Season (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="mvout"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span><select class="cmpsel" data-cc="mvout"><option value="off">Compare…</option><option value="ly">vs same period last year</option></select></span></h3><div class="chart-box sm"><canvas id="c-mv-out"></canvas></div></div>
     </div>
-  </div>
 
-  <!-- FORECAST -->
-  <div class="panel" id="forecast">
-    <div class="sec-title">Forecast</div>
-    <div class="sec-sub">Expected stock, dead / over stock, months of stock</div>
-    <div class="stub"><i class="ti ti-chart-line"></i><b>Forecast model — next iteration</b>Months-of-Stock, expected/dead/over-stock and consumption projections build on the same ledger. I'll wire these after you sign off on the core views.</div>
+    <!-- ===== FLOW DEEP-DIVE (Inbound / Outbound analysis over the full period) ===== -->
+    <div class="sec-title" style="margin-top:26px">Flow Analysis</div>
+    <div class="sec-sub">Inbound and outbound over the whole data period — pick a grain, then <b>click any bar</b> to break its category / brand / site mix down to that single period.</div>
+
+    <div class="rail" id="flowParams" style="margin-bottom:14px">
+      <div class="fl"><label>Values</label><span class="mtoggle" id="flowMetric"><button type="button" data-fm="v" class="on">EGP</button><button type="button" data-fm="q">Qty</button></span></div>
+      <div style="margin-left:auto;padding-bottom:2px"><span style="display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--text2);background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:6px 12px"><i class="ti ti-arrows-exchange" style="color:var(--orange);font-size:13px"></i><b style="color:var(--navy)">Full transaction history</b></span></div>
+    </div>
+
+    <!-- INBOUND -->
+    <div class="sec-title" style="margin-top:8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-arrow-down-circle" style="color:var(--green)"></i>Inbound analysis</span><span class="gtoggle" data-fg="in"><button type="button" data-g="day">Day</button><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span><select class="fsel" data-fwin="in" style="height:28px;font-size:11px;padding:0 6px"><option value="all" selected>All time</option><option value="year">Last year</option><option value="m6">Last 6 months</option><option value="d90">Last 90 days</option><option value="d30">Last 30 days</option><option value="week">Last 7 days</option><option value="day">Last day</option></select><span id="flowInPeriod" style="font-size:11.5px;font-weight:600;color:var(--text2)"></span></div>
+    <div class="card" style="margin:8px 0 14px"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-chart-bar"></i><span id="h-flow-in-ts">Inbound over time (M EGP)</span></span><span style="font-size:10.5px;font-weight:600;color:var(--text3)">click a bar to drill ↓</span></h3><div class="chart-box tall"><canvas id="c-flow-in-ts"></canvas></div></div>
+    <div class="card" style="margin:0 0 14px"><h3><i class="ti ti-chart-bar"></i><span id="h-flow-in-cats">Inbound by Category over time (M EGP)</span></h3><div class="chart-box tall"><canvas id="c-flow-in-cats"></canvas></div></div>
+    <div class="grid g2" style="margin-bottom:14px">
+      <div class="card"><h3><i class="ti ti-chart-donut"></i><span id="h-flow-in-cat">Inbound by Category (M EGP)</span></h3><div class="chart-box"><canvas id="c-flow-in-cat"></canvas></div></div>
+      <div class="card"><h3><i class="ti ti-tags"></i><span id="h-flow-in-brand">Top Inbound Brands (M EGP)</span></h3><div class="chart-box"><canvas id="c-flow-in-brand"></canvas></div></div>
+    </div>
+    <div class="card" style="margin-bottom:14px"><h3><i class="ti ti-map-pin"></i><span id="h-flow-in-site">Inbound by Site (M EGP)</span></h3><div class="chart-box"><canvas id="c-flow-in-site"></canvas></div></div>
+
+    <!-- OUTBOUND -->
+    <div class="sec-title" style="margin-top:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-arrow-up-circle" style="color:var(--red)"></i>Outbound analysis</span><span class="gtoggle" data-fg="out"><button type="button" data-g="day">Day</button><button type="button" data-g="week">Week</button><button type="button" data-g="month" class="on">Month</button></span><select class="fsel" data-fwin="out" style="height:28px;font-size:11px;padding:0 6px"><option value="all" selected>All time</option><option value="year">Last year</option><option value="m6">Last 6 months</option><option value="d90">Last 90 days</option><option value="d30">Last 30 days</option><option value="week">Last 7 days</option><option value="day">Last day</option></select><span id="flowOutPeriod" style="font-size:11.5px;font-weight:600;color:var(--text2)"></span></div>
+    <div class="card" style="margin:8px 0 14px"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-chart-bar"></i><span id="h-flow-out-ts">Outbound over time (M EGP)</span></span><span style="font-size:10.5px;font-weight:600;color:var(--text3)">click a bar to drill ↓</span></h3><div class="chart-box tall"><canvas id="c-flow-out-ts"></canvas></div></div>
+    <div class="card" style="margin:0 0 14px"><h3><i class="ti ti-chart-bar"></i><span id="h-flow-out-cats">Outbound by Category over time (M EGP)</span></h3><div class="chart-box tall"><canvas id="c-flow-out-cats"></canvas></div></div>
+    <div class="grid g2" style="margin-bottom:14px">
+      <div class="card"><h3><i class="ti ti-chart-donut"></i><span id="h-flow-out-cat">Outbound by Category (M EGP)</span></h3><div class="chart-box"><canvas id="c-flow-out-cat"></canvas></div></div>
+      <div class="card"><h3><i class="ti ti-tags"></i><span id="h-flow-out-brand">Top Outbound Brands (M EGP)</span></h3><div class="chart-box"><canvas id="c-flow-out-brand"></canvas></div></div>
+    </div>
+    <div class="card"><h3><i class="ti ti-map-pin"></i><span id="h-flow-out-site">Outbound by Site (M EGP)</span></h3><div class="chart-box"><canvas id="c-flow-out-site"></canvas></div></div>
   </div>
 
   <!-- HEALTH -->
@@ -359,7 +425,7 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
     <div class="sec-sub">Stock health by movement tier — value, item count and concentration of risk</div>
     <div class="kpis" id="healthTiles"></div>
     <div class="grid g2" style="margin-bottom:14px">
-      <div class="card"><h3><i class="ti ti-chart-donut"></i>Value by Movement Status (M EGP)</h3><div class="chart-box"><canvas id="c-status-val"></canvas></div></div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-chart-donut"></i><span id="h-statusval">Value by Movement Status (M EGP)</span></span><span class="h3ctl"><span class="mtoggle" data-mchart="health"><button type="button" data-m="v" class="on">EGP</button><button type="button" data-m="q">Qty</button></span></span></h3><div class="chart-box"><canvas id="c-status-val"></canvas></div></div>
       <div class="card"><h3><i class="ti ti-list-numbers"></i>Item Count by Status</h3><div class="chart-box"><canvas id="c-status-cnt"></canvas></div></div>
     </div>
     <div class="grid g3">
@@ -372,6 +438,119 @@ table.mom tr:last-child td{background:#f4f6fb;font-weight:700}
     </div>
   </div>
 
+  <!-- ABC ANALYSIS -->
+  <div class="panel" id="abc">
+    <div class="sec-title">ABC Analysis <span class="infowrap"><button type="button" class="infobtn" onclick="toggleInfo(this,event)">i</button><div class="infopop"><h5>ABC classes (Pareto 80/20)</h5><p><b>A — vital few:</b> ~10% of items that hold ~80% of your on-hand value. Watch these closely.</p><p><b>B:</b> the middle — the next ~15% of value.</p><p><b>C — long tail:</b> most of your items, but only ~5% of value. Don't over-manage these.</p><p>Computed per category: sort items high→low by value; A up to 80% of the category's value, B up to 95%, C the rest.</p></div></span></div>
+    <div class="sec-sub">Pareto classification by on-hand value within each category — <b>A</b> = items making up the first ≤80% of category value (the vital few), <b>B</b> = the next ≤95%, <b>C</b> = the long tail. Overstock = on-hand above a target of (max annual usage ÷ 365 × target days).</div>
+
+    <!-- target-days control -->
+    <div class="rail" id="abcControl" style="margin-bottom:12px">
+      <div class="fl"><label>Target coverage (months) <span class="infowrap"><button type="button" class="infobtn" onclick="toggleInfo(this,event)">i</button><div class="infopop"><h5>Target coverage (months)</h5><p>How many months of stock you aim to hold. Anything beyond it counts as <b>overstock</b>. Default <b>24</b> ≈ 2 years.</p><p><span class="eq">Target Qty = avg monthly demand × months</span></p><p>Over Qty = on-hand − Target Qty; Over Value = Over Qty × unit cost.</p><p>Lower it → stricter (more flagged as overstock). Items with no usage get a target of 0, so all their stock shows as overstock (dead stock).</p></div></span></label><input type="number" id="abcDays" class="fsel" style="width:120px" min="1" step="1" value="24"></div>
+      <button class="freset" id="abcApply"><i class="ti ti-check" style="font-size:13px"></i>Apply</button>
+      <div style="margin-left:auto;padding-bottom:2px"><span style="display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--text2);background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:6px 12px"><i class="ti ti-calendar-stats" style="color:var(--orange);font-size:13px"></i><b id="abcAsOf" style="color:var(--navy)">—</b></span></div>
+    </div>
+
+    <div class="stub" id="abcLoading"><i class="ti ti-loader-2"></i><b>Loading ABC analysis…</b>Classifying ~10k items by cumulative value.</div>
+    <div class="note" id="abcError" style="display:none"></div>
+
+    <div id="abcBody" style="display:none">
+      <div class="kpis" id="abcKpis"></div>
+
+      <div class="grid g2" style="margin-bottom:14px">
+        <div class="card"><h3><i class="ti ti-chart-bar"></i>Value by Class × Category (M EGP)</h3><div class="chart-box"><canvas id="c-abc-vcc"></canvas></div></div>
+        <div class="card"><h3><i class="ti ti-list-numbers"></i># Items by Class</h3><div class="chart-box"><canvas id="c-abc-cnt"></canvas></div></div>
+      </div>
+
+      <div class="card" style="margin-bottom:14px"><h3><i class="ti ti-table"></i>Class × Category Matrix (M EGP)</h3><div style="overflow-x:auto"><table class="dtable" id="abcMatrix"></table></div></div>
+
+      <div class="sec-title" style="margin-top:22px">Overstock Detail</div>
+      <div class="sec-sub">On-hand held above the target coverage window, by class and by category</div>
+      <div class="kpis" id="abcOverKpis"></div>
+      <div class="grid g2" style="margin-bottom:14px">
+        <div class="card"><h3><i class="ti ti-stack-2"></i>Overstock Value by Class (M EGP)</h3><div class="chart-box sm"><canvas id="c-abc-overcls"></canvas></div></div>
+        <div class="card"><h3><i class="ti ti-category"></i>Overstock Value by Category (M EGP)</h3><div class="chart-box sm"><canvas id="c-abc-overcat"></canvas></div></div>
+      </div>
+
+      <div class="sec-title" style="margin-top:22px">Item Drill-through</div>
+      <div class="sec-sub">Every classified item — search, filter by class / category; sorted by on-hand value (top 400 shown)</div>
+      <div class="rail" id="abcItemFilters">
+        <div class="gsearch"><i class="ti ti-search" style="color:var(--text3);font-size:15px"></i><input id="abcSearch" placeholder="Search item number or name…"></div>
+        <div class="fl"><label>Class</label><select id="abcClsSel" class="fsel"><option value="">All classes</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select></div>
+        <div class="fl"><label>Category</label><select id="abcCatSel" class="fsel"><option value="">All categories</option><option value="Sp">Sp</option><option value="IRR">IRR</option><option value="Oil">Oil</option><option value="Invest">Invest</option></select></div>
+      </div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-list-search"></i><span id="abcItemCount">0</span> items <span style="font-weight:400;color:var(--text3);font-size:11px">· <span id="abcItemNote">—</span></span></span><button class="freset" id="abcExport" title="Export all filtered items to CSV"><i class="ti ti-download" style="font-size:13px"></i>Export CSV</button></h3>
+        <div style="overflow:auto;max-height:560px"><table class="itable" id="abcItems"></table></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REORDER & SAFETY STOCK -->
+  <div class="panel" id="reorder">
+    <div class="sec-title">Reorder &amp; Safety Stock</div>
+    <div class="sec-sub">Statistical reorder points from the transaction ledger — monthly OUTBOUND per item gives mean demand <b>D̄</b> and std-dev <b>σ<sub>D</sub></b>; lead time <b>L</b> is estimated from the average interval between INBOUND receipts. <b>Safety Stock = Z·σ<sub>D</sub>·√L</b> · <b>Reorder Point = D̄·L + Safety Stock</b> (L in months). An item needs reordering when on-hand ≤ its reorder point. <span class="infowrap"><button type="button" class="infobtn" onclick="toggleInfo(this,event)">i</button><div class="infopop"><h5>What the formulas mean</h5><p><span class="eq">Reorder Point = D̄·L + Safety Stock</span> — the "time to reorder" line: the stock you'll use up while waiting for delivery, plus a cushion. When on-hand drops to it, reorder.</p><p><span class="eq">Safety Stock = Z·σ·√L</span> — the just-in-case cushion. Bigger when demand is bouncy (σ), the wait is long (L), or you want to play it safe (Z).</p><p><b>Candy-stand version:</b> reorder point = "call the truck now" line; safety stock = the backup pile so you never run out on a surprise-busy day.</p></div></span></div>
+
+    <!-- service-level / lead control -->
+    <div class="rail" id="roControl" style="margin-bottom:12px">
+      <div class="fl"><label>Service level <span class="infowrap"><button type="button" class="infobtn" onclick="toggleInfo(this,event)">i</button><div class="infopop"><h5>Service level</h5><p>Your target for <b>not</b> running out while waiting for restock. <b>95%</b> = you accept stocking out only ~5% of the time.</p><p>Becomes a <b>Z factor</b> (90%→1.28, 95%→1.65, 99%→2.33) that sizes the safety stock.</p><p><b>Higher (99%)</b> = bigger buffer, fewer stockouts, more cash held. <b>Lower (90%)</b> = leaner but more shortages. Use high service for your A-class items.</p></div></span></label><select id="roSvc" class="fsel" style="width:120px"><option value="1.2816">90%</option><option value="1.6449" selected>95%</option><option value="1.9600">97.5%</option><option value="2.3263">99%</option></select></div>
+      <div class="fl"><label>Fallback lead time (months) <span class="infowrap"><button type="button" class="infobtn" onclick="toggleInfo(this,event)">i</button><div class="infopop"><h5>Fallback lead time (months)</h5><p><b>Lead time</b> = how long a restock takes to arrive.</p><p>Each item's lead time is normally estimated from the average gap between its <b>inbound receipts</b> (data-driven).</p><p>For items with too few receipts to measure a gap, this <b>fallback</b> value is used instead. Default 2 months.</p></div></span></label><input type="number" id="roLead" class="fsel" style="width:150px" min="0.5" step="0.5" value="2"></div>
+      <button class="freset" id="roApply"><i class="ti ti-check" style="font-size:13px"></i>Apply</button>
+      <div style="margin-left:auto;padding-bottom:2px"><span style="display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--text2);background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:6px 12px"><i class="ti ti-calendar-stats" style="color:var(--orange);font-size:13px"></i><b id="roAsOf" style="color:var(--navy)">—</b></span></div>
+    </div>
+
+    <div class="stub" id="roLoading"><i class="ti ti-loader-2"></i><b>Loading reorder analysis…</b>Computing safety stock &amp; reorder points for ~11.5k items.</div>
+    <div class="note" id="roError" style="display:none"></div>
+
+    <div id="roBody" style="display:none">
+      <div class="kpis" id="roKpis"></div>
+
+      <div class="grid g2" style="margin-bottom:14px">
+        <div class="card"><h3><i class="ti ti-chart-bar"></i>Items to Reorder by Category</h3><div class="chart-box"><canvas id="c-ro-cat"></canvas></div></div>
+        <div class="card"><h3><i class="ti ti-shield-check"></i>Safety-Stock Value by Category (M EGP)</h3><div class="chart-box"><canvas id="c-ro-ss"></canvas></div></div>
+      </div>
+
+      <div class="sec-title" style="margin-top:22px">Item Drill-through</div>
+      <div class="sec-sub">Every analysed item — search, filter by category / status; sorted with reorder-now items first, then by safety-stock value (top 400 shown)</div>
+      <div class="rail" id="roItemFilters">
+        <div class="gsearch"><i class="ti ti-search" style="color:var(--text3);font-size:15px"></i><input id="roSearch" placeholder="Search item number or name…"></div>
+        <div class="fl"><label>Category</label><select id="roCatSel" class="fsel"><option value="">All categories</option><option value="Sp">Sp</option><option value="IRR">IRR</option><option value="Oil">Oil</option><option value="Invest">Invest</option></select></div>
+        <div class="fl"><label>Status</label><select id="roStSel" class="fsel"><option value="">All statuses</option><option value="Reorder">Reorder now</option><option value="OK">OK</option></select></div>
+      </div>
+      <div class="card"><h3 style="justify-content:space-between"><span style="display:inline-flex;align-items:center;gap:7px"><i class="ti ti-list-search"></i><span id="roItemCount">0</span> items <span style="font-weight:400;color:var(--text3);font-size:11px">· <span id="roItemNote">—</span></span></span><button class="freset" id="roExport" title="Export all filtered items to CSV"><i class="ti ti-download" style="font-size:13px"></i>Export CSV</button></h3>
+        <div style="overflow:auto;max-height:560px"><table class="itable" id="roItems"></table></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Flow drill-down popup (period detail) -->
+<div class="flowmodal" id="flowModal" style="display:none">
+  <div class="flowmodal-bg" id="fmBg"></div>
+  <div class="flowmodal-box">
+    <div class="flowmodal-head">
+      <span class="flowmodal-title" id="fmTitle">—</span>
+      <span style="display:inline-flex;gap:10px;align-items:center">
+        <span class="mtoggle" id="fmMetric"><button type="button" data-fmm="v" class="on">EGP</button><button type="button" data-fmm="q">Qty</button></span>
+        <button class="flowmodal-x" id="fmClose" title="Close">✕</button>
+      </span>
+    </div>
+    <div class="flowmodal-body" id="fmBody"></div>
+  </div>
+</div>
+
+<!-- On-hand click-to-drill popup (fed from the loaded ITEMS array) -->
+<div class="flowmodal" id="drillModal" style="display:none">
+  <div class="flowmodal-bg" id="dmBg"></div>
+  <div class="flowmodal-box">
+    <div class="flowmodal-head">
+      <span class="flowmodal-title" id="dmTitle">—</span>
+      <span style="display:inline-flex;gap:10px;align-items:center">
+        <span class="mtoggle" id="dmMetric"><button type="button" data-dmm="v" class="on">EGP</button><button type="button" data-dmm="q">Qty</button></span>
+        <button class="flowmodal-x" id="dmClose" title="Close">✕</button>
+      </span>
+    </div>
+    <div class="flowmodal-body" id="dmBody"></div>
+  </div>
 </div>
 
 <script>
@@ -382,8 +561,16 @@ const CAT = ['Sp','IRR','Oil','Invest'];
 const CATCOLOR = {Sp:'#142850',IRR:'#2563eb',Oil:'#d97706',Invest:'#6d28d9'};
 const NAVY='#142850', ORANGE='#DC6428', BLUE='#2563eb', SLATE='#94a3b8', GREEN='#16a34a', RED='#dc2626';
 const fmtM = v => (v>=0?'':'-')+Math.abs(v).toLocaleString('en',{maximumFractionDigits:1});
-const seasonMonths = ['2025-10','2025-11','2025-12','2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07'];
-const mLabel = m => ({'2025-10':'Oct-25','2025-11':'Nov-25','2025-12':'Dec-25','2026-01':'Jan-26','2026-02':'Feb-26','2026-03':'Mar-26','2026-04':'Apr-26','2026-05':'May-26','2026-06':'Jun-26','2026-07':'Jul-26'}[m]||m);
+function mM(m){ m=+m||0; var a=Math.abs(m); if(a>=1) return m.toFixed(1)+'M'; if(a===0) return '0'; return Math.round(m*1000).toLocaleString()+'K'; }   // value is in MILLIONS: >=1M -> 'X.XM', else 'NNNK' (0.5 -> 500K, 0.05 -> 50K)
+function pP(p){ p=+p||0; if(p<=0) return '0%'; if(p<0.1) return '<0.1%'; if(p<1) return p.toFixed(1)+'%'; return p.toFixed(0)+'%'; }   // p is a percent 0..100: small non-zero -> one decimal (0.5%) instead of 0%
+function monthRangeYM(startYM,endYM){ var o=[],a=startYM.split('-'),b=endYM.split('-'),y=+a[0],m=+a[1],ey=+b[0],em=+b[1]; while(y<ey||(y===ey&&m<=em)){ o.push(y+'-'+String(m).padStart(2,'0')); m++; if(m>12){m=1;y++;} } return o; }
+const seasonMonths = monthRangeYM(((DATA.meta&&DATA.meta.seasonStart)||'2025-10'), (((DATA.meta&&DATA.meta.asOf)||'2026-08-15').slice(0,7)));
+const MON3=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const mLabel = m => { var p=(''+m).split('-'); if(p.length<2)return m; var i=(+p[1])-1; return (MON3[i]||m)+'-'+p[0].slice(2); };
+/* dynamic season + as-of labels (no hardcoded '26' / dates) */
+const SEASON_NO = ((+(((DATA.meta&&DATA.meta.seasonStart)||'2025-10').split('-')[0]))+1)%100;
+const SEASON_LBL = 'Season '+SEASON_NO;
+const asOfPretty = (()=>{ var s=(DATA.meta&&DATA.meta.asOf)||''; var p=s.split('-'); return (p.length===3)?(+p[2])+' '+MON3[(+p[1])-1]+' '+p[0]:s; })();
 
 Chart.register(ChartDataLabels);
 Chart.defaults.font.family="'Plus Jakarta Sans',sans-serif";
@@ -391,40 +578,105 @@ Chart.defaults.plugins.datalabels.display=false;
 Chart.defaults.plugins.legend.labels.usePointStyle=true;
 Chart.defaults.plugins.legend.labels.boxWidth=8;
 Chart.defaults.plugins.legend.labels.font={size:11};
+/* when a chart is in compare mode, its hover tooltip footers the two real periods + exact dates */
+Chart.defaults.plugins.tooltip.callbacks.footer=function(items){ var it=items&&items[0]; var id=it&&it.chart&&it.chart.canvas&&it.chart.canvas.id; var w=id&&CMPWIN[id]; if(!w)return ''; return ['', w.cl+':  '+w.cur.from+' → '+w.cur.to, w.pl+':  '+w.comp.from+' → '+w.comp.to]; };
+/* title = the hovered bar's OWN bucket date (current vs comparison sit at the same x but are different actual periods) */
+Chart.defaults.plugins.tooltip.callbacks.title=function(items){ var it=items&&items[0]; if(!it)return ''; var w=it.chart&&CMPWIN[it.chart.canvas.id]; if(w&&w.keysByDs&&w.keysByDs[it.datasetIndex]){ var k=w.keysByDs[it.datasetIndex][it.dataIndex]; if(k)return bLabelYr(k,w.grain); } return it.label; };
 
 function setTab(btn){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b===btn));
   const t=btn.dataset.tab;
   document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===t));
+  if(t==='abc')openABC();
+  if(t==='reorder')openReorder();
+  if(t==='movement')openMovement();
+}
+/* clickable ⓘ definition popovers — position:fixed near the icon so no parent can clip it */
+function closeInfo(){ document.querySelectorAll('.infopop.open').forEach(function(p){p.classList.remove('open');}); }
+function toggleInfo(btn,ev){ if(ev){ev.stopPropagation();ev.preventDefault();}
+  var wrap=btn.closest('.infowrap'); var pop=wrap&&wrap.querySelector('.infopop'); if(!pop)return;
+  var isOpen=pop.classList.contains('open'); closeInfo();
+  if(!isOpen){
+    var r=btn.getBoundingClientRect();
+    var w=Math.min(310, window.innerWidth-24);
+    pop.style.width=w+'px';
+    pop.style.left=Math.max(12, Math.min(r.left, window.innerWidth-w-12))+'px';
+    pop.style.top=Math.min(r.bottom+6, window.innerHeight-12)+'px';
+    pop.classList.add('open');
+  }
+}
+document.addEventListener('click',function(e){ if(!e.target.closest('.infowrap'))closeInfo(); });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeInfo(); });
+window.addEventListener('scroll',closeInfo,true);
+/* ---- CSV export (opens in Excel; UTF-8 BOM keeps Arabic descriptions intact) ---- */
+function csvCell(v){ v=(v==null?'':''+v); return /[",\n\r]/.test(v)?('"'+v.replace(/"/g,'""')+'"'):v; }
+function downloadCSV(name,headers,rows){
+  var csv=headers.map(csvCell).join(',')+'\r\n'+rows.map(function(r){return r.map(csvCell).join(',');}).join('\r\n');
+  var blob=new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8;'}), url=URL.createObjectURL(blob), a=document.createElement('a');
+  a.href=url; a.download=name; document.body.appendChild(a); a.click();
+  setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},150);
+}
+function asOfTag(){ return (((DATA&&DATA.meta&&DATA.meta.asOf)||'')+'').replace(/[^0-9-]/g,'')||'export'; }
+function exportExplorerCSV(){
+  var rows=ITEMS.items.filter(passesX).sort(function(a,b){return num(b.v)-num(a.v);});
+  downloadCSV('inventory-items-'+asOfTag()+'.csv',
+    ['Item','Description','Type','Dept','Brand','Site','Tier','On-Hand (EGP)','Qty'],
+    rows.map(function(i){return [i.n,i.dsc||'',i.c,i.d,i.b,i.s,i.t,Math.round(num(i.v)),Math.round(num(i.q))];}));
+}
+function exportAbcCSV(){
+  var items=(ABC&&ABC.items)||[], q=ABCF.q, cls=ABCF.cls, cat=ABCF.cat;
+  var rows=items.filter(function(i){ if(cls&&i.cls!==cls)return false; if(cat&&i.c!==cat)return false; if(q){var s=(''+(i.n||'')).toLowerCase()+' '+(''+(i.nm||'')).toLowerCase(); if(s.indexOf(q)<0)return false;} return true; })
+    .sort(function(a,b){return num(b.v)-num(a.v);});
+  downloadCSV('abc-analysis-'+asOfTag()+'.csv',
+    ['Item','Name','Category','Class','On-Hand Qty','Value (EGP)','Unit Value (EGP)','FY24','FY25','FY26','Max per year','Months of Stock','Target Qty','Over Qty','Over Value (EGP)'],
+    rows.map(function(i){return [i.n,i.nm||'',i.c,i.cls,Math.round(num(i.q)),Math.round(num(i.v)),Math.round(num(i.u)),Math.round(num(i.c24)),Math.round(num(i.c25)),Math.round(num(i.c26)),Math.round(num(i.mx)),(i.cov==null?'':(num(i.cov)/(365/12)).toFixed(1)),Math.round(num(i.tg)),Math.round(num(i.oq)),Math.round(num(i.ov))];}));
+}
+function exportReorderCSV(){
+  var items=(RO&&RO.items)||[], q=ROF.q, cat=ROF.cat, st=ROF.st;
+  var rows=items.filter(function(i){ if(cat&&i.c!==cat)return false; if(st&&i.st!==st)return false; if(q){var s=(''+(i.n||'')).toLowerCase()+' '+(''+(i.nm||'')).toLowerCase(); if(s.indexOf(q)<0)return false;} return true; })
+    .sort(function(a,b){ var ra=(a.st==='Reorder')?1:0, rb=(b.st==='Reorder')?1:0; if(ra!==rb)return rb-ra; return num(b.ssv)-num(a.ssv); });
+  downloadCSV('reorder-safety-stock-'+asOfTag()+'.csv',
+    ['Item','Name','Category','On-Hand Qty','Avg Monthly Demand','Sigma (monthly)','Lead (months)','Safety Stock','Reorder Point','Status','SS Value (EGP)','Unit Value (EGP)'],
+    rows.map(function(i){return [i.n,i.nm||'',i.c,Math.round(num(i.q)),num(i.dmo),num(i.sig),(num(i.ld)/(365/12)).toFixed(1),Math.round(num(i.ss)),Math.round(num(i.rop)),i.st,Math.round(num(i.ssv)),Math.round(num(i.u))];}));
 }
 
 /* ---- snapshot ---- */
-document.getElementById('s-onhand').textContent='EGP '+DATA.kpi.onhandTotal+'M';
+document.getElementById('s-onhand').textContent='EGP '+mM(DATA.kpi.onhandTotal);
 document.getElementById('s-sku').textContent=DATA.kpi.totalSku.toLocaleString();
 document.getElementById('s-sp').textContent=DATA.kpi.spDominance+'%';
 document.getElementById('s-rows').textContent=(DATA.meta&&DATA.meta.asOf)||'—';
+/* dynamic header badge + hero subtitle (no hardcoded season/date/site counts) */
+(function(){
+  var bt=document.getElementById('tbBadgeTxt'); if(bt)bt.textContent=SEASON_LBL+(asOfPretty?' · as of '+asOfPretty:'');
+  var hs=document.getElementById('heroSub'); if(hs){
+    var nSites=DATA.onhandBySite?Object.keys(DATA.onhandBySite).length:0;
+    var months=Object.keys(DATA.monthlyOnhand||{}).filter(function(m){return /^\d{4}-\d{2}$/.test(m);}).sort();
+    var span=months.length?(mLabel(months[0])+' → '+mLabel(months[months.length-1])):'';
+    hs.textContent='On-hand value, movement and stock health across 4 categories'+(nSites?(' and '+nSites+' sites'):'')+' — computed live from the full transaction history'+(span?(' ('+span+')'):'')+'.';
+  }
+})();
 
 /* ---- KPI row ---- */
 const seasonIn = seasonMonths.reduce((s,m)=>s+(DATA.inboundByMonth[m]||0),0);
 const seasonOut = seasonMonths.reduce((s,m)=>s+Math.abs(DATA.outboundByMonth[m]||0),0);
 const turnover = (seasonOut/DATA.kpi.onhandTotal);
 const kpis=[
-  {v:'EGP '+DATA.kpi.onhandTotal+'M',l:'Total On-Hand Value',s:'Across all sites',c:''},
+  {v:'EGP '+mM(DATA.kpi.onhandTotal),l:'Total On-Hand Value',s:'Across all sites',c:''},
   {v:DATA.kpi.activeItems.toLocaleString(),l:'Active Moving Items',s:DATA.kpi.activeRate+'% active rate',c:'k-teal'},
   {v:DATA.kpi.totalSku.toLocaleString(),l:'Total SKUs',s:'Across 4 categories',c:'k-orange'},
   {v:DATA.kpi.spDominance+'%',l:'Spare Parts Dominance',s:'of total value',c:''},
   {v:'EGP '+fmtM(seasonIn)+'M',l:'Season Inbound',s:'Or Ty 1P/2P/FF',c:'k-in'},
   {v:'EGP '+fmtM(seasonOut)+'M',l:'Season Outbound',s:'Do Ty # (issues)',c:'k-out'},
   {v:turnover.toFixed(1)+'×',l:'Inventory Turnover',s:'season out / on-hand',c:'k-teal'},
-  {v:DATA.onhandByCat.Invest.toFixed(0)+'M',l:'Invest Category',s:'reclassified items',c:'k-orange'}
+  {v:mM(DATA.onhandByCat.Invest),l:'Invest Category',s:'reclassified items',c:'k-orange'}
 ];
 document.getElementById('kpiRow').innerHTML=kpis.map(k=>
   `<div class="kpi ${k.c}"><div class="kpi-val">${k.v}</div><div class="kpi-lbl">${k.l}</div><div class="kpi-sub">${k.s}</div></div>`).join('');
 
 /* ---- helpers ---- */
-const dl = (color,fmt)=>({display:true,color:color||'#374151',font:{size:10,weight:'700'},formatter:fmt||(v=>v)});
+const dl = (color,fmt)=>({display:true,color:color||'#374151',font:{size:10,weight:'700'},clamp:true,clip:false,formatter:fmt||(v=>v)});
 const dlv = fmt=>({display:true,anchor:'end',align:'top',color:'#374151',font:{size:10,weight:'700'},clamp:true,formatter:fmt||(v=>v)});   /* vertical bars: label above */
-const dlh = fmt=>({display:true,anchor:'end',align:'right',color:'#374151',font:{size:10,weight:'700'},clip:false,formatter:fmt||(v=>v)}); /* horizontal bars: label past end */
+const dlh = fmt=>({display:true,anchor:'end',align:'right',color:'#374151',font:{size:10,weight:'700'},clip:false,clamp:true,formatter:fmt||(v=>v)}); /* horizontal bars: label past end */
 const CH={}; function killChart(id){ if(CH[id]){try{CH[id].destroy();}catch(e){} delete CH[id];} try{var _ex=Chart.getChart(id); if(_ex)_ex.destroy();}catch(e){} }
 function barChart(id,labels,datasets,opts={}){ killChart(id);
   CH[id]=new Chart(document.getElementById(id),{type:'bar',data:{labels,datasets},options:Object.assign({
@@ -435,26 +687,30 @@ function barChart(id,labels,datasets,opts={}){ killChart(id);
 }
 
 /* ===== OVERVIEW ===== */
-// season stock value/month bar + line
-(()=>{ const vals=seasonMonths.map(m=>DATA.monthlyOnhand[m]);
-  new Chart(document.getElementById('c-season'),{data:{labels:seasonMonths.map(mLabel),
-    datasets:[
-      {type:'bar',label:'On-hand',data:vals,backgroundColor:NAVY,borderRadius:4,datalabels:dl('#fff',v=>v.toFixed(0)+'M')},
-      {type:'line',label:'Trend',data:vals,borderColor:ORANGE,backgroundColor:ORANGE,tension:.35,pointRadius:0,borderWidth:2.5,datalabels:{display:false}}
-    ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:{color:'#eef1f6'}},x:{grid:{display:false}}}}});
-})();
+// season chart drawn after CMET is declared (drawSeason -> isQ -> CMET), see below
 // category share donut
-function donut(id,labels,vals,colors){ killChart(id);
+function donut(id,labels,vals,colors,onClick){ killChart(id);
   CH[id]=new Chart(document.getElementById(id),{type:'doughnut',data:{labels,datasets:[{data:vals,backgroundColor:colors,borderWidth:2,borderColor:'#fff'}]},
-    options:{responsive:true,maintainAspectRatio:false,cutout:'55%',plugins:{legend:{position:'right'},
-      datalabels:{display:true,color:'#fff',font:{size:11,weight:'700'},formatter:(v,c)=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);const p=100*v/t;return p>4?p.toFixed(0)+'%':''}}}}});
+    options:{responsive:true,maintainAspectRatio:false,cutout:'55%',onClick:onClick||undefined,onHover:onClick?drillHover:undefined,plugins:{legend:{position:'right'},
+      datalabels:{display:true,color:'#fff',font:{size:11,weight:'700'},formatter:(v,c)=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);const p=100*v/t;return p>4?pP(p):''}}}}});
 }
 
 /* ================= DATE-RANGE ENGINE (day / week / month) ================= */
 const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const RANGE={active:false,from:null,to:null,grain:'week',grainOverride:null};
 function num(x){return (x==null||isNaN(x))?0:+x;}
-function bLabel(k,grain){var p=(''+k).split('-');if(grain==='month')return MON[(+p[1])-1]+'-'+p[0].slice(2);var mo=MON[(+p[1])-1];return (grain==='week'?'w/o ':'')+(+p[2])+' '+mo;}
+function wkNum(dt){ var d=new Date(Date.UTC(dt.getFullYear(),dt.getMonth(),dt.getDate())); var day=d.getUTCDay()||7; d.setUTCDate(d.getUTCDate()+4-day); var ys=new Date(Date.UTC(d.getUTCFullYear(),0,1)); return Math.ceil((((d-ys)/86400000)+1)/7); }
+function wkLabel(k){ var d=new Date(k+'T00:00:00'); return 'W'+wkNum(d)+' '+MON[d.getMonth()]+"'"+(''+d.getFullYear()).slice(2); }
+function bLabel(k,grain){var p=(''+k).split('-');if(grain==='month')return MON[(+p[1])-1]+'-'+p[0].slice(2);if(grain==='week')return wkLabel(k);return (+p[2])+' '+MON[(+p[1])-1];}
+
+/* ---- per-chart metric (EGP value 'v' vs Qty units 'q'); each chart independent ---- */
+const CMET={season:'v',iomonth:'v',iocat:'v',cattrend:'v',catmonthly:'v',mvmonth:'v',mvin:'v',mvout:'v',catoh:'v',catturn:'v',site:'v',heat:'v',brandoh:'v',brandiss:'v',health:'v'};
+/* initial season chart (bar + value line + last-12m trendline) — after CMET so drawSeason->isQ works */
+drawSeason(buildFullVW());
+function mIsQ(key){return CMET[key]==='q';}
+function isQ(key){return CMET[key]==='q';}
+function fmtQ(v){return Math.round(num(v)).toLocaleString();}
+function uLbl(key){return isQ(key)?'Qty · units':'M EGP';}
 
 /* ---- build a normalized "view" (same shape) for full period or a date range ---- */
 function buildFullVW(){
@@ -475,6 +731,15 @@ function buildFullVW(){
   s.trendLabels=tms.slice(); s.trendOnhand=tms.map(m=>num(DATA.monthlyOnhand[m]));
   s.catLabels=seasonMonths.map(mLabel);
   s.catData={}; CAT.forEach(c=>s.catData[c]=seasonMonths.map(m=>num(DATA.monthlyOnhandByCat[c]?DATA.monthlyOnhandByCat[c][m]:0)));
+  /* ---- qty siblings (raw unit sums) ---- */
+  var IBM=DATA.inboundByMonthQty||{}, OBM=DATA.outboundByMonthQty||{}, MOH=DATA.monthlyOnhandQty||{}, MOHC=DATA.monthlyOnhandByCatQty||{};
+  s.onhandByCatQ=DATA.onhandByCatQty||{}; s.onhandBySiteQ=DATA.onhandBySiteQty||{}; s.heatQ=DATA.heatQty||{};
+  s.statusValQ=DATA.statusValQty||{};
+  s.onhandByBrandQ=BRAND.onhandByBrandQty||{}; s.issueByBrandQ=BRAND.issueSeasonByBrandQty||{};
+  s.inByCatQ=DATA.inboundByCatSeasonQty||{}; s.outByCatQ=DATA.outboundByCatSeasonQty||{};
+  s.sInQ=seasonMonths.map(m=>num(IBM[m])); s.sOutQ=seasonMonths.map(m=>num(OBM[m])); s.sOnhandQ=seasonMonths.map(m=>num(MOH[m]));
+  s.trendOnhandQ=tms.map(m=>num(MOH[m]));
+  s.catDataQ={}; CAT.forEach(c=>s.catDataQ[c]=seasonMonths.map(m=>num(MOHC[c]?MOHC[c][m]:0)));
   return s;
 }
 function buildRangeVW(p){
@@ -492,12 +757,22 @@ function buildRangeVW(p){
   s.trendLabels=s.sLabels.slice(); s.trendOnhand=s.sOnhand.slice(); s.catLabels=s.sLabels.slice();
   const ks=ser.map(x=>x.k), sc=p.seriesByCat||{};
   s.catData={}; CAT.forEach(c=>s.catData[c]=ks.map(k=>num(sc[c]?sc[c][k]:0)));
+  /* ---- qty siblings (merged from the p_metric='q' payload) ---- */
+  s.onhandByCatQ=p.onhandByCatQ||{}; s.onhandBySiteQ=p.onhandBySiteQ||{}; s.heatQ=p.heatQ||{};
+  s.statusValQ=p.statusValQ||{};
+  s.onhandByBrandQ=p.onhandByBrandQ||{}; s.issueByBrandQ=p.issueByBrandQ||{};
+  s.inByCatQ=p.inByCatSeasonQ||{}; s.outByCatQ=p.outByCatSeasonQ||{};
+  var serQ=p.seriesQ||[];
+  s.sInQ=serQ.map(x=>num(x.inb)); s.sOutQ=serQ.map(x=>num(x.outb)); s.sOnhandQ=serQ.map(x=>num(x.onhand));
+  s.trendOnhandQ=s.sOnhandQ.slice();
+  var scQ=p.seriesByCatQ||{}, ksQ=serQ.map(x=>x.k);
+  s.catDataQ={}; CAT.forEach(c=>s.catDataQ[c]=ksQ.map(k=>num(scQ[c]?scQ[c][k]:0)));
   return s;
 }
 
 /* ---- re-callable renderers (read from a view) ---- */
 function drawSnapshot(vw){
-  document.getElementById('s-onhand').textContent='EGP '+vw.onhandTotal+'M';
+  document.getElementById('s-onhand').textContent='EGP '+mM(vw.onhandTotal);
   document.getElementById('s-sku').textContent=(+vw.sku).toLocaleString();
   document.getElementById('s-sp').textContent=vw.sp+'%';
   document.getElementById('s-rows').textContent=vw.rowsLabel||'—';
@@ -505,149 +780,219 @@ function drawSnapshot(vw){
 function drawKpis(vw){
   const turnover=vw.onhandTotal?(vw.rangeOut/vw.onhandTotal):0;
   const kpis=[
-    {v:'EGP '+vw.onhandTotal+'M',l:'Total On-Hand Value',s:vw.rangeActive?vw.asofLabel:'Across all sites',c:''},
+    {v:'EGP '+mM(vw.onhandTotal),l:'Total On-Hand Value',s:vw.rangeActive?vw.asofLabel:'Across all sites',c:''},
     {v:(+vw.active).toLocaleString(),l:'Active Moving Items',s:vw.activeRate+'% active rate',c:'k-teal'},
     {v:(+vw.sku).toLocaleString(),l:'Total SKUs',s:'qty > 0',c:'k-orange'},
     {v:vw.sp+'%',l:'Spare Parts Dominance',s:'of total value',c:''},
     {v:'EGP '+fmtM(vw.rangeIn)+'M',l:vw.flowLabel+' Inbound',s:'Or Ty 1P/2P/FF',c:'k-in'},
     {v:'EGP '+fmtM(vw.rangeOut)+'M',l:vw.flowLabel+' Outbound',s:'Do Ty # (issues)',c:'k-out'},
     {v:turnover.toFixed(1)+'×',l:'Inventory Turnover',s:vw.flowLabel.toLowerCase()+' out / on-hand',c:'k-teal'},
-    {v:(+vw.invest).toFixed(0)+'M',l:'Invest Category',s:'reclassified items',c:'k-orange'}
+    {v:mM(+vw.invest),l:'Invest Category',s:'reclassified items',c:'k-orange'}
   ];
   document.getElementById('kpiRow').innerHTML=kpis.map(k=>`<div class="kpi ${k.c}"><div class="kpi-val">${k.v}</div><div class="kpi-lbl">${k.l}</div><div class="kpi-sub">${k.s}</div></div>`).join('');
 }
-function drawSeason(vw){ killChart('c-season');
-  CH['c-season']=new Chart(document.getElementById('c-season'),{data:{labels:vw.sLabels,datasets:[
-    {type:'bar',label:'On-hand',data:vw.sOnhand,backgroundColor:NAVY,borderRadius:4,datalabels:dl('#fff',v=>v.toFixed(0)+'M')},
-    {type:'line',label:'Trend',data:vw.sOnhand,borderColor:ORANGE,backgroundColor:ORANGE,tension:.35,pointRadius:0,borderWidth:2.5,datalabels:{display:false}}
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:{color:'#eef1f6'}},x:{grid:{display:false}}}}});
+function drawSeason(vw){ killChart('c-season'); var q=isQ('season');
+  var data=q?vw.sOnhandQ:vw.sOnhand, lf=q?(v=>fmtQ(v)):(v=>mM(v));
+  /* same-period-last-year dotted line: only in the default month view (aligned month-for-month) */
+  var showLast=!vw.rangeActive && data.length===seasonMonths.length;
+  var ds=[
+    {type:'bar',label:'This season',data:data,backgroundColor:NAVY,borderRadius:4,datalabels:dl('#fff',lf)},
+    {type:'line',label:'Trend',data:data,borderColor:ORANGE,backgroundColor:ORANGE,tension:.35,pointRadius:0,borderWidth:2.5,datalabels:{display:false}}
+  ];
+  if(showLast){
+    var src=q?(DATA.monthlyOnhandQty||{}):(DATA.monthlyOnhand||{});
+    var last=seasonMonths.map(function(m){ var p=(''+m).split('-'); var lm=(+p[0]-1)+'-'+p[1]; return (lm in src)?num(src[lm]):null; });
+    ds.push({type:'line',label:'Same period last year',data:last,borderColor:'#0d9488',backgroundColor:'#0d9488',borderWidth:3,borderDash:[6,4],pointRadius:4,pointHoverRadius:5,pointBackgroundColor:'#fff',pointBorderColor:'#0d9488',pointBorderWidth:2,tension:.3,fill:false,spanGaps:true,order:0,datalabels:{display:false}});
+  }
+  CH['c-season']=new Chart(document.getElementById('c-season'),{data:{labels:vw.sLabels,datasets:ds},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:showLast,position:'bottom',labels:{filter:function(it){return it.text!=='Trend';}}}},scales:{y:{grid:{color:'#eef1f6'}},x:{grid:{display:false}}}}});
 }
-function drawIoCat(vw){ barChart('c-io-cat',CAT,[
-  {label:'Inbound',data:CAT.map(c=>+num(vw.inByCat[c]).toFixed(1)),backgroundColor:NAVY,borderRadius:4,datalabels:{display:true,anchor:'end',align:'top',color:NAVY,font:{size:10,weight:'700'},formatter:v=>v>0?v.toFixed(1):''}},
-  {label:'Outbound',data:CAT.map(c=>+Math.abs(num(vw.outByCat[c])).toFixed(1)),backgroundColor:ORANGE,borderRadius:4,datalabels:{display:true,anchor:'end',align:'top',color:ORANGE,font:{size:10,weight:'700'},formatter:v=>v>0?v.toFixed(1):''}}
+function drawIoCat(vw){ var q=isQ('iocat'), inb=q?vw.inByCatQ:vw.inByCat, outb=q?vw.outByCatQ:vw.outByCat;
+  var f=q?(v=>v>0?fmtQ(v):''):(v=>v>0?v.toFixed(1):'');
+  var din=CAT.map(c=>q?Math.round(num(inb[c])):+num(inb[c]).toFixed(1));
+  var dout=CAT.map(c=>q?Math.round(Math.abs(num(outb[c]))):+Math.abs(num(outb[c])).toFixed(1));
+  barChart('c-io-cat',CAT,[
+  {label:'Inbound',data:din,backgroundColor:NAVY,borderRadius:4,datalabels:{display:true,anchor:'end',align:'top',color:NAVY,font:{size:10,weight:'700'},formatter:f}},
+  {label:'Outbound',data:dout,backgroundColor:ORANGE,borderRadius:4,datalabels:{display:true,anchor:'end',align:'top',color:ORANGE,font:{size:10,weight:'700'},formatter:f}}
+],CATCLICK); }
+function ioBars(id,vw,q){
+  var sIn=q?vw.sInQ:vw.sIn, sOut=q?vw.sOutQ:vw.sOut;
+  var f=q?(v=>v>0?fmtQ(v):''):(v=>v>0?v.toFixed(0):'');
+  var din=sIn.map(v=>q?Math.round(v):+v.toFixed(1));
+  var dout=sOut.map(v=>q?Math.round(Math.abs(v)):+Math.abs(v).toFixed(1));
+  barChart(id,vw.sLabels,[
+  {label:'Inbound',data:din,backgroundColor:NAVY,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:NAVY,font:{size:8,weight:'700'},formatter:f}},
+  {label:'Outbound',data:dout,backgroundColor:ORANGE,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:ORANGE,font:{size:8,weight:'700'},formatter:f}}
 ]); }
-function drawIoMonth(vw){ barChart('c-io-month',vw.sLabels,[
-  {label:'Inbound',data:vw.sIn.map(v=>+v.toFixed(1)),backgroundColor:NAVY,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:NAVY,font:{size:8,weight:'700'},formatter:v=>v>0?v.toFixed(0):''}},
-  {label:'Outbound',data:vw.sOut.map(v=>+Math.abs(v).toFixed(1)),backgroundColor:ORANGE,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:ORANGE,font:{size:8,weight:'700'},formatter:v=>v>0?v.toFixed(0):''}}
-]); }
-function drawCatTrend(vw){ killChart('c-cat-trend');
+function drawIoMonth(vw){ ioBars('c-io-month',vw,isQ('iomonth')); }
+function drawCatTrend(vw){ if(!document.getElementById('c-cat-trend'))return; killChart('c-cat-trend'); var q=isQ('cattrend');
+  var data=q?vw.trendOnhandQ:vw.trendOnhand, f=q?(v=>fmtQ(v)):(v=>v.toFixed(0));
   CH['c-cat-trend']=new Chart(document.getElementById('c-cat-trend'),{data:{labels:vw.trendLabels,datasets:[
-    {type:'bar',label:'On-hand',data:vw.trendOnhand,backgroundColor:NAVY,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:'#4a5778',font:{size:7,weight:'600'},formatter:v=>v.toFixed(0)}},
-    {type:'line',label:'Trend',data:vw.trendOnhand,borderColor:ORANGE,tension:.35,pointRadius:0,borderWidth:2.5,datalabels:{display:false}}
+    {type:'bar',label:'On-hand',data:data,backgroundColor:NAVY,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:'#4a5778',font:{size:7,weight:'600'},formatter:f}},
+    {type:'line',label:'Trend',data:data,borderColor:ORANGE,tension:.35,pointRadius:0,borderWidth:2.5,datalabels:{display:false}}
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:{color:'#eef1f6'}},x:{grid:{display:false},ticks:{maxRotation:60,minRotation:60,font:{size:9}}}}}});
 }
-function drawCatMonthly(vw){
-  barChart('c-cat-monthly',vw.catLabels,CAT.map(c=>({label:c,data:vw.catData[c],backgroundColor:CATCOLOR[c],borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:CATCOLOR[c],font:{size:7,weight:'700'},formatter:v=>v>=5?v.toFixed(0):''}})));
-  const L=vw.catLabels,D=vw.catData;
+function drawCatMonthly(vw){ var q=isQ('catmonthly');
+  const D=q?vw.catDataQ:vw.catData;
+  const barFmt=q?(v=>v>=1?fmtQ(v):''):(v=>v>=5?v.toFixed(0):'');
+  barChart('c-cat-monthly',vw.catLabels,CAT.map(c=>({label:c,data:D[c],backgroundColor:CATCOLOR[c],borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:CATCOLOR[c],font:{size:7,weight:'700'},formatter:barFmt}})));
+  const L=vw.catLabels;
   const val=(c,i)=> c==='Total'? CAT.reduce((s,x)=>s+num(D[x][i]),0) : num(D[c][i]);
+  const thr=q?0.5:0.05, dTxt=q?(d=>(d>=0?'+':'')+fmtQ(d)):(d=>(d>=0?'+':'')+d.toFixed(1));
   const cats=[...CAT,'Total']; let html='<tr><th>Category</th>';
   for(let i=1;i<L.length;i++){ html+=`<th>${(''+L[i-1]).slice(0,7)}→${(''+L[i]).slice(0,7)}</th>`; }
   html+='</tr>';
   cats.forEach(c=>{ html+=`<tr><td>${c}</td>`;
     for(let i=1;i<L.length;i++){ const d=val(c,i)-val(c,i-1),base=val(c,i-1),pct=base?d/base*100:0;
-      const cls=d>0.05?'up':d<-0.05?'dn':'',arr=d>0.05?'▲':d<-0.05?'▼':'■';
-      html+=`<td class="${cls}">${arr} ${d>=0?'+':''}${d.toFixed(1)}<br><span style="font-size:9px;opacity:.75">${pct>=0?'+':''}${pct.toFixed(1)}%</span></td>`; }
+      const cls=d>thr?'up':d<-thr?'dn':'',arr=d>thr?'▲':d<-thr?'▼':'■';
+      html+=`<td class="${cls}">${arr} ${dTxt(d)}<br><span style="font-size:9px;opacity:.75">${pct>=0?'+':''}${pct.toFixed(1)}%</span></td>`; }
     html+='</tr>'; });
   document.getElementById('momTable').innerHTML= L.length>1?html:('<tr><td style="padding:14px;color:var(--text3)">Pick a range spanning at least two '+(vw.grain||'period')+'s to see variance.</td></tr>');
 }
-function drawCatTurn(vw){
-  const t=CAT.map(c=>{ const oh=num(vw.onhandByCat[c]), out=Math.abs(num(vw.outByCat[c])); return oh>0?+(out/oh).toFixed(2):0; });
+function drawCatTurn(vw){ var q=isQ('catturn'), oh=q?vw.onhandByCatQ:vw.onhandByCat, ob=q?vw.outByCatQ:vw.outByCat;
+  const t=CAT.map(c=>{ const o=num(oh[c]), out=Math.abs(num(ob[c])); return o>0?+(out/o).toFixed(2):0; });
   barChart('c-cat-turn',CAT,[{label:'Turnover',data:t,backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dlv(v=>v.toFixed(2)+'×')}]);
 }
-function drawSite(vw){
-  const sites=Object.entries(vw.onhandBySite).filter(([s,v])=>v>0.05).sort((a,b)=>b[1]-a[1]);
-  barChart('c-site',sites.map(s=>s[0]),[{label:'On-hand',data:sites.map(s=>+(+s[1]).toFixed(1)),backgroundColor:sites.map((s,i)=>i<5?NAVY:SLATE),borderRadius:4,datalabels:dlh(v=>v.toFixed(1))}],
-    {indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
+function drawSite(vw){ var q=isQ('site'), src=q?vw.onhandBySiteQ:vw.onhandBySite;
+  const sites=Object.entries(src).filter(([s,v])=>v>(q?0:0.05)).sort((a,b)=>b[1]-a[1]);
+  const data=sites.map(s=>q?Math.round(+s[1]):+(+s[1]).toFixed(1));
+  const dlf=q?dlh(v=>fmtQ(v)):dlh(v=>v.toFixed(1));
+  const siteLabels=sites.map(s=>s[0]);
+  barChart('c-site',siteLabels,[{label:'On-hand',data:data,backgroundColor:sites.map((s,i)=>i<5?NAVY:SLATE),borderRadius:4,datalabels:dlf}],
+    {indexAxis:'y',onClick:drillClick('s',function(i){return siteLabels[i];}),onHover:drillHover,scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
   const tot=sites.reduce((s,x)=>s+x[1],0)||1, top2=sites.slice(0,2).reduce((s,x)=>s+x[1],0), top5=sites.slice(0,5).reduce((s,x)=>s+x[1],0);
+  const fmtV=q?(v=>fmtQ(v)+' units'):(v=>'EGP '+mM(+v));
   document.getElementById('concPanel').innerHTML=`<h4>Concentration Analysis</h4>
-    <div class="conc-item"><div class="v">${(100*top2/tot).toFixed(0)}%</div><div class="l">Top 2 sites share</div></div>
-    <div class="conc-item"><div class="v">${(100*top5/tot).toFixed(0)}%</div><div class="l">Top 5 sites share</div></div>
-    <div class="conc-item"><div class="v">EGP ${(sites[0]?sites[0][1]:0).toFixed(1)}M</div><div class="l">${sites[0]?sites[0][0]:'—'} (largest)</div></div>
-    <div class="conc-item"><div class="v">EGP ${(tot-top5).toFixed(1)}M</div><div class="l">Remaining ${Math.max(0,sites.length-5)} sites</div></div>`;
+    <div class="conc-item"><div class="v">${pP(100*top2/tot)}</div><div class="l">Top 2 sites share</div></div>
+    <div class="conc-item"><div class="v">${pP(100*top5/tot)}</div><div class="l">Top 5 sites share</div></div>
+    <div class="conc-item"><div class="v">${fmtV(sites[0]?sites[0][1]:0)}</div><div class="l">${sites[0]?sites[0][0]:'—'} (largest)</div></div>
+    <div class="conc-item"><div class="v">${fmtV(tot-top5)}</div><div class="l">Remaining ${Math.max(0,sites.length-5)} sites</div></div>`;
 }
-function drawHeat(vw){
-  const sites=Object.keys(vw.onhandBySite).filter(s=>vw.onhandBySite[s]>0.05).sort((a,b)=>vw.onhandBySite[b]-vw.onhandBySite[a]);
-  const band=v=>v>80?'#7f1d1d':v>20?'#dc2626':v>5?'#d97706':v>0?'#2563eb':'#1b2a44';
-  let html='<tr><th>Location</th>'+CAT.map(c=>`<th>${c} (M)</th>`).join('')+'<th>Total (M)</th></tr>';
-  sites.forEach(s=>{ let row=`<tr><td>${s}</td>`,tot=0;
-    CAT.forEach(c=>{const v=num(vw.heat[`${s}|${c}`]);tot+=v;row+=`<td style="background:${band(v)}">${v>0?v.toFixed(1):'–'}</td>`;});
-    row+=`<td style="background:${band(tot)}">${tot.toFixed(1)}</td></tr>`; html+=row;});
+function drawHeat(vw){ var q=isQ('heat'), src=q?vw.onhandBySiteQ:vw.onhandBySite, hv=q?vw.heatQ:vw.heat;
+  const sites=Object.keys(src).filter(s=>src[s]>(q?0:0.05)).sort((a,b)=>src[b]-src[a]);
+  /* colours are relative WITHIN each category (column max) so every category reads on its own scale */
+  var colMax={}, totMax=0, rowTot={}; CAT.forEach(c=>colMax[c]=0);
+  sites.forEach(s=>{ var t=0; CAT.forEach(c=>{var v=num(hv[`${s}|${c}`]); if(v>colMax[c])colMax[c]=v; t+=v;}); rowTot[s]=t; if(t>totMax)totMax=t; });
+  var band=(v,mx)=>{ if(v<=0)return '#1b2a44'; var r=mx>0?v/mx:0; return r>0.66?'#7f1d1d':r>0.33?'#dc2626':r>0.1?'#d97706':'#2563eb'; };
+  const cell=q?(v=>v>0?fmtQ(v):'–'):(v=>v>0?v.toFixed(1):'–'), unit=q?' (u)':' (M)';
+  let html='<tr><th>Location</th>'+CAT.map(c=>`<th>${c}${unit}</th>`).join('')+`<th>Total${unit}</th></tr>`;
+  sites.forEach(s=>{ let row=`<tr><td data-s="${fesc(s)}" style="cursor:pointer">${s}</td>`;
+    CAT.forEach(c=>{const v=num(hv[`${s}|${c}`]);row+=`<td data-s="${fesc(s)}" data-c="${fesc(c)}" style="background:${band(v,colMax[c])};cursor:pointer">${cell(v)}</td>`;});
+    row+=`<td data-s="${fesc(s)}" style="background:${band(rowTot[s],totMax)};cursor:pointer">${q?fmtQ(rowTot[s]):rowTot[s].toFixed(1)}</td></tr>`; html+=row;});
   document.getElementById('heatTable').innerHTML=html;
+  var lg=document.getElementById('heatLegend');
+  if(lg)lg.innerHTML='<span style="color:var(--text3)">shaded relative to each category’s top site:</span><span><i style="background:#7f1d1d"></i>Top</span><span><i style="background:#dc2626"></i>High</span><span><i style="background:#d97706"></i>Medium</span><span><i style="background:#2563eb"></i>Low</span>';
 }
-function drawMvMonth(vw){
-  barChart('c-mv-month',vw.sLabels,[
-    {label:'Inbound',data:vw.sIn.map(v=>+v.toFixed(1)),backgroundColor:NAVY,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:NAVY,font:{size:8,weight:'700'},formatter:v=>v>0?v.toFixed(0):''}},
-    {label:'Outbound',data:vw.sOut.map(v=>+Math.abs(v).toFixed(1)),backgroundColor:ORANGE,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:ORANGE,font:{size:8,weight:'700'},formatter:v=>v>0?v.toFixed(0):''}}
-  ]);
+function drawMvMonth(vw){ ioBars('c-mv-month',vw,isQ('mvmonth')); }
+function drawMvIn(vw){ var q=isQ('mvin'), src=q?vw.inByCatQ:vw.inByCat;
+  var data=CAT.map(c=>q?Math.round(num(src[c])):+num(src[c]).toFixed(1));
+  barChart('c-mv-in',CAT,[{label:'Inbound',data:data,backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dl('#fff',q?(v=>fmtQ(v)):(v=>v.toFixed(1)))}],CATCLICK);
 }
-function drawMovement(vw){
-  drawMvMonth(vw);
-  barChart('c-mv-in',CAT,[{label:'Inbound',data:CAT.map(c=>+num(vw.inByCat[c]).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dl('#fff',v=>v.toFixed(1))}]);
-  barChart('c-mv-out',CAT,[{label:'Outbound',data:CAT.map(c=>+Math.abs(num(vw.outByCat[c])).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dl('#fff',v=>v.toFixed(1))}]);
+function drawMvOut(vw){ var q=isQ('mvout'), src=q?vw.outByCatQ:vw.outByCat;
+  var data=CAT.map(c=>q?Math.round(Math.abs(num(src[c]))):+Math.abs(num(src[c])).toFixed(1));
+  barChart('c-mv-out',CAT,[{label:'Outbound',data:data,backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dl('#fff',q?(v=>fmtQ(v)):(v=>v.toFixed(1)))}],CATCLICK);
 }
-function drawBrand(vw){
-  const oh=Object.entries(vw.onhandByBrand).filter(([b,v])=>b!=='(Unbranded)'&&b!==''&&v>0).sort((a,b)=>b[1]-a[1]).slice(0,12);
-  barChart('c-brand-oh',oh.map(e=>e[0]),[{label:'On-hand',data:oh.map(e=>+(+e[1]).toFixed(1)),backgroundColor:NAVY,borderRadius:4,datalabels:dlh(v=>v.toFixed(1))}],
-    {indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
-  const iss=Object.entries(vw.issueByBrand).filter(([b,v])=>b!=='(Unbranded)'&&b!==''&&v>0).sort((a,b)=>b[1]-a[1]).slice(0,10);
-  barChart('c-brand-iss',iss.map(e=>e[0]),[{label:'Issues',data:iss.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:ORANGE,borderRadius:4,datalabels:dlh(v=>v.toFixed(2))}],
-    {indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
-  const grand=oh.reduce((s,e)=>s+e[1],0)||1;
-  let html='<tr><th>#</th><th>Brand</th><th class="n">M EGP</th><th class="n">Share</th></tr>';
-  oh.forEach((e,i)=>{html+=`<tr><td>${i+1}</td><td class="b">${e[0]}</td><td class="n">${(+e[1]).toFixed(1)}</td><td class="n">${(100*e[1]/grand).toFixed(1)}%</td></tr>`;});
+function drawMovement(vw){ drawMvMonth(vw); drawMvIn(vw); drawMvOut(vw); }
+/* Brand set is ALWAYS the top 12 brands by on-hand EGP value; the metric toggle only
+   changes which value (EGP vs that brand's qty) is shown. Bars sorted by displayed metric. */
+function brandTop12(egpObj,qtyObj,q){
+  var top=Object.entries(egpObj||{}).filter(function(e){return e[0]&&e[0]!=='(Unbranded)'&&e[1]>0;})
+            .sort(function(a,b){return b[1]-a[1];}).slice(0,12).map(function(e){return e[0];});
+  var rows=top.map(function(b){return {b:b,egp:num(egpObj[b]),qty:num(qtyObj&&qtyObj[b])};});
+  rows.sort(function(a,b){return q?(b.qty-a.qty):(b.egp-a.egp);});
+  return rows;
+}
+function drawBrandOh(vw){ var q=isQ('brandoh');
+  var rows=brandTop12(vw.onhandByBrand,vw.onhandByBrandQ,q);
+  var data=rows.map(function(r){return q?Math.round(r.qty):+(+r.egp).toFixed(1);});
+  var brandLabels=rows.map(function(r){return r.b;});
+  barChart('c-brand-oh',brandLabels,[{label:'On-hand',data:data,backgroundColor:NAVY,borderRadius:4,datalabels:q?dlh(function(v){return fmtQ(v);}):dlh(function(v){return v.toFixed(1);})}],
+    {indexAxis:'y',onClick:drillClick('b',function(i){return brandLabels[i];}),onHover:drillHover,scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
+  var grand=rows.reduce(function(s,r){return s+(q?r.qty:r.egp);},0)||1;
+  var col=q?'Units':'M EGP', numFmt=q?function(v){return fmtQ(v);}:function(v){return (+v).toFixed(1);};
+  var html='<tr><th>#</th><th>Brand</th><th class="n">'+col+'</th><th class="n">Share</th></tr>';
+  rows.forEach(function(r,i){ var v=q?r.qty:r.egp; html+='<tr><td>'+(i+1)+'</td><td class="b">'+r.b+'</td><td class="n">'+numFmt(v)+'</td><td class="n">'+pP(100*v/grand)+'</td></tr>';});
   document.getElementById('brandTable').innerHTML=html;
 }
+function drawBrandIss(vw){ var q=isQ('brandiss'), src=q?vw.issueByBrandQ:vw.issueByBrand;
+  const iss=Object.entries(src).filter(([b,v])=>b!=='(Unbranded)'&&b!==''&&v>0).sort((a,b)=>b[1]-a[1]).slice(0,10);
+  /* value path: issues are raw EGP → /1e6 for M.  qty path: already units → no divide */
+  const data=iss.map(e=>q?Math.round(+e[1]):+(e[1]/1e6).toFixed(2));
+  const dlf=q?dlh(v=>fmtQ(v)):dlh(v=>v.toFixed(2));
+  barChart('c-brand-iss',iss.map(e=>e[0]),[{label:'Issues',data:data,backgroundColor:ORANGE,borderRadius:4,datalabels:dlf}],
+    {indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
+}
+function drawBrand(vw){ drawBrandOh(vw); drawBrandIss(vw); }
+function drawCatOh(vw){ var q=isQ('catoh'), src=q?vw.onhandByCatQ:vw.onhandByCat;
+  var data=CAT.map(c=>q?Math.round(num(src[c])):+num(src[c]).toFixed(1));
+  barChart('c-cat-oh',CAT,[{label:'On-hand',data:data,backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:q?dlv(v=>fmtQ(v)):dlv(v=>mM(v))}],
+    {onClick:drillClick('c',function(i){return CAT[i];}),onHover:drillHover});
+}
 function drawBreakdowns(vw){
-  donut('c-share',CAT,CAT.map(c=>num(vw.onhandByCat[c])),CAT.map(c=>CATCOLOR[c]));
-  barChart('c-cat-oh',CAT,[{label:'On-hand',data:CAT.map(c=>+num(vw.onhandByCat[c]).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dlv(v=>v.toFixed(1)+'M')}]);
-  donut('c-cat-share',CAT,CAT.map(c=>num(vw.onhandByCat[c])),CAT.map(c=>CATCOLOR[c]));
-  paintHealth(vw.statusVal,vw.statusCnt);
+  donut('c-share',CAT,CAT.map(c=>num(vw.onhandByCat[c])),CAT.map(c=>CATCOLOR[c]),drillClick('c',function(i){return CAT[i];}));
+  drawCatOh(vw);
+  donut('c-cat-share',CAT,CAT.map(c=>num(vw.onhandByCat[c])),CAT.map(c=>CATCOLOR[c]),drillClick('c',function(i){return CAT[i];}));
+  paintHealth(vw.statusVal,vw.statusCnt,vw.statusValQ);
 }
 /* Health tab: charts + stat tiles + tier table + insight panel (sv in M EGP, sc counts) */
-function paintHealth(sv,sc){
+function paintHealth(sv,sc,svq){
   const TS=['Fast','Normal','Slow','Dead'],
         TL=['Fast (<3m)','Normal (3-12m)','Slow (12-18m)','Deadstock (>18m)'],
         TC=['#142850','#2563eb','#DC6428','#dc2626'];
-  const v=t=>num(sv&&sv[t]), c=t=>num(sc&&sc[t]);
-  const totV=TS.reduce((s,t)=>s+v(t),0)||1, totC=TS.reduce((s,t)=>s+c(t),0)||1;
-  donut('c-status-val',TL,TS.map(v),TC);
+  const q=isQ('health')&&!!svq;   /* qty mode only when qty data is present */
+  const v=t=>num(sv&&sv[t]), c=t=>num(sc&&sc[t]), vq=t=>num(svq&&svq[t]);
+  const hv=q?vq:v;                /* metric-selected "value" accessor */
+  const totV=TS.reduce((s,t)=>s+v(t),0)||1, totC=TS.reduce((s,t)=>s+c(t),0)||1, totH=TS.reduce((s,t)=>s+hv(t),0)||1;
+  const hFmt=q?(x=>fmtQ(x)):(x=>x.toFixed(1)), unitWord=q?'units':'value';
+  const hHead=q?(t=>fmtQ(hv(t))+' units'):(t=>'EGP '+mM(hv(t)));
+  donut('c-status-val',TL,TS.map(hv),TC,drillClick('t',function(i){return TS[i];}));
   barChart('c-status-cnt',TL,[{label:'Items',data:TS.map(c),backgroundColor:TC,borderRadius:5,datalabels:dlh()}],
-    {indexAxis:'y',scales:{x:{grid:{color:'#eef1f6'}},y:{grid:{display:false}}}});
+    {indexAxis:'y',onClick:drillClick('t',function(i){return TS[i];}),onHover:drillHover,scales:{x:{grid:{color:'#eef1f6'}},y:{grid:{display:false}}}});
   const tiles=document.getElementById('healthTiles');
-  if(tiles)tiles.innerHTML=TS.map((t,i)=>`<div class="kpi k-${t.toLowerCase()}"><div class="kpi-val">EGP ${v(t).toFixed(1)}M</div><div class="kpi-lbl">${TL[i]}</div><div class="kpi-sub">${c(t).toLocaleString()} items · ${(100*v(t)/totV).toFixed(0)}% of value</div></div>`).join('');
+  if(tiles)tiles.innerHTML=TS.map((t,i)=>`<div class="kpi k-${t.toLowerCase()}"><div class="kpi-val">${hHead(t)}</div><div class="kpi-lbl">${TL[i]}</div><div class="kpi-sub">${c(t).toLocaleString()} items · ${pP(100*hv(t)/totH)} of ${unitWord}</div></div>`).join('');
   const tbl=document.getElementById('healthTable');
-  if(tbl){ let h='<tr><th>Tier</th><th class="n">Value (M)</th><th class="n">Items</th><th class="n">% Value</th><th class="n">% Items</th><th class="n">Avg / item (K)</th></tr>';
-    TS.forEach((t,i)=>{ const avg=c(t)?(v(t)*1000/c(t)):0;
-      h+=`<tr><td class="b"><span class="tier-pill" style="background:${TC[i]}">${t}</span></td><td class="n">${v(t).toFixed(1)}</td><td class="n">${c(t).toLocaleString()}</td><td class="n">${(100*v(t)/totV).toFixed(1)}%</td><td class="n">${(100*c(t)/totC).toFixed(1)}%</td><td class="n">${avg.toFixed(1)}</td></tr>`; });
-    h+=`<tr><td class="b">Total</td><td class="n">${totV.toFixed(1)}</td><td class="n">${totC.toLocaleString()}</td><td class="n">100%</td><td class="n">100%</td><td class="n">${(totV*1000/totC).toFixed(1)}</td></tr>`;
+  if(tbl){ const valHdr=q?'Units':'Value (M)', avgHdr=q?'Avg / item':'Avg / item (K)';
+    let h=`<tr><th>Tier</th><th class="n">${valHdr}</th><th class="n">Items</th><th class="n">% ${q?'Units':'Value'}</th><th class="n">% Items</th><th class="n">${avgHdr}</th></tr>`;
+    TS.forEach((t,i)=>{ const avg=c(t)?(q?(hv(t)/c(t)):(v(t)*1000/c(t))):0;
+      h+=`<tr><td class="b"><span class="tier-pill" style="background:${TC[i]}">${t}</span></td><td class="n">${hFmt(hv(t))}</td><td class="n">${c(t).toLocaleString()}</td><td class="n">${pP(100*hv(t)/totH)}</td><td class="n">${pP(100*c(t)/totC)}</td><td class="n">${q?fmtQ(avg):avg.toFixed(1)}</td></tr>`; });
+    h+=`<tr><td class="b">Total</td><td class="n">${hFmt(totH)}</td><td class="n">${totC.toLocaleString()}</td><td class="n">100%</td><td class="n">100%</td><td class="n">${q?fmtQ(totH/totC):(totV*1000/totC).toFixed(1)}</td></tr>`;
     tbl.innerHTML=h;
   }
   const panel=document.getElementById('healthPanel');
-  if(panel){ const healthyV=v('Fast')+v('Normal'), riskV=v('Slow')+v('Dead'), deadV=v('Dead'), movingC=c('Fast')+c('Normal');
+  if(panel){ const healthy=hv('Fast')+hv('Normal'), risk=hv('Slow')+hv('Dead'), dead=hv('Dead'), movingC=c('Fast')+c('Normal');
+    const rFmt=q?(x=>fmtQ(x)+' units'):(x=>'EGP '+mM(x));
     panel.innerHTML=`<h4>Health Signals</h4>
-      <div class="conc-item"><div class="v">${(100*healthyV/totV).toFixed(0)}%</div><div class="l">Healthy value (Fast + Normal)</div></div>
-      <div class="conc-item"><div class="v">EGP ${riskV.toFixed(1)}M</div><div class="l">At-risk value (Slow + Deadstock)</div></div>
-      <div class="conc-item"><div class="v">EGP ${deadV.toFixed(1)}M</div><div class="l">Deadstock · ${(100*deadV/totV).toFixed(0)}% of value · ${c('Dead').toLocaleString()} items</div></div>
-      <div class="conc-item"><div class="v">${(100*movingC/totC).toFixed(0)}%</div><div class="l">Items moved within 12 months</div></div>`;
+      <div class="conc-item"><div class="v">${pP(100*healthy/totH)}</div><div class="l">Healthy ${unitWord} (Fast + Normal)</div></div>
+      <div class="conc-item"><div class="v">${rFmt(risk)}</div><div class="l">At-risk ${unitWord} (Slow + Deadstock)</div></div>
+      <div class="conc-item"><div class="v">${rFmt(dead)}</div><div class="l">Deadstock · ${pP(100*dead/totH)} of ${unitWord} · ${c('Dead').toLocaleString()} items</div></div>
+      <div class="conc-item"><div class="v">${pP(100*movingC/totC)}</div><div class="l">Items moved within 12 months</div></div>`;
   }
 }
 function gWord(g){return g==='day'?'Day':g==='week'?'Week':'Month';}
 function gAdv(g){return g==='day'?'Daily':g==='week'?'Weekly':'Monthly';}
 function setTitle(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
 function updateTitles(vw){
-  var R=vw.rangeActive,G=gWord(vw.grain),A=gAdv(vw.grain),SP=R?vw.rowsLabel:'Season';
-  setTitle('h-season',(R?'':'Season 26 · ')+'Stock Value / '+G+' (M EGP)');
-  setTitle('h-iomonth','Inbound vs Outbound '+A+' (M EGP)');
-  setTitle('h-iocat','Inbound vs Outbound by Category ('+SP+', M EGP)');
-  setTitle('h-cattrend','Total On-Hand Value — '+A+' Trend (M EGP)');
-  setTitle('h-catmonthly','Stock Value / '+G+' — Per Category (M EGP)');
-  setTitle('h-mvmonth',A+' Inbound vs Outbound (M EGP)');
-  setTitle('h-mvin','Inbound by Category — '+SP+' (M EGP)');
-  setTitle('h-mvout','Outbound by Category — '+SP+' (M EGP)');
-  setTitle('h-brandiss','Top 10 Brands by Issues — '+SP+' (M EGP)');
+  vw=vw||LASTVW||{rangeActive:RANGE.active};
+  var R=vw.rangeActive,SP=R?(vw.rowsLabel||''):'Season';
+  /* grain charts use each chart's own current grain (CG) so titles match the toggle */
+  setTitle('h-season',(R?'':SEASON_LBL+' · ')+'Stock Value / '+gWord(CG.season)+' ('+uLbl('season')+')');
+  setTitle('h-iomonth','Inbound vs Outbound '+gAdv(CG.iomonth)+' ('+uLbl('iomonth')+')');
+  setTitle('h-iocat','Inbound vs Outbound by Category ('+SP+', '+uLbl('iocat')+')');
+  setTitle('h-cattrend','Total On-Hand Value — '+gAdv(CG.cattrend)+' Trend ('+uLbl('cattrend')+')');
+  setTitle('h-catmonthly','Stock Value / '+gWord(CG.catmonthly)+' — Per Category ('+uLbl('catmonthly')+')');
+  setTitle('h-mvmonth',gAdv(CG.mvmonth)+' Inbound vs Outbound ('+uLbl('mvmonth')+')');
+  setTitle('h-mvin','Inbound by Category — '+SP+' ('+uLbl('mvin')+')');
+  setTitle('h-mvout','Outbound by Category — '+SP+' ('+uLbl('mvout')+')');
+  setTitle('h-brandiss','Top 10 Brands by Issues — '+SP+' ('+uLbl('brandiss')+')');
+  /* static-position charts (no grain) */
+  setTitle('h-catoh','On-Hand Value by Category ('+uLbl('catoh')+')');
+  setTitle('h-site','On-Hand Value by Site ('+uLbl('site')+')');
+  setTitle('h-heat','Stock Value Heat Map — Location × Category ('+uLbl('heat')+')');
+  setTitle('h-brandoh',isQ('brandoh')?'On-Hand Qty of Top 12 Brands by Value (units)':'Top 12 Brands by On-Hand Value (M EGP)');
+  setTitle('h-statusval','Value by Movement Status ('+uLbl('health')+')');
 }
 function renderWindow(vw){
-  updateTitles(vw);
+  LASTVW=vw; updateTitles(vw);
   drawSnapshot(vw); drawKpis(vw);
   drawSeason(vw); drawIoCat(vw); drawIoMonth(vw);
   drawCatTrend(vw); drawCatMonthly(vw); drawCatTurn(vw);
@@ -658,7 +1003,7 @@ function renderWindow(vw){
 /* ---- date-range apply / clear + controls ---- */
 function ymd(d){var m=(''+(d.getMonth()+1)).padStart(2,'0'),day=(''+d.getDate()).padStart(2,'0');return d.getFullYear()+'-'+m+'-'+day;}
 function asOfDate(){return new Date(((DATA.meta&&DATA.meta.asOf)||'2026-07-11')+'T00:00:00');}
-function mondayOf(d){var x=new Date(d);var wd=(x.getDay()+6)%7;x.setDate(x.getDate()-wd);return x;}
+function weekStartOf(d){var x=new Date(d);var wd=(x.getDay()+1)%7;x.setDate(x.getDate()-wd);return x;}  /* Saturday-start week */
 function syncRangeInputs(){document.getElementById('dFrom').value=RANGE.from||'';document.getElementById('dTo').value=RANGE.to||'';}
 function rpcRange(){
   var H={apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json'};
@@ -679,11 +1024,23 @@ function filterBody(grain){ var w=curWin(), b={p_from:w.from,p_to:w.to,p_grain:g
   if(S.lm.length)b.p_lm=S.lm; if(S.brand.length)b.p_brand=S.brand; if(GQ)b.p_search=GQ; return b;
 }
 function filterSig(grain){ var w=curWin(); return [w.from,w.to,grain,S.cat,S.dept,S.tier,S.lm,S.brand,GQ].join('|'); }
+function rpcOk(r){ return r.ok?r.json():r.text().then(function(t){throw new Error(r.status+': '+t.slice(0,120));}); }
+/* merge the qty payload's chart-keys onto the value payload under *Q props (KPIs stay from value) */
+function mergeQty(p,q){ q=q||{};
+  p.onhandByCatQ=q.onhandByCat||{}; p.onhandBySiteQ=q.onhandBySite||{}; p.heatQ=q.heat||{};
+  p.statusValQ=q.statusVal||{}; p.onhandByBrandQ=q.onhandByBrand||{}; p.issueByBrandQ=q.issueSeasonByBrand||{};
+  p.inByCatSeasonQ=q.inboundByCatSeason||{}; p.outByCatSeasonQ=q.outboundByCatSeason||{};
+  p.seriesQ=q.series||[]; p.seriesByCatQ=q.seriesByCat||{};
+  return p;
+}
 function fetchInv(grain){ var k=filterSig(grain); if(RGCACHE[k])return Promise.resolve(RGCACHE[k]);
   var H={apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json'};
-  return fetch(SB+'/rest/v1/rpc/inv_range',{method:'POST',headers:H,body:JSON.stringify(filterBody(grain))})
-    .then(function(r){return r.ok?r.json():r.text().then(function(t){throw new Error(r.status+': '+t.slice(0,120));});})
-    .then(function(p){RGCACHE[k]=p;return p;});
+  var bodyV=filterBody(grain);                                   /* p_metric defaults to 'v' (EGP) */
+  var bodyQ=Object.assign({},bodyV,{p_metric:'q'});              /* qty twin */
+  return Promise.all([
+    fetch(SB+'/rest/v1/rpc/inv_range',{method:'POST',headers:H,body:JSON.stringify(bodyV)}).then(rpcOk),
+    fetch(SB+'/rest/v1/rpc/inv_range',{method:'POST',headers:H,body:JSON.stringify(bodyQ)}).then(rpcOk)
+  ]).then(function(rs){ var p=rs[0]||{}; mergeQty(p,rs[1]); RGCACHE[k]=p; return p; });
 }
 function spanStart(key){ if(RANGE.active)return null; var ss=seasonFrom(); return key==='cattrend'?'2024-09-01':ss; }
 function payloadVW(p,key){
@@ -694,20 +1051,27 @@ function payloadVW(p,key){
   vw.trendLabels=vw.sLabels.slice(); vw.trendOnhand=vw.sOnhand.slice(); vw.catLabels=vw.sLabels.slice();
   var ks=ser.map(function(x){return x.k;}), sc=p.seriesByCat||{};
   vw.catData={}; CAT.forEach(function(c){vw.catData[c]=ks.map(function(k){return num(sc[c]?sc[c][k]:0);});});
+  /* qty siblings (same window/grain filtering) */
+  var serQ=(p.seriesQ||[]).filter(function(x){return !from||x.k>=from;});
+  vw.sInQ=serQ.map(function(x){return num(x.inb);}); vw.sOutQ=serQ.map(function(x){return num(x.outb);}); vw.sOnhandQ=serQ.map(function(x){return num(x.onhand);});
+  vw.trendOnhandQ=vw.sOnhandQ.slice();
+  var scQ=p.seriesByCatQ||{}, ksQ=serQ.map(function(x){return x.k;});
+  vw.catDataQ={}; CAT.forEach(function(c){vw.catDataQ[c]=ksQ.map(function(k){return num(scQ[c]?scQ[c][k]:0);});});
   return vw;
 }
 function drawOne(key,vw){ if(key==='season')drawSeason(vw); else if(key==='iomonth')drawIoMonth(vw); else if(key==='cattrend')drawCatTrend(vw); else if(key==='catmonthly')drawCatMonthly(vw); else if(key==='mvmonth')drawMvMonth(vw); }
 function chartTitle(key,g){ var G=gWord(g),A=gAdv(g);
-  if(key==='season')setTitle('h-season',(RANGE.active?'':'Season 26 · ')+'Stock Value / '+G+' (M EGP)');
-  else if(key==='iomonth')setTitle('h-iomonth','Inbound vs Outbound '+A+' (M EGP)');
-  else if(key==='cattrend')setTitle('h-cattrend','Total On-Hand Value — '+A+' Trend (M EGP)');
-  else if(key==='catmonthly')setTitle('h-catmonthly','Stock Value / '+G+' — Per Category (M EGP)');
-  else if(key==='mvmonth')setTitle('h-mvmonth',A+' Inbound vs Outbound (M EGP)');
+  if(key==='season')setTitle('h-season',(RANGE.active?'':SEASON_LBL+' · ')+'Stock Value / '+G+' ('+uLbl('season')+')');
+  else if(key==='iomonth')setTitle('h-iomonth','Inbound vs Outbound '+A+' ('+uLbl('iomonth')+')');
+  else if(key==='cattrend')setTitle('h-cattrend','Total On-Hand Value — '+A+' Trend ('+uLbl('cattrend')+')');
+  else if(key==='catmonthly')setTitle('h-catmonthly','Stock Value / '+G+' — Per Category ('+uLbl('catmonthly')+')');
+  else if(key==='mvmonth')setTitle('h-mvmonth',A+' Inbound vs Outbound ('+uLbl('mvmonth')+')');
 }
 function reflectChartToggle(key){var t=document.querySelector('.gtoggle[data-chart="'+key+'"]');if(t)t.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.g===CG[key]);});}
 function reflectAllToggles(){Object.keys(CG).forEach(reflectChartToggle);}
 function setChartGrain(key,g){
   CG[key]=g; reflectChartToggle(key);
+  if(CC[key]&&CC[key]!=='off'){ drawChartCmp(key); return; }
   var tog=document.querySelector('.gtoggle[data-chart="'+key+'"]'); if(tog)tog.style.opacity=.5;
   fetchInv(g).then(function(p){ drawOne(key,payloadVW(p,key)); chartTitle(key,g); if(tog)tog.style.opacity=1; })
     .catch(function(e){ if(tog)tog.style.opacity=1; console.warn('grain fetch failed',e); });
@@ -728,7 +1092,7 @@ function applyView(){
   if(RANGE.from&&RANGE.to&&RANGE.from>RANGE.to){var t=RANGE.from;RANGE.from=RANGE.to;RANGE.to=t;if(df)df.value=RANGE.from;if(dt)dt.value=RANGE.to;}
   if(!anyActive()){
     RANGE.active=false; for(var kk in RGCACHE)delete RGCACHE[kk]; Object.keys(CG).forEach(function(k){CG[k]='month';});
-    renderWindow(buildFullVW()); reflectAllToggles(); renderX();
+    renderWindow(buildFullVW()); reflectAllToggles(); renderX(); refreshCompares();
     document.getElementById('filterState').textContent='All items'; return;
   }
   RANGE.active=true;
@@ -737,7 +1101,7 @@ function applyView(){
     if(!p||!p.kpi)throw new Error((p&&p.message)||'no data');
     var vw=buildRangeVW(p); renderWindow(vw); drawBreakdowns(vw);
     Object.keys(CG).forEach(function(k){CG[k]='month';}); reflectAllToggles();
-    renderX();
+    renderX(); refreshCompares();
     document.getElementById('filterState').textContent=filterSummary();
   }).catch(function(e){ document.getElementById('filterState').textContent='Filter error: '+((e&&e.message)||e); });
 }
@@ -751,12 +1115,641 @@ function wireRangeControls(){
   });
 }
 
+/* ================= PER-CHART COMPARE (period-vs-period overlay) ================= */
+const CC={}; var LASTVW=null, CMPWIN={};
+function addFilters(b){ if(S.cat.length)b.p_cat=S.cat; if(S.dept.length)b.p_dept=S.dept; if(S.tier.length)b.p_tier=S.tier; if(S.lm.length)b.p_lm=S.lm; if(S.brand.length)b.p_brand=S.brand; if(GQ)b.p_search=GQ; return b; }
+function invFor(from,to,grain,metric){ var b=addFilters({p_from:from,p_to:to,p_grain:grain||'month'}); if(metric==='q')b.p_metric='q'; var k='CMP'+JSON.stringify(b); if(RGCACHE[k])return Promise.resolve(RGCACHE[k]);
+  var H={apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json'};
+  return fetch(SB+'/rest/v1/rpc/inv_range',{method:'POST',headers:H,body:JSON.stringify(b)}).then(function(r){return r.ok?r.json():r.text().then(function(t){throw new Error(r.status+': '+t.slice(0,120));});}).then(function(p){RGCACHE[k]=p;return p;});
+}
+function addDays(iso,n){var d=new Date(iso+'T00:00:00');d.setDate(d.getDate()+n);return ymd(d);}
+function shiftYearISO(iso,dy){var p=(''+iso).split('-');return (parseInt(p[0],10)+dy)+'-'+p[1]+'-'+p[2];}
+function chartCurWin(){ return RANGE.active?{from:RANGE.from,to:RANGE.to}:{from:seasonFrom(),to:asOfStr()}; }
+function chartCompWin(cur,mode){
+  if(!RANGE.active||mode==='ly'){ return {from:shiftYearISO(cur.from,-1),to:shiftYearISO(cur.to,-1)}; }
+  var len=Math.round((new Date(cur.to+'T00:00:00')-new Date(cur.from+'T00:00:00'))/86400000)+1;
+  return {from:addDays(cur.from,-len),to:addDays(cur.from,-1)};
+}
+/* human name for a window, so the legend reads real periods instead of "Current/Previous" */
+function periodLabel(win){
+  var f=win.from,t=win.to,fp=(''+f).split('-'),tp=(''+t).split('-');
+  var days=Math.round((new Date(t+'T00:00:00')-new Date(f+'T00:00:00'))/86400000)+1;
+  if(fp[1]==='10'&&fp[2]==='01'&&days>200) return 'Season '+(''+(parseInt(fp[0],10)+1)).slice(2);
+  if(fp[2]==='01'){ var last=new Date(+tp[0],+tp[1],0).getDate(); if(fp[0]===tp[0]&&fp[1]===tp[1]&&+tp[2]===last) return MON[(+fp[1])-1]+' '+fp[0]; }
+  if(days<=8) return 'w/o '+(+fp[2])+' '+MON[(+fp[1])-1]+' '+fp[0].slice(2);
+  return (+fp[2])+' '+MON[(+fp[1])-1]+'–'+(+tp[2])+' '+MON[(+tp[1])-1]+' '+tp[0].slice(2);
+}
+/* bucket label WITH year — for compare tooltips so each bar shows its own actual period */
+function bLabelYr(k,grain){ var p=(''+k).split('-'); if(grain==='month')return MON[(+p[1])-1]+' '+p[0]; if(grain==='week')return wkLabel(k); return (+p[2])+' '+MON[(+p[1])-1]+' '+p[0]; }
+var CMPMETA={
+  season:{cv:'c-season',fam:'trend',metric:'onhand'},
+  iomonth:{cv:'c-io-month',fam:'trend',metric:'io'},
+  cattrend:{cv:'c-cat-trend',fam:'trend',metric:'onhand'},
+  mvmonth:{cv:'c-mv-month',fam:'trend',metric:'io'},
+  iocat:{cv:'c-io-cat',fam:'cat',metric:'io'},
+  catoh:{cv:'c-cat-oh',fam:'cat',metric:'ohcat'},
+  mvin:{cv:'c-mv-in',fam:'cat',metric:'in'},
+  mvout:{cv:'c-mv-out',fam:'cat',metric:'out'},
+  catturn:{cv:'c-cat-turn',fam:'cat',metric:'turn'}
+};
+var CMP_L1='#8fa1c4', CMP_L2='#eab98f';
+function catVal(P,c,metric){ if(metric==='in')return num((P.inboundByCatSeason||{})[c]); if(metric==='out')return Math.abs(num((P.outboundByCatSeason||{})[c])); if(metric==='ohcat')return num((P.onhandByCat||{})[c]); if(metric==='turn'){var oh=num((P.onhandByCat||{})[c]),o=Math.abs(num((P.outboundByCatSeason||{})[c]));return oh>0?+(o/oh).toFixed(2):0;} return 0; }
+function dcmp(){return {display:true,anchor:'end',align:'top',rotation:-90,color:'#374151',font:{size:7,weight:'700'},clamp:true,formatter:function(v){return v>=0.5?(v>=10?v.toFixed(0):v.toFixed(1)):'';}};}
+function dcmpQ(){return {display:true,anchor:'end',align:'top',rotation:-90,color:'#374151',font:{size:7,weight:'700'},clamp:true,formatter:function(v){return v>=1?Math.round(v).toLocaleString():'';}};}
+function drawChartCmp(key){
+  var meta=CMPMETA[key], mode=CC[key]||'prev', grain=CG[key]||'month';
+  var mq=isQ(key), m=mq?'q':'v', dc=mq?dcmpQ:dcmp;
+  var cur=chartCurWin(), comp=chartCompWin(cur,mode);
+  var sel=document.querySelector('.cmpsel[data-cc="'+key+'"]'); if(sel)sel.style.opacity=.5;
+  Promise.all([invFor(cur.from,cur.to,grain,m),invFor(comp.from,comp.to,grain,m)]).then(function(r){
+    var A=r[0],B=r[1], cl=periodLabel(cur), pl=periodLabel(comp);
+    CMPWIN[meta.cv]={cl:cl,pl:pl,cur:cur,comp:comp};
+    if(sel)sel.title=cl+' ('+cur.from+' → '+cur.to+')   vs   '+pl+' ('+comp.from+' → '+comp.to+')';
+    if(meta.fam==='trend'){
+      var sa=A.series||[], sb=B.series||[], labels=sa.map(function(x){return bLabel(x.k,A.meta.grain);});
+      var curKeys=sa.map(function(x){return x.k;}), compKeys=sb.map(function(x){return x.k;});
+      CMPWIN[meta.cv].grain=A.meta.grain;
+      CMPWIN[meta.cv].keysByDs = (meta.metric==='onhand') ? [curKeys,compKeys] : [curKeys,curKeys,compKeys,compKeys];
+      if(meta.metric==='onhand'){
+        barChart(meta.cv,labels,[
+          {label:cl,data:sa.map(function(x){return +num(x.onhand).toFixed(1);}),backgroundColor:NAVY,borderRadius:3,datalabels:dc()},
+          {label:pl,data:sb.map(function(x){return +num(x.onhand).toFixed(1);}),backgroundColor:SLATE,borderRadius:3,datalabels:dc()}
+        ]);
+      } else {
+        barChart(meta.cv,labels,[
+          {label:'In · '+cl,data:sa.map(function(x){return +num(x.inb).toFixed(1);}),backgroundColor:NAVY,borderRadius:2,datalabels:dc()},
+          {label:'Out · '+cl,data:sa.map(function(x){return +Math.abs(num(x.outb)).toFixed(1);}),backgroundColor:ORANGE,borderRadius:2,datalabels:dc()},
+          {label:'In · '+pl,data:sb.map(function(x){return +num(x.inb).toFixed(1);}),backgroundColor:CMP_L1,borderRadius:2,datalabels:dc()},
+          {label:'Out · '+pl,data:sb.map(function(x){return +Math.abs(num(x.outb)).toFixed(1);}),backgroundColor:CMP_L2,borderRadius:2,datalabels:dc()}
+        ]);
+      }
+    } else if(meta.metric==='io'){
+      barChart(meta.cv,CAT,[
+        {label:'In · '+cl,data:CAT.map(function(c){return +catVal(A,c,'in').toFixed(1);}),backgroundColor:NAVY,borderRadius:3,datalabels:dc()},
+        {label:'Out · '+cl,data:CAT.map(function(c){return +catVal(A,c,'out').toFixed(1);}),backgroundColor:ORANGE,borderRadius:3,datalabels:dc()},
+        {label:'In · '+pl,data:CAT.map(function(c){return +catVal(B,c,'in').toFixed(1);}),backgroundColor:CMP_L1,borderRadius:3,datalabels:dc()},
+        {label:'Out · '+pl,data:CAT.map(function(c){return +catVal(B,c,'out').toFixed(1);}),backgroundColor:CMP_L2,borderRadius:3,datalabels:dc()}
+      ]);
+    } else {
+      var fmt=meta.metric==='turn'?function(v){return v.toFixed(2)+'×';}:(mq?function(v){return fmtQ(v);}:function(v){return v.toFixed(1);});
+      barChart(meta.cv,CAT,[
+        {label:cl,data:CAT.map(function(c){return +catVal(A,c,meta.metric).toFixed(2);}),backgroundColor:NAVY,borderRadius:4,datalabels:dlv(fmt)},
+        {label:pl,data:CAT.map(function(c){return +catVal(B,c,meta.metric).toFixed(2);}),backgroundColor:SLATE,borderRadius:4,datalabels:dlv(fmt)}
+      ]);
+    }
+    if(sel)sel.style.opacity=1;
+  }).catch(function(e){ if(sel)sel.style.opacity=1; console.warn('compare fetch failed',e); });
+}
+function chartCmpOff(key){
+  var meta=CMPMETA[key]; delete CMPWIN[meta.cv];
+  var s0=document.querySelector('.cmpsel[data-cc="'+key+'"]'); if(s0)s0.title='';
+  if(meta.fam==='trend'){ setChartGrain(key, CG[key]||'month'); }
+  else { var vw=LASTVW||buildFullVW(); if(key==='iocat')drawIoCat(vw); else if(key==='catturn')drawCatTurn(vw); else if(key==='catoh')drawBreakdowns(vw); else drawMovement(vw); }
+}
+function wireCompare(){
+  document.querySelectorAll('.cmpsel[data-cc]').forEach(function(sel){ var key=sel.dataset.cc;
+    sel.onchange=function(){ CC[key]=sel.value; if(sel.value==='off')chartCmpOff(key); else drawChartCmp(key); };
+  });
+}
+function refreshCompares(){ Object.keys(CC).forEach(function(k){ if(CC[k]&&CC[k]!=='off')drawChartCmp(k); }); }
+
+/* ================= PER-CHART METRIC (EGP <-> Qty) ================= */
+var METRIC_GRAINKEYS={season:1,iomonth:1,cattrend:1,catmonthly:1,mvmonth:1};
+function reflectMetricToggle(key){ var t=document.querySelector('.mtoggle[data-mchart="'+key+'"]'); if(t)t.querySelectorAll('button').forEach(function(b){ b.classList.toggle('on',b.dataset.m===(CMET[key]||'v')); }); }
+function reflectAllMetricToggles(){ Object.keys(CMET).forEach(reflectMetricToggle); }
+/* redraw a single chart from the current view-model, honoring its metric */
+function drawByKey(key,vw){
+  switch(key){
+    case 'season': drawSeason(vw); break;
+    case 'iomonth': drawIoMonth(vw); break;
+    case 'iocat': drawIoCat(vw); break;
+    case 'cattrend': drawCatTrend(vw); break;
+    case 'catmonthly': drawCatMonthly(vw); break;
+    case 'mvmonth': drawMvMonth(vw); break;
+    case 'mvin': drawMvIn(vw); break;
+    case 'mvout': drawMvOut(vw); break;
+    case 'catoh': drawCatOh(vw); break;
+    case 'catturn': drawCatTurn(vw); break;
+    case 'site': drawSite(vw); break;
+    case 'heat': drawHeat(vw); break;
+    case 'brandoh': drawBrandOh(vw); break;
+    case 'brandiss': drawBrandIss(vw); break;
+    case 'health': paintHealth(vw.statusVal,vw.statusCnt,vw.statusValQ); break;
+  }
+}
+function redrawChart(key){
+  if(METRIC_GRAINKEYS[key]){                       /* grain charts: refetch at current grain (metric-aware), also handles compare */
+    setChartGrain(key, CG[key]||'month'); return;
+  }
+  if(CMPMETA[key]&&CC[key]&&CC[key]!=='off'){ drawChartCmp(key); return; }  /* compare-capable non-grain in compare mode */
+  drawByKey(key, LASTVW||buildFullVW());
+}
+function setChartMetric(key,m){ CMET[key]=m; reflectMetricToggle(key); updateTitles(LASTVW); redrawChart(key); }
+function wireMetric(){
+  document.querySelectorAll('.mtoggle[data-mchart]').forEach(function(tg){ var key=tg.dataset.mchart;
+    tg.querySelectorAll('button').forEach(function(b){ b.onclick=function(){ setChartMetric(key,b.dataset.m); }; });
+    reflectMetricToggle(key);
+  });
+}
+
+/* ================= ABC ANALYSIS (lazy-loaded tab) ================= */
+var ABC=null, ABC_DAYS=730, ABC_LOADED=false;  /* 730 days = 24 months */
+const ABC_CAP=400; const ABCF={q:'',cls:'',cat:''};
+const ABC_CLSCOL={A:NAVY,B:BLUE,C:RED};       /* A navy · B teal/blue · C red */
+const ABC_TINT={A:'#dcfce7',B:'#fef3c7',C:'#fee2e2'}, ABC_TXT={A:'#166534',B:'#92400e',C:'#991b1b'};
+function abcM(v){return num(v)/1e6;}           /* raw EGP -> M EGP */
+function abcRpc(days){
+  var H={apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json'};
+  return fetch(SB+'/rest/v1/rpc/inv_abc',{method:'POST',headers:H,body:JSON.stringify({p_target_days:days})})
+    .then(function(r){ if(!r.ok)return r.text().then(function(t){throw new Error(r.status+': '+t.slice(0,140));}); return r.json(); });
+}
+function openABC(){ if(ABC_LOADED)return; ABC_LOADED=true; loadABC(ABC_DAYS); }   /* fetch once on first open */
+function applyABC(){                                                               /* target-days refetch */
+  var inp=document.getElementById('abcDays'); var mo=inp?parseFloat(inp.value):24;
+  if(!mo||mo<1){ mo=24; if(inp)inp.value=24; }
+  ABC_LOADED=true; loadABC(Math.round(mo*(365/12)));   /* months -> days for the RPC */
+}
+function loadABC(days){
+  var body=document.getElementById('abcBody'), ld=document.getElementById('abcLoading'), er=document.getElementById('abcError');
+  if(ld)ld.style.display='block'; if(body)body.style.display='none'; if(er)er.style.display='none';
+  abcRpc(days).then(function(d){
+    if(!d||!d.totals)throw new Error((d&&d.message)||'no data');
+    ABC=d; ABC_DAYS=(d.meta&&d.meta.targetDays)||days;
+    var inp=document.getElementById('abcDays'); if(inp&&d.meta&&d.meta.targetDays)inp.value=Math.round(d.meta.targetDays/(365/12)*10)/10;  /* days -> months */
+    if(ld)ld.style.display='none'; if(body)body.style.display='block';
+    renderABC();
+  }).catch(function(e){
+    if(ld)ld.style.display='none';
+    if(er){ er.style.display='flex'; er.innerHTML='<i class="ti ti-alert-triangle"></i>Could not load ABC analysis: '+((e&&e.message)||e); }
+    ABC_LOADED=false;   /* allow a retry */
+  });
+}
+function renderABC(){
+  if(!ABC)return;
+  var as=document.getElementById('abcAsOf');
+  if(as)as.textContent=((ABC.meta&&ABC.meta.asOf)?('as of '+ABC.meta.asOf+' · '):'')+'target '+ABC_DAYS+' days';
+  renderAbcKpis(); renderAbcCharts(); renderAbcMatrix(); renderAbcOver(); renderAbcItems();
+}
+function abcByCls(arr){ var o={}; (arr||[]).forEach(function(r){o[r.cls]=r;}); return o; }
+function renderAbcKpis(){
+  var d=ABC, byCls=abcByCls(d.classTotals), t=d.totals||{};
+  function cnt(c){return byCls[c]?Math.round(num(byCls[c].count)):0;}
+  var kpis=[
+    {v:Math.round(num(t.count)).toLocaleString(),l:'Total Items',s:'classified',c:''},
+    {v:'EGP '+mM(abcM(t.value)),l:'Total On-Hand Value',s:'all classes',c:'k-teal'},
+    {v:cnt('A').toLocaleString()+' / '+cnt('B').toLocaleString()+' / '+cnt('C').toLocaleString(),l:'Class A / B / C items',s:'vital few → long tail',c:'k-orange'},
+    {v:'EGP '+mM(abcM(t.overValue)),l:'Overstock Value',s:Math.round(num(t.overQty)).toLocaleString()+' units over target',c:'k-out'}
+  ];
+  document.getElementById('abcKpis').innerHTML=kpis.map(function(k){return '<div class="kpi '+k.c+'"><div class="kpi-val">'+k.v+'</div><div class="kpi-lbl">'+k.l+'</div><div class="kpi-sub">'+k.s+'</div></div>';}).join('');
+}
+function renderAbcCharts(){
+  var d=ABC, CL=['A','B','C'], map={};
+  (d.classCat||[]).forEach(function(r){ map[r.cls+'|'+r.cat]=r; });
+  var ds=CAT.map(function(cat){
+    return {label:cat,data:CL.map(function(cl){var r=map[cl+'|'+cat];return r?+abcM(r.value).toFixed(1):0;}),
+      backgroundColor:CATCOLOR[cat],borderRadius:4,
+      datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:CATCOLOR[cat],font:{size:8,weight:'700'},clamp:true,formatter:function(v){return v>=1?v.toFixed(1):'';}}};
+  });
+  barChart('c-abc-vcc',CL,ds);
+  var byCls=abcByCls(d.classTotals);
+  var counts=CL.map(function(c){return byCls[c]?Math.round(num(byCls[c].count)):0;});
+  barChart('c-abc-cnt',CL.map(function(c){return 'Class '+c;}),
+    [{label:'Items',data:counts,backgroundColor:CL.map(function(c){return ABC_CLSCOL[c];}),borderRadius:5,datalabels:dlh(function(v){return Math.round(v).toLocaleString();})}],
+    {indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false}}}});
+}
+function renderAbcMatrix(){
+  var d=ABC, cc=d.classCat||[], CL=['A','B','C'], byCls=abcByCls(d.classTotals);
+  var html='<tr><th>Class</th><th>Category</th><th class="n">Items</th><th class="n">Qty</th><th class="n">Value (M)</th></tr>';
+  CL.forEach(function(cl){
+    var tint=ABC_TINT[cl], txt=ABC_TXT[cl];
+    var rows=cc.filter(function(r){return r.cls===cl;}).sort(function(a,b){return num(b.value)-num(a.value);});
+    rows.forEach(function(r){
+      html+='<tr><td class="b" style="background:'+tint+';color:'+txt+';font-weight:800">'+cl+'</td><td>'+r.cat+'</td>'
+        +'<td class="n">'+Math.round(num(r.count)).toLocaleString()+'</td><td class="n">'+Math.round(num(r.qty)).toLocaleString()+'</td><td class="n">'+abcM(r.value).toFixed(1)+'</td></tr>';
+    });
+    var st=byCls[cl]||{};
+    html+='<tr style="background:'+tint+'"><td class="b" style="color:'+txt+'">'+cl+'</td><td class="b" style="color:'+txt+'">Subtotal</td>'
+      +'<td class="n">'+Math.round(num(st.count)).toLocaleString()+'</td><td class="n">'+Math.round(num(st.qty)).toLocaleString()+'</td><td class="n">'+abcM(st.value).toFixed(1)+'</td></tr>';
+  });
+  var t=d.totals||{};
+  html+='<tr style="background:var(--navy)"><td class="b" colspan="2" style="color:#fff">Grand Total</td>'
+    +'<td class="n" style="color:#fff">'+Math.round(num(t.count)).toLocaleString()+'</td><td class="n" style="color:#fff">'+Math.round(num(t.qty)).toLocaleString()+'</td><td class="n" style="color:#fff">'+abcM(t.value).toFixed(1)+'</td></tr>';
+  document.getElementById('abcMatrix').innerHTML=html;
+}
+function renderAbcOver(){
+  var d=ABC, t=d.totals||{}, CL=['A','B','C'], obc=d.overByClass||{}, obk=d.overByCat||{};
+  document.getElementById('abcOverKpis').innerHTML=[
+    {v:Math.round(num(t.overQty)).toLocaleString(),l:'Total Overstock Qty',s:'units above target',c:'k-orange'},
+    {v:'EGP '+mM(abcM(t.overValue)),l:'Total Overstock Value',s:'over '+ABC_DAYS+'-day target',c:'k-out'}
+  ].map(function(k){return '<div class="kpi '+k.c+'"><div class="kpi-val">'+k.v+'</div><div class="kpi-lbl">'+k.l+'</div><div class="kpi-sub">'+k.s+'</div></div>';}).join('');
+  barChart('c-abc-overcls',CL.map(function(c){return 'Class '+c;}),
+    [{label:'Overstock',data:CL.map(function(c){return +abcM(obc[c]).toFixed(1);}),backgroundColor:CL.map(function(c){return ABC_CLSCOL[c];}),borderRadius:5,datalabels:dlv(function(v){return mM(v);})}]);
+  barChart('c-abc-overcat',CAT,
+    [{label:'Overstock',data:CAT.map(function(c){return +abcM(obk[c]).toFixed(1);}),backgroundColor:CAT.map(function(c){return CATCOLOR[c];}),borderRadius:5,datalabels:dlv(function(v){return mM(v);})}]);
+}
+function renderAbcItems(){
+  var items=(ABC&&ABC.items)||[], q=ABCF.q, cls=ABCF.cls, cat=ABCF.cat;
+  var f=items.filter(function(i){
+    if(cls&&i.cls!==cls)return false;
+    if(cat&&i.c!==cat)return false;
+    if(q){ var s=(''+(i.n||'')).toLowerCase()+' '+(''+(i.nm||'')).toLowerCase(); if(s.indexOf(q)<0)return false; }
+    return true;
+  });
+  f.sort(function(a,b){return num(b.v)-num(a.v);});
+  var total=f.length, shown=f.slice(0,ABC_CAP);
+  var cE=document.getElementById('abcItemCount'); if(cE)cE.textContent=total.toLocaleString();
+  var nE=document.getElementById('abcItemNote'); if(nE)nE.textContent=total>ABC_CAP?('showing top '+ABC_CAP+' of '+total.toLocaleString()+' by value'):(total.toLocaleString()+' items');
+  var h='<tr><th>Item</th><th>Name</th><th>Cat</th><th>Class</th><th class="num">On-Hand Qty</th><th class="num">Value (M)</th><th class="num">Unit Value</th><th class="num">FY24</th><th class="num">FY25</th><th class="num">FY26</th><th class="num">Max/yr</th><th class="num">Months of Stock</th><th class="num">Target Qty</th><th class="num">Over Qty</th><th class="num">Over Value (M)</th></tr>';
+  shown.forEach(function(i){
+    var cov=(i.cov==null)?'∞':(num(i.cov)/(365/12)).toFixed(1);   /* coverage days -> months of stock */
+    h+='<tr><td class="num">'+i.n+'</td>'
+      +'<td style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+fesc(i.nm||'')+'">'+fesc(i.nm||'')+'</td>'
+      +'<td>'+(i.c||'')+'</td>'
+      +'<td><span class="tier-pill" style="background:'+(ABC_CLSCOL[i.cls]||SLATE)+'">'+(i.cls||'')+'</span></td>'
+      +'<td class="num">'+Math.round(num(i.q)).toLocaleString()+'</td>'
+      +'<td class="num">'+mM(abcM(i.v))+'</td>'
+      +'<td class="num">'+Math.round(num(i.u)).toLocaleString()+'</td>'
+      +'<td class="num">'+Math.round(num(i.c24)).toLocaleString()+'</td>'
+      +'<td class="num">'+Math.round(num(i.c25)).toLocaleString()+'</td>'
+      +'<td class="num">'+Math.round(num(i.c26)).toLocaleString()+'</td>'
+      +'<td class="num">'+Math.round(num(i.mx)).toLocaleString()+'</td>'
+      +'<td class="num">'+cov+'</td>'
+      +'<td class="num">'+Math.round(num(i.tg)).toLocaleString()+'</td>'
+      +'<td class="num">'+Math.round(num(i.oq)).toLocaleString()+'</td>'
+      +'<td class="num">'+mM(abcM(i.ov))+'</td></tr>';
+  });
+  document.getElementById('abcItems').innerHTML=h;
+}
+function wireABC(){
+  var ap=document.getElementById('abcApply'); if(ap)ap.onclick=applyABC;
+  var di=document.getElementById('abcDays'); if(di)di.onkeydown=function(e){ if(e.key==='Enter')applyABC(); };
+  var s=document.getElementById('abcSearch'); if(s)s.oninput=function(){ ABCF.q=s.value.trim().toLowerCase(); renderAbcItems(); };
+  var cs=document.getElementById('abcClsSel'); if(cs)cs.onchange=function(){ ABCF.cls=cs.value; renderAbcItems(); };
+  var ca=document.getElementById('abcCatSel'); if(ca)ca.onchange=function(){ ABCF.cat=ca.value; renderAbcItems(); };
+}
+
+/* ================= MOVEMENT · FLOW DEEP-DIVE (lazy-loaded) =================
+   Two sections (Inbound / Outbound). Each: full-period time-series bar with its own
+   Day/Week/Month grain toggle + click-to-drill into that bucket's category/brand/site
+   share charts. Shared EGP/Qty metric toggle. Data from RPC inv_flow. */
+var FLOW_LOADED=false, FLOW_METRIC='v';
+var FIN_GRAIN='month', FOUT_GRAIN='month';
+var FIN_DRILL=null, FOUT_DRILL=null;   /* {from,to,label} | null */
+const FLOWCACHE={};                    /* key: from|to|grain|metric -> payload */
+function flowIsQ(){ return FLOW_METRIC==='q'; }
+function flowUnit(){ return flowIsQ()?'Units':'M EGP'; }
+function flowFullFrom(){ return FULL_FROM; }
+function flowAsOf(){ return asOfStr(); }
+var FIN_WIN='all', FOUT_WIN='all';
+function flowWinFrom(preset){ if(!preset||preset==='all')return FULL_FROM; var days={day:1,week:7,d30:30,d90:90,m6:182,year:365}[preset]; if(!days)return FULL_FROM; var d=new Date(flowAsOf()+'T00:00:00'); d.setDate(d.getDate()-days); return ymd(d); }
+function flowFetch(from,to,grain,metric){
+  var key=[from,to,grain,metric].join('|');
+  if(FLOWCACHE[key])return Promise.resolve(FLOWCACHE[key]);
+  var H={apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json'};
+  var body=JSON.stringify({p_from:from,p_to:to,p_grain:grain,p_metric:metric});
+  return fetch(SB+'/rest/v1/rpc/inv_flow',{method:'POST',headers:H,body:body})
+    .then(rpcOk).then(function(d){ FLOWCACHE[key]=d; return d; });
+}
+/* month YYYY-MM -> 1st..last day · week YYYY-MM-DD(Mon) -> Mon..+6 · day -> itself */
+function flowBucketRange(k,grain){
+  var p=(''+k).split('-');
+  if(grain==='month'){ var y=+p[0],m=+p[1],last=new Date(y,m,0).getDate(); return {from:k+'-01',to:k+'-'+String(last).padStart(2,'0')}; }
+  if(grain==='week'){ var d=new Date(k+'T00:00:00'),e=new Date(d); e.setDate(e.getDate()+6); return {from:k,to:ymd(e)}; }
+  return {from:k,to:k};
+}
+function drawFlowTs(id,payload,side){
+  killChart(id);
+  var ser=(payload&&payload.series)||[], grain=(payload&&payload.meta&&payload.meta.grain)||'month';
+  var labels=ser.map(function(x){return bLabel(x.k,grain);});
+  var keys=ser.map(function(x){return x.k;});
+  var q=flowIsQ(), color=(side==='in')?NAVY:ORANGE;
+  var raw=ser.map(function(x){return num(side==='in'?x.inb:x.outb);});
+  var data=raw.map(function(v){return q?Math.round(v):+v.toFixed(1);});
+  var lf=q?function(v){return v>0?fmtQ(v):'';}:function(v){return v>0?v.toFixed(0):'';};
+  var rot=labels.length>18?-90:0;
+  CH[id]=new Chart(document.getElementById(id),{type:'bar',
+    data:{labels:labels,datasets:[{label:(side==='in'?'Inbound':'Outbound'),data:data,backgroundColor:color,borderRadius:3,
+      datalabels:{display:true,anchor:'end',align:'top',rotation:rot,clamp:true,color:color,font:{size:8,weight:'700'},formatter:lf}}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      onClick:function(e,el){ if(el&&el.length){ flowDrill(side,keys[el[0].index],grain); } },
+      plugins:{legend:{display:false}},
+      scales:{y:{beginAtZero:true,grace:'8%',grid:{color:'#eef1f6'}},x:{grid:{display:false},ticks:{maxRotation:60,minRotation:0,font:{size:9}}}}}});
+}
+/* horizontal ranked bar with value + % of total labels */
+function flowRankBar(id,obj,total,topN,color){
+  var q=flowIsQ();
+  var ent=Object.entries(obj||{}).filter(function(e){return e[0]&&e[0]!=='(Unbranded)'&&num(e[1])>0;})
+            .sort(function(a,b){return num(b[1])-num(a[1]);}).slice(0,topN);
+  var labels=ent.map(function(e){return e[0];});
+  var data=ent.map(function(e){return q?Math.round(num(e[1])):+num(e[1]).toFixed(1);});
+  var tot=num(total)||ent.reduce(function(s,e){return s+num(e[1]);},0)||1;
+  var lf=function(v){ return (q?fmtQ(v):mM(v))+' ('+pP(100*v/tot)+')'; };
+  barChart(id,labels,[{label:'',data:data,backgroundColor:color,borderRadius:4,datalabels:dlh(lf)}],
+    {indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
+}
+function drawFlowShares(side,br){
+  br=br||{};
+  var tot=num(br.total);
+  donut('c-flow-'+side+'-cat',CAT,CAT.map(function(c){return num(br.byCat&&br.byCat[c]);}),CAT.map(function(c){return CATCOLOR[c];}));
+  flowRankBar('c-flow-'+side+'-brand',br.byBrand,tot,10,(side==='in')?NAVY:ORANGE);
+  flowRankBar('c-flow-'+side+'-site',br.bySite,tot,12,(side==='in')?NAVY:ORANGE);
+}
+function flowHint(side){
+  var cap=document.getElementById(side==='in'?'flowInPeriod':'flowOutPeriod');
+  if(cap)cap.innerHTML='· <span style="color:var(--text3)">full period — click a bar to open that period\'s breakdown</span>';
+}
+function renderFlowSection(side){
+  var g=(side==='in')?FIN_GRAIN:FOUT_GRAIN, metric=FLOW_METRIC;
+  var tsId=(side==='in')?'c-flow-in-ts':'c-flow-out-ts';
+  return flowFetch(flowWinFrom((side==='in')?FIN_WIN:FOUT_WIN),flowAsOf(),g,metric).then(function(full){
+    drawFlowTs(tsId,full,side);
+    drawFlowCatSeries(side,full);
+    drawFlowShares(side,(side==='in')?full.in:full.out); flowHint(side);
+  });
+}
+function drawFlowCatSeries(side,payload){
+  var id=(side==='in')?'c-flow-in-cats':'c-flow-out-cats';
+  var cs=(side==='in')?(payload&&payload.inCatSeries):(payload&&payload.outCatSeries); cs=cs||{};
+  var grain=(payload&&payload.meta&&payload.meta.grain)||'month';
+  var kset={}; CAT.forEach(function(c){ Object.keys(cs[c]||{}).forEach(function(k){kset[k]=1;}); });
+  var keys=Object.keys(kset).sort();
+  var labels=keys.map(function(k){return bLabel(k,grain);});
+  var q=flowIsQ();
+  var ds=CAT.map(function(c){ var o=cs[c]||{}; return {label:c,data:keys.map(function(k){return q?Math.round(num(o[k])):+num(o[k]).toFixed(1);}),backgroundColor:CATCOLOR[c],borderRadius:2,stack:'f',datalabels:{display:false}}; });
+  barChart(id,labels,ds,{onHover:drillHover,onClick:function(e,el){ if(el&&el.length){ var k=keys[el[0].index], cat=CAT[el[0].datasetIndex], r=flowBucketRange(k,grain);
+      FM={side:side,from:r.from,to:r.to,grain:grain,label:bLabelYr(k,grain),metric:FLOW_METRIC,drill:{dim:'cat',val:cat}}; fmSyncMetric();
+      var mo=document.getElementById('flowModal'); if(mo)mo.style.display='flex'; fmLoad(); } },
+    plugins:{legend:{display:true,position:'bottom'}},scales:{x:{stacked:true,grid:{display:false},ticks:{maxRotation:60,minRotation:keys.length>8?60:0,font:{size:9}}},y:{stacked:true,beginAtZero:true,grid:{color:'#eef1f6'}}}});
+}
+/* ----- clicking a period opens a POPUP with that period's breakdown (section charts stay on full window) ----- */
+var FM={side:'in',from:null,to:null,grain:'month',label:'',metric:'v',drill:null};
+function flowDetailFetch(from,to,metric,dir,dim,val){
+  var key=['D',from,to,metric,dir,dim,val].join('|'); if(FLOWCACHE[key])return Promise.resolve(FLOWCACHE[key]);
+  var H={apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json'};
+  return fetch(SB+'/rest/v1/rpc/inv_flow_detail',{method:'POST',headers:H,body:JSON.stringify({p_from:from,p_to:to,p_metric:metric,p_dir:dir,p_dim:dim,p_val:val})})
+    .then(rpcOk).then(function(d){ FLOWCACHE[key]=d; return d; });
+}
+function flowDrill(side,k,grain){
+  var r=flowBucketRange(k,grain);
+  FM={side:side,from:r.from,to:r.to,grain:grain,label:bLabelYr(k,grain),metric:FLOW_METRIC,drill:null};
+  fmSyncMetric();
+  var mo=document.getElementById('flowModal'); if(mo)mo.style.display='flex';
+  fmLoad();
+}
+function fmFmt(v){ return FM.metric==='q'?Math.round(num(v)).toLocaleString():('EGP '+mM(num(v))); }
+function fmErr(e){ return '<div style="color:#dc2626;font-weight:600;padding:8px">'+((e&&e.message)||e)+'</div>'; }
+function fmTbl(obj,topN,color,tot,dim){   /* dim set => rows clickable to drill deeper */
+  var arr=Object.keys(obj||{}).map(function(k){return [k,num(obj[k])];}).filter(function(x){return x[1]>0;}).sort(function(a,b){return b[1]-a[1];});
+  if(topN)arr=arr.slice(0,topN);
+  if(!arr.length)return '<div style="color:var(--text3);font-size:12px;padding:2px 8px">none</div>';
+  var mx=arr[0][1]||1;
+  return '<table class="fm-tbl">'+arr.map(function(x){ var pct=tot>0?(100*x[1]/tot):0;
+    var attr=dim?(' data-dim="'+dim+'" data-val="'+fesc(''+x[0])+'" style="cursor:pointer"'):'';
+    return '<tr'+attr+'><td class="b">'+fesc(x[0])+(dim?' <span style="color:var(--text3);font-weight:400">›</span>':'')+'</td><td style="width:36%"><div class="fm-bar" style="width:'+Math.max(3,100*x[1]/mx)+'%;background:'+color+'"></div></td><td class="n">'+fmFmt(x[1])+'</td><td class="p">'+pP(pct)+'</td></tr>'; }).join('')+'</table>';
+}
+function fmItems(items){
+  items=items||[]; if(!items.length)return '<div style="color:var(--text3);font-size:12px">no items</div>';
+  var h='<div style="max-height:280px;overflow:auto"><table class="fm-tbl"><tr><td class="b">Item</td><td class="b">Name</td><td class="b">Cat</td><td class="b">Brand</td><td class="n">'+(FM.metric==='q'?'Qty':'Value')+'</td></tr>';
+  h+=items.map(function(i){ return '<tr><td>'+fesc(i.n)+'</td><td style="max-width:210px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+fesc(i.nm||'')+'">'+fesc(i.nm||'')+'</td><td>'+fesc(i.c||'')+'</td><td>'+fesc(i.b||'')+'</td><td class="n">'+fmFmt(num(i.v))+'</td></tr>'; }).join('');
+  return h+'</table></div>';
+}
+function fmLoad(){
+  var t=document.getElementById('fmTitle'), body=document.getElementById('fmBody');
+  var base=(FM.side==='in'?'Inbound':'Outbound')+' · '+FM.label;
+  if(body)body.innerHTML='<div style="padding:26px 4px;color:var(--text3)">Loading…</div>';
+  if(FM.drill){
+    if(t)t.textContent=base+' · '+FM.drill.val;
+    flowDetailFetch(FM.from,FM.to,FM.metric,FM.side,FM.drill.dim,FM.drill.val).then(fmRenderDetail).catch(function(e){ if(body)body.innerHTML=fmErr(e); });
+  } else {
+    if(t)t.textContent=base;
+    flowFetch(FM.from,FM.to,FM.grain,FM.metric).then(function(d){ fmRenderPeriod((FM.side==='in')?d.in:d.out); }).catch(function(e){ if(body)body.innerHTML=fmErr(e); });
+  }
+}
+function fmRenderPeriod(br){
+  br=br||{}; var tot=num(br.total)||0;
+  var h='<div style="font-size:13px;color:var(--text2);margin-bottom:6px">Total '+(FM.side==='in'?'inbound':'outbound')+': <b style="color:var(--navy);font-size:15px">'+fmFmt(tot)+'</b></div>'
+    +'<div style="font-size:11px;color:var(--text3);margin-bottom:12px">click a category, brand or site to see its items ↓</div>';
+  h+='<div class="fm-sec"><h4>By Category</h4>'+fmTbl(br.byCat,null,NAVY,tot,'cat')+'</div>';
+  h+='<div class="fm-sec"><h4>Top Brands</h4>'+fmTbl(br.byBrand,10,(FM.side==='in')?'#16a34a':ORANGE,tot,'brand')+'</div>';
+  h+='<div class="fm-sec"><h4>By Site</h4>'+fmTbl(br.bySite,12,BLUE,tot,'site')+'</div>';
+  var body=document.getElementById('fmBody'); if(body)body.innerHTML=h;
+}
+function fmRenderDetail(d){
+  d=d||{}; var tot=num(d.total)||0, dim=FM.drill.dim;
+  var h='<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><button class="flowmodal-x" data-back="1" title="Back" style="width:auto;padding:0 12px;font-weight:700">← Back</button><span style="font-size:13px;color:var(--text2)">Total: <b style="color:var(--navy);font-size:15px">'+fmFmt(tot)+'</b></span></div>';
+  if(dim!=='cat')   h+='<div class="fm-sec"><h4>By Category</h4>'+fmTbl(d.byCat,null,NAVY,tot,null)+'</div>';
+  if(dim!=='brand') h+='<div class="fm-sec"><h4>By Brand</h4>'+fmTbl(d.byBrand,12,'#16a34a',tot,null)+'</div>';
+  if(dim!=='site')  h+='<div class="fm-sec"><h4>By Site</h4>'+fmTbl(d.bySite,12,BLUE,tot,null)+'</div>';
+  h+='<div class="fm-sec"><h4>Items ('+((d.items||[]).length)+')</h4>'+fmItems(d.items)+'</div>';
+  var body=document.getElementById('fmBody'); if(body)body.innerHTML=h;
+}
+function fmSyncMetric(){ var mp=document.getElementById('fmMetric'); if(mp)mp.querySelectorAll('button').forEach(function(b){ b.classList.toggle('on',b.dataset.fmm===FM.metric); }); }
+function fmSetMetric(m){ if(FM.metric===m)return; FM.metric=m; fmSyncMetric(); fmLoad(); }
+function fmClose(){ var mo=document.getElementById('flowModal'); if(mo)mo.style.display='none'; FM.drill=null; }
+function fmBodyClick(e){ var back=e.target.closest('[data-back]'); if(back){ FM.drill=null; fmLoad(); return; }
+  var row=e.target.closest('[data-dim]'); if(row){ FM.drill={dim:row.getAttribute('data-dim'),val:row.getAttribute('data-val')}; fmLoad(); } }
+function flowSetGrain(side,g){
+  if(side==='in'){ if(FIN_GRAIN===g)return; FIN_GRAIN=g; FIN_DRILL=null; }
+  else { if(FOUT_GRAIN===g)return; FOUT_GRAIN=g; FOUT_DRILL=null; }
+  flowSyncGrainUI(side); renderFlowSection(side);
+}
+function flowSetMetric(m){ if(FLOW_METRIC===m)return; FLOW_METRIC=m; flowSyncMetricUI(); flowUpdateTitles(); renderFlowSection('in'); renderFlowSection('out'); }
+function flowSyncMetricUI(){ var mp=document.getElementById('flowMetric'); if(mp)mp.querySelectorAll('button').forEach(function(b){ b.classList.toggle('on',b.dataset.fm===FLOW_METRIC); }); }
+function flowSyncGrainUI(side){ var g=(side==='in')?FIN_GRAIN:FOUT_GRAIN, tg=document.querySelector('#movement .gtoggle[data-fg="'+side+'"]'); if(tg)tg.querySelectorAll('button').forEach(function(b){ b.classList.toggle('on',b.dataset.g===g); }); }
+function flowUpdateTitles(){ var u=flowUnit();
+  setTitle('h-flow-in-ts','Inbound over time ('+u+')'); setTitle('h-flow-in-cat','Inbound by Category ('+u+')'); setTitle('h-flow-in-cats','Inbound by Category over time ('+u+')');
+  setTitle('h-flow-in-brand','Top Inbound Brands ('+u+')'); setTitle('h-flow-in-site','Inbound by Site ('+u+')');
+  setTitle('h-flow-out-ts','Outbound over time ('+u+')'); setTitle('h-flow-out-cat','Outbound by Category ('+u+')'); setTitle('h-flow-out-cats','Outbound by Category over time ('+u+')');
+  setTitle('h-flow-out-brand','Top Outbound Brands ('+u+')'); setTitle('h-flow-out-site','Outbound by Site ('+u+')');
+}
+function wireMovement(){
+  var mp=document.getElementById('flowMetric');
+  if(mp)mp.querySelectorAll('button').forEach(function(b){ b.onclick=function(){ flowSetMetric(b.dataset.fm); }; });
+  document.querySelectorAll('#movement .gtoggle[data-fg]').forEach(function(tg){
+    var side=tg.dataset.fg;
+    tg.querySelectorAll('button').forEach(function(b){ b.onclick=function(){ flowSetGrain(side,b.dataset.g); }; });
+  });
+  document.querySelectorAll('#movement select[data-fwin]').forEach(function(sel){ var side=sel.dataset.fwin;
+    sel.onchange=function(){ if(side==='in')FIN_WIN=sel.value; else FOUT_WIN=sel.value; renderFlowSection(side); }; });
+  var fx=document.getElementById('fmClose'); if(fx)fx.onclick=fmClose;
+  var fb=document.getElementById('fmBg'); if(fb)fb.onclick=fmClose;
+  var fmm=document.getElementById('fmMetric'); if(fmm)fmm.querySelectorAll('button').forEach(function(b){ b.onclick=function(){ fmSetMetric(b.dataset.fmm); }; });
+  var fbody=document.getElementById('fmBody'); if(fbody)fbody.onclick=fmBodyClick;
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape')fmClose(); });
+}
+function openMovement(){ if(FLOW_LOADED)return; FLOW_LOADED=true; flowUpdateTitles(); renderFlowSection('in'); renderFlowSection('out'); }
+
+/* ================= CLICK-TO-DRILL popup (on-hand equivalent of the flow popup) =================
+   Fed entirely from the loaded ITEMS.items — no server calls. Filter keys c/d/b/s/t map 1:1
+   to the item fields (category/department/brand/site/tier). */
+var DRILL={f:{},order:[],metric:'v'};
+const DRILLDIM={c:'Category',d:'Department',b:'Brand',s:'Site',t:'Tier'};
+function drillHover(e,el){ var c=e&&e.native&&e.native.target; if(c)c.style.cursor=(el&&el.length)?'pointer':'default'; }
+function drillClick(dim,labelAt){ return function(e,el){ if(el&&el.length){ var v=labelAt(el[0].index); if(v!=null&&v!=='')openDrill(dim,v); } }; }
+var CATCLICK={onClick:drillClick('c',function(i){return CAT[i];}),onHover:drillHover};  /* opts for category bars (io-cat, mv-in, mv-out) */
+function drillItems(){ return ITEMS.items.filter(function(i){ var f=DRILL.f; for(var k in f){ if(i[k]!==f[k])return false; } return true; }); }
+function dmVal(i){ return DRILL.metric==='q'?num(i.q):num(i.v); }
+function dmFmt(sum){ return DRILL.metric==='q'?Math.round(num(sum)).toLocaleString():mM(num(sum)/1e6); }
+function openDrill(dim,val){ if(val==null||val==='')return; DRILL.f={}; DRILL.order=[]; DRILL.f[dim]=val; DRILL.order.push(dim); DRILL.metric='v'; dmSyncMetric();
+  var mo=document.getElementById('drillModal'); if(mo)mo.style.display='flex'; drillRender(); }
+function drillAdd(dim,val){ if(dim in DRILL.f)return; DRILL.f[dim]=val; DRILL.order.push(dim); drillRender(); }
+function drillBack(){ var k=DRILL.order.pop(); if(k!=null)delete DRILL.f[k]; drillRender(); }
+function dmGroup(rows,dim){ var m={}; rows.forEach(function(i){ var key=i[dim]; if(key==null||key==='')return; m[key]=(m[key]||0)+dmVal(i); }); return m; }
+function dmTbl(rows,dim,color,tot,topN){
+  var m=dmGroup(rows,dim);
+  var arr=Object.keys(m).map(function(k){return [k,m[k]];}).filter(function(x){return x[1]>0;}).sort(function(a,b){return b[1]-a[1];});
+  if(topN)arr=arr.slice(0,topN);
+  if(!arr.length)return '<div style="color:var(--text3);font-size:12px;padding:2px 8px">none</div>';
+  var mx=arr[0][1]||1;
+  return '<table class="fm-tbl">'+arr.map(function(x){ var pct=tot>0?(100*x[1]/tot):0;
+    return '<tr data-dim="'+dim+'" data-val="'+fesc(''+x[0])+'" style="cursor:pointer"><td class="b">'+fesc(x[0])+' <span style="color:var(--text3);font-weight:400">›</span></td><td style="width:36%"><div class="fm-bar" style="width:'+Math.max(3,100*x[1]/mx)+'%;background:'+color+'"></div></td><td class="n">'+dmFmt(x[1])+'</td><td class="p">'+pP(pct)+'</td></tr>'; }).join('')+'</table>';
+}
+function dmItems(rows){
+  var arr=rows.slice().sort(function(a,b){return dmVal(b)-dmVal(a);}).slice(0,200);
+  if(!arr.length)return '<div style="color:var(--text3);font-size:12px">no items</div>';
+  var h='<div style="max-height:280px;overflow:auto"><table class="fm-tbl"><tr><td class="b">Item</td><td class="b">Name</td><td class="b">Cat</td><td class="b">Brand</td><td class="b">Site</td><td class="b">Tier</td><td class="n">'+(DRILL.metric==='q'?'Qty':'Value')+'</td></tr>';
+  h+=arr.map(function(i){ return '<tr><td>'+fesc(i.n)+'</td><td style="max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+fesc(i.dsc||'')+'">'+fesc(i.dsc||'')+'</td><td>'+fesc(i.c||'')+'</td><td>'+fesc(i.b||'')+'</td><td>'+fesc(i.s||'')+'</td><td>'+fesc(i.t||'')+'</td><td class="n">'+dmFmt(dmVal(i))+'</td></tr>'; }).join('');
+  return h+'</table></div>';
+}
+function drillRender(){
+  var t=document.getElementById('dmTitle'), body=document.getElementById('dmBody');
+  var rows=drillItems();
+  var tot=rows.reduce(function(s,i){return s+dmVal(i);},0);
+  var totV=rows.reduce(function(s,i){return s+num(i.v);},0), totQ=rows.reduce(function(s,i){return s+num(i.q);},0);
+  var crumb=DRILL.order.map(function(k){return DRILLDIM[k]+': '+DRILL.f[k];}).join(' › ');
+  if(t)t.textContent=crumb||'On-hand drill';
+  var h='<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">';
+  if(DRILL.order.length>1)h+='<button class="flowmodal-x" data-back="1" title="Back" style="width:auto;padding:0 12px;font-weight:700">← Back</button>';
+  h+='<span style="font-size:13px;color:var(--text2)">On-hand: <b style="color:var(--navy);font-size:15px">'+(totV/1e6).toFixed(1)+'M EGP</b> · <b style="color:var(--navy)">'+Math.round(totQ).toLocaleString()+'</b> units · <b style="color:var(--navy)">'+rows.length.toLocaleString()+'</b> items</span></div>';
+  h+='<div style="font-size:11px;color:var(--text3);margin-bottom:12px">click any row below to drill deeper ↓</div>';
+  var DIMSPEC=[['c','By Category',NAVY,null],['d','By Department','#0d9488',12],['b','By Brand','#16a34a',12],['s','By Site',BLUE,12],['t','By Tier',ORANGE,null]];
+  DIMSPEC.forEach(function(sp){ if(sp[0] in DRILL.f)return; h+='<div class="fm-sec"><h4>'+sp[1]+'</h4>'+dmTbl(rows,sp[0],sp[2],tot,sp[3])+'</div>'; });
+  h+='<div class="fm-sec"><h4>Items ('+rows.length.toLocaleString()+(rows.length>200?' · top 200':'')+')</h4>'+dmItems(rows)+'</div>';
+  if(body)body.innerHTML=h;
+}
+function dmSyncMetric(){ var mp=document.getElementById('dmMetric'); if(mp)mp.querySelectorAll('button').forEach(function(b){ b.classList.toggle('on',b.dataset.dmm===DRILL.metric); }); }
+function dmSetMetric(m){ if(DRILL.metric===m)return; DRILL.metric=m; dmSyncMetric(); drillRender(); }
+function dmClose(){ var mo=document.getElementById('drillModal'); if(mo)mo.style.display='none'; DRILL.f={}; DRILL.order=[]; }
+function dmBodyClick(e){ var back=e.target.closest('[data-back]'); if(back){ drillBack(); return; }
+  var row=e.target.closest('[data-dim]'); if(row){ drillAdd(row.getAttribute('data-dim'),row.getAttribute('data-val')); } }
+function drillHeatClick(e){ var td=e.target.closest('td'); if(!td)return; var s=td.getAttribute('data-s'); if(s==null)return; var c=td.getAttribute('data-c');
+  DRILL.f={}; DRILL.order=[]; DRILL.f.s=s; DRILL.order.push('s'); if(c){ DRILL.f.c=c; DRILL.order.push('c'); } DRILL.metric='v'; dmSyncMetric();
+  var mo=document.getElementById('drillModal'); if(mo)mo.style.display='flex'; drillRender(); }
+function wireDrill(){
+  var x=document.getElementById('dmClose'); if(x)x.onclick=dmClose;
+  var bg=document.getElementById('dmBg'); if(bg)bg.onclick=dmClose;
+  var mp=document.getElementById('dmMetric'); if(mp)mp.querySelectorAll('button').forEach(function(b){ b.onclick=function(){ dmSetMetric(b.dataset.dmm); }; });
+  var body=document.getElementById('dmBody'); if(body)body.onclick=dmBodyClick;
+  var ht=document.getElementById('heatTable'); if(ht)ht.onclick=drillHeatClick;
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape')dmClose(); });
+}
+
+/* ================= REORDER & SAFETY STOCK (lazy-loaded tab) ================= */
+var RO=null, RO_Z=1.6449, RO_LEAD=61, RO_LOADED=false;  /* RO_LEAD in DAYS; 61 ≈ 2 months */
+const RO_CAP=400; const ROF={q:'',cat:'',st:''};
+const RO_SVCPCT={'1.2816':'90','1.6449':'95','1.9600':'97.5','2.3263':'99'};   /* Z -> service level % label */
+const RO_STCOL={Reorder:RED,OK:GREEN};                                          /* status badge colors */
+function roM(v){return num(v)/1e6;}                                             /* raw EGP -> M EGP */
+function roRpc(z,lead){
+  var H={apikey:ANON,Authorization:'Bearer '+ANON,'Content-Type':'application/json'};
+  return fetch(SB+'/rest/v1/rpc/inv_reorder',{method:'POST',headers:H,body:JSON.stringify({p_z:z,p_lead_days:lead})})
+    .then(function(r){ if(!r.ok)return r.text().then(function(t){throw new Error(r.status+': '+t.slice(0,140));}); return r.json(); });
+}
+function openReorder(){ if(RO_LOADED)return; RO_LOADED=true; loadReorder(RO_Z,RO_LEAD); }   /* fetch once on first open */
+function applyReorder(){                                                                     /* service/lead refetch */
+  var sv=document.getElementById('roSvc'); var z=sv?parseFloat(sv.value):1.6449;
+  if(!z||z<=0){ z=1.6449; if(sv)sv.value='1.6449'; }
+  var ll=document.getElementById('roLead'); var mo=ll?parseFloat(ll.value):2;
+  if(!mo||mo<0.5){ mo=2; if(ll)ll.value=2; }
+  RO_LOADED=true; loadReorder(z,Math.round(mo*(365/12)));   /* months -> days for the RPC */
+}
+function loadReorder(z,lead){
+  var body=document.getElementById('roBody'), ld=document.getElementById('roLoading'), er=document.getElementById('roError');
+  if(ld)ld.style.display='block'; if(body)body.style.display='none'; if(er)er.style.display='none';
+  roRpc(z,lead).then(function(d){
+    if(!d||!d.totals)throw new Error((d&&d.message)||'no data');
+    RO=d; RO_Z=(d.meta&&d.meta.z)||z; RO_LEAD=lead;
+    var ll=document.getElementById('roLead'); if(ll)ll.value=Math.round(RO_LEAD/(365/12)*10)/10;  /* days -> months */
+    if(ld)ld.style.display='none'; if(body)body.style.display='block';
+    renderReorder();
+  }).catch(function(e){
+    if(ld)ld.style.display='none';
+    if(er){ er.style.display='flex'; er.innerHTML='<i class="ti ti-alert-triangle"></i>Could not load reorder analysis: '+((e&&e.message)||e); }
+    RO_LOADED=false;   /* allow a retry */
+  });
+}
+function renderReorder(){
+  if(!RO)return;
+  var pct=RO_SVCPCT[''+RO_Z]||((RO.meta&&RO.meta.z)?(''+RO.meta.z):'—');
+  var as=document.getElementById('roAsOf');
+  if(as)as.textContent=((RO.meta&&RO.meta.asOf)?('as of '+RO.meta.asOf+' · '):'')+'service '+pct+'% · lead est. from receipts (fallback '+(RO_LEAD/(365/12)).toFixed(1)+' mo)';
+  renderRoKpis(); renderRoCharts(); renderRoItems();
+}
+function roByCat(arr){ var o={}; (arr||[]).forEach(function(r){o[r.cat]=r;}); return o; }
+function renderRoKpis(){
+  var t=(RO&&RO.totals)||{};
+  var kpis=[
+    {v:Math.round(num(t.items)).toLocaleString(),l:'Items Analysed',s:'with demand history',c:'k-teal'},
+    {v:Math.round(num(t.reorderNow)).toLocaleString(),l:'Items to Reorder Now',s:'on-hand ≤ reorder point',c:'k-out'},
+    {v:'EGP '+mM(roM(t.ssValue)),l:'Safety-Stock Value',s:'buffer to hold',c:'k-orange'},
+    {v:'EGP '+mM(roM(t.reorderValue)),l:'Value of Items to Reorder',s:'on-hand value of reorder items',c:'k-out'}
+  ];
+  document.getElementById('roKpis').innerHTML=kpis.map(function(k){return '<div class="kpi '+k.c+'"><div class="kpi-val">'+k.v+'</div><div class="kpi-lbl">'+k.l+'</div><div class="kpi-sub">'+k.s+'</div></div>';}).join('');
+}
+function renderRoCharts(){
+  var by=roByCat(RO&&RO.byCat);
+  barChart('c-ro-cat',CAT,
+    [{label:'Items to reorder',data:CAT.map(function(c){return by[c]?Math.round(num(by[c].reorderNow)):0;}),backgroundColor:CAT.map(function(c){return CATCOLOR[c];}),borderRadius:5,datalabels:dlv(function(v){return Math.round(v).toLocaleString();})}],
+    {plugins:{legend:{display:false}}});
+  barChart('c-ro-ss',CAT,
+    [{label:'Safety-stock value',data:CAT.map(function(c){return by[c]?+roM(by[c].ssValue).toFixed(1):0;}),backgroundColor:CAT.map(function(c){return CATCOLOR[c];}),borderRadius:5,datalabels:dlv(function(v){return mM(v);})}],
+    {plugins:{legend:{display:false}}});
+}
+function renderRoItems(){
+  var items=(RO&&RO.items)||[], q=ROF.q, cat=ROF.cat, st=ROF.st;
+  var f=items.filter(function(i){
+    if(cat&&i.c!==cat)return false;
+    if(st&&i.st!==st)return false;
+    if(q){ var s=(''+(i.n||'')).toLowerCase()+' '+(''+(i.nm||'')).toLowerCase(); if(s.indexOf(q)<0)return false; }
+    return true;
+  });
+  /* reorder-now first, then by safety-stock value desc */
+  f.sort(function(a,b){ var ra=(a.st==='Reorder')?1:0, rb=(b.st==='Reorder')?1:0; if(ra!==rb)return rb-ra; return num(b.ssv)-num(a.ssv); });
+  var total=f.length, shown=f.slice(0,RO_CAP);
+  var cE=document.getElementById('roItemCount'); if(cE)cE.textContent=total.toLocaleString();
+  var nE=document.getElementById('roItemNote'); if(nE)nE.textContent=total>RO_CAP?('showing top '+RO_CAP+' of '+total.toLocaleString()+' (reorder-now first)'):(total.toLocaleString()+' items');
+  var h='<tr><th>Item</th><th>Name</th><th>Cat</th><th class="num">On-Hand Qty</th><th class="num">Avg Monthly Demand</th><th class="num">σ (monthly)</th><th class="num">Lead (months)</th><th class="num">Safety Stock</th><th class="num">Reorder Point</th><th>On-Hand vs ROP</th><th class="num">SS Value (M)</th></tr>';
+  shown.forEach(function(i){
+    var stLbl=(i.st==='Reorder')?'Reorder':'OK';
+    h+='<tr><td class="num">'+i.n+'</td>'
+      +'<td style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+fesc(i.nm||'')+'">'+fesc(i.nm||'')+'</td>'
+      +'<td>'+(i.c||'')+'</td>'
+      +'<td class="num">'+Math.round(num(i.q)).toLocaleString()+'</td>'
+      +'<td class="num">'+num(i.dmo).toLocaleString('en',{maximumFractionDigits:1})+'</td>'
+      +'<td class="num">'+num(i.sig).toLocaleString('en',{maximumFractionDigits:1})+'</td>'
+      +'<td class="num">'+(num(i.ld)/(365/12)).toFixed(1)+'</td>'
+      +'<td class="num">'+Math.round(num(i.ss)).toLocaleString()+'</td>'
+      +'<td class="num">'+Math.round(num(i.rop)).toLocaleString()+'</td>'
+      +'<td><span class="tier-pill" style="background:'+(RO_STCOL[i.st]||SLATE)+'">'+stLbl+'</span></td>'
+      +'<td class="num">'+mM(roM(i.ssv))+'</td></tr>';
+  });
+  document.getElementById('roItems').innerHTML=h;
+}
+function wireReorder(){
+  var ap=document.getElementById('roApply'); if(ap)ap.onclick=applyReorder;
+  var sv=document.getElementById('roSvc'); if(sv)sv.onchange=function(){ applyReorder(); };
+  var ll=document.getElementById('roLead'); if(ll)ll.onkeydown=function(e){ if(e.key==='Enter')applyReorder(); };
+  var s=document.getElementById('roSearch'); if(s)s.oninput=function(){ ROF.q=s.value.trim().toLowerCase(); renderRoItems(); };
+  var ca=document.getElementById('roCatSel'); if(ca)ca.onchange=function(){ ROF.cat=ca.value; renderRoItems(); };
+  var cst=document.getElementById('roStSel'); if(cst)cst.onchange=function(){ ROF.st=cst.value; renderRoItems(); };
+}
+
 donut('c-share',CAT,CAT.map(c=>DATA.onhandByCat[c]),CAT.map(c=>CATCOLOR[c]));
 // inbound vs outbound by category — real Season 26 figures
 barChart('c-io-cat',CAT,[
   {label:'Inbound',data:CAT.map(c=>+(DATA.inboundByCatSeason[c]||0).toFixed(1)),backgroundColor:NAVY,borderRadius:4,datalabels:{display:true,anchor:'end',align:'top',color:NAVY,font:{size:10,weight:'700'},formatter:v=>v>0?v.toFixed(1):''}},
   {label:'Outbound',data:CAT.map(c=>+Math.abs(DATA.outboundByCatSeason[c]||0).toFixed(1)),backgroundColor:ORANGE,borderRadius:4,datalabels:{display:true,anchor:'end',align:'top',color:ORANGE,font:{size:10,weight:'700'},formatter:v=>v>0?v.toFixed(1):''}}
-]);
+],CATCLICK);
 // inbound vs outbound monthly
 barChart('c-io-month',seasonMonths.map(mLabel),[
   {label:'Inbound',data:seasonMonths.map(m=>+(DATA.inboundByMonth[m]||0).toFixed(1)),backgroundColor:NAVY,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:NAVY,font:{size:8,weight:'700'},formatter:v=>v>0?v.toFixed(0):''}},
@@ -764,7 +1757,7 @@ barChart('c-io-month',seasonMonths.map(mLabel),[
 ]);
 
 /* ===== CATEGORY ===== */
-barChart('c-cat-oh',CAT,[{label:'On-hand',data:CAT.map(c=>+DATA.onhandByCat[c].toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dlv(v=>v.toFixed(1)+'M')}]);
+barChart('c-cat-oh',CAT,[{label:'On-hand',data:CAT.map(c=>+DATA.onhandByCat[c].toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dlv(v=>mM(v))}]);
 donut('c-cat-share',CAT,CAT.map(c=>DATA.onhandByCat[c]),CAT.map(c=>CATCOLOR[c]));
 drawCatTurn(buildFullVW());
 (()=>{ const ms=Object.keys(DATA.monthlyOnhand).filter(m=>m>='2024-09');
@@ -791,87 +1784,80 @@ drawCatTurn(buildFullVW());
 
 /* ===== SITE ===== */
 (()=>{ const sites=Object.entries(DATA.onhandBySite).filter(([s,v])=>v>0.05).sort((a,b)=>b[1]-a[1]);
-  barChart('c-site',sites.map(s=>s[0]),[{label:'On-hand',data:sites.map(s=>+s[1].toFixed(1)),backgroundColor:sites.map((s,i)=>i<5?NAVY:SLATE),borderRadius:4,datalabels:dlh(v=>v.toFixed(1))}],
-    {indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
+  const siteLabels0=sites.map(s=>s[0]);
+  barChart('c-site',siteLabels0,[{label:'On-hand',data:sites.map(s=>+s[1].toFixed(1)),backgroundColor:sites.map((s,i)=>i<5?NAVY:SLATE),borderRadius:4,datalabels:dlh(v=>v.toFixed(1))}],
+    {indexAxis:'y',onClick:drillClick('s',function(i){return siteLabels0[i];}),onHover:drillHover,scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
   const tot=sites.reduce((s,x)=>s+x[1],0);
   const top2=sites.slice(0,2).reduce((s,x)=>s+x[1],0), top5=sites.slice(0,5).reduce((s,x)=>s+x[1],0);
   document.getElementById('concPanel').innerHTML=`<h4>Concentration Analysis</h4>
-    <div class="conc-item"><div class="v">${(100*top2/tot).toFixed(0)}%</div><div class="l">Top 2 sites share</div></div>
-    <div class="conc-item"><div class="v">${(100*top5/tot).toFixed(0)}%</div><div class="l">Top 5 sites share</div></div>
-    <div class="conc-item"><div class="v">EGP ${sites[0][1].toFixed(1)}M</div><div class="l">${sites[0][0]} (largest)</div></div>
-    <div class="conc-item"><div class="v">EGP ${(tot-sites.slice(0,5).reduce((s,x)=>s+x[1],0)).toFixed(1)}M</div><div class="l">Remaining ${sites.length-5} sites</div></div>`;
+    <div class="conc-item"><div class="v">${pP(100*top2/tot)}</div><div class="l">Top 2 sites share</div></div>
+    <div class="conc-item"><div class="v">${pP(100*top5/tot)}</div><div class="l">Top 5 sites share</div></div>
+    <div class="conc-item"><div class="v">EGP ${mM(sites[0][1])}</div><div class="l">${sites[0][0]} (largest)</div></div>
+    <div class="conc-item"><div class="v">EGP ${mM(tot-sites.slice(0,5).reduce((s,x)=>s+x[1],0))}</div><div class="l">Remaining ${sites.length-5} sites</div></div>`;
 })();
-/* heat map */
-(()=>{ const sites=Object.keys(DATA.onhandBySite).filter(s=>DATA.onhandBySite[s]>0.05).sort((a,b)=>DATA.onhandBySite[b]-DATA.onhandBySite[a]);
-  const band=v=>v>80?'#7f1d1d':v>20?'#dc2626':v>5?'#d97706':v>0?'#2563eb':'#1b2a44';
-  let html='<tr><th>Location</th>'+CAT.map(c=>`<th>${c} (M)</th>`).join('')+'<th>Total (M)</th></tr>';
-  sites.forEach(s=>{ let row=`<tr><td>${s}</td>`; let tot=0;
-    CAT.forEach(c=>{const v=DATA.heat[`${s}|${c}`]||0;tot+=v;row+=`<td style="background:${band(v)}">${v>0?v.toFixed(1):'–'}</td>`;});
-    row+=`<td style="background:${band(tot)}">${tot.toFixed(1)}</td></tr>`; html+=row;});
-  document.getElementById('heatTable').innerHTML=html;
-})();
+/* heat map — via drawHeat so the per-category relative colouring applies on load */
+drawHeat(buildFullVW());
 
 /* ===== MOVEMENT ===== */
 barChart('c-mv-month',seasonMonths.map(mLabel),[
   {label:'Inbound',data:seasonMonths.map(m=>+(DATA.inboundByMonth[m]||0).toFixed(1)),backgroundColor:NAVY,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:NAVY,font:{size:8,weight:'700'},formatter:v=>v>0?v.toFixed(0):''}},
   {label:'Outbound',data:seasonMonths.map(m=>+Math.abs(DATA.outboundByMonth[m]||0).toFixed(1)),backgroundColor:ORANGE,borderRadius:3,datalabels:{display:true,anchor:'end',align:'top',rotation:-90,color:ORANGE,font:{size:8,weight:'700'},formatter:v=>v>0?v.toFixed(0):''}}
 ]);
-barChart('c-mv-in',CAT,[{label:'Inbound',data:CAT.map(c=>+(DATA.inboundByCatSeason[c]||0).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dl('#fff',v=>v.toFixed(1))}]);
-barChart('c-mv-out',CAT,[{label:'Outbound',data:CAT.map(c=>+Math.abs(DATA.outboundByCatSeason[c]||0).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dl('#fff',v=>v.toFixed(1))}]);
+barChart('c-mv-in',CAT,[{label:'Inbound',data:CAT.map(c=>+(DATA.inboundByCatSeason[c]||0).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dl('#fff',v=>v.toFixed(1))}],CATCLICK);
+barChart('c-mv-out',CAT,[{label:'Outbound',data:CAT.map(c=>+Math.abs(DATA.outboundByCatSeason[c]||0).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dl('#fff',v=>v.toFixed(1))}],CATCLICK);
 
 /* ===== HEALTH ===== */
 paintHealth(DATA.statusVal,DATA.statusCnt);
 
 /* ===== BY BRAND ===== */
-(()=>{ if(typeof BRAND==='undefined')return;
-  const oh=Object.entries(BRAND.onhandByBrand).filter(([b,v])=>b!=='(Unbranded)'&&b!=='' &&v>0).slice(0,12);
-  barChart('c-brand-oh',oh.map(e=>e[0]),[{label:'On-hand',data:oh.map(e=>+e[1].toFixed(1)),backgroundColor:NAVY,borderRadius:4,datalabels:dlh(v=>v.toFixed(1))}],
-    {indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
-  const iss=Object.entries(BRAND.issueSeasonByBrand).filter(([b,v])=>b!=='(Unbranded)'&&b!==''&&v>0).slice(0,10);
-  barChart('c-brand-iss',iss.map(e=>e[0]),[{label:'Issues',data:iss.map(e=>+(e[1]/1e6).toFixed(2)),backgroundColor:ORANGE,borderRadius:4,datalabels:dlh(v=>v.toFixed(2))}],
-    {indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
-  const grand=oh.reduce((s,e)=>s+e[1],0);
-  let html='<tr><th>#</th><th>Brand</th><th class="n">M EGP</th><th class="n">Share</th></tr>';
-  oh.forEach((e,i)=>{html+=`<tr><td>${i+1}</td><td class="b">${e[0]}</td><td class="n">${e[1].toFixed(1)}</td><td class="n">${(100*e[1]/grand).toFixed(1)}%</td></tr>`;});
-  document.getElementById('brandTable').innerHTML=html;
+(()=>{ if(typeof BRAND==='undefined'||!BRAND.onhandByBrand)return;
+  var vw=buildFullVW(); drawBrandOh(vw); drawBrandIss(vw);   /* top 12 by EGP value, sorted, table included */
 })();
 
 /* ===== GLOBAL FILTER RECOMPUTE (KPIs + category + brand + health from filtered items) ===== */
-const ASOF_K=2026*12+7;
+const ASOF_K=(()=>{var a=((DATA.meta&&DATA.meta.asOf)||'2026-08-15').split('-');return (+a[0])*12+(+a[1]);})();
 function lmk(lm){ if(!lm)return -1; const p=(''+lm).split('-'); return (+p[0])*12+(+p[1]); }
 function renderKPIs(rows){
-  const onh=rows.reduce((s,i)=>s+i.v,0)/1e6;
-  const sku=rows.filter(i=>i.q>0).length;
-  const active=rows.filter(i=>i.q>0&&lmk(i.lm)>=ASOF_K-12).length;
-  const spv=rows.filter(i=>i.c==='Sp').reduce((s,i)=>s+i.v,0)/1e6, spD=onh?Math.round(100*spv/onh):0;
-  const inv=rows.filter(i=>i.c==='Invest').reduce((s,i)=>s+i.v,0)/1e6;
+  let onh=rows.reduce((s,i)=>s+i.v,0)/1e6;
+  let sku=rows.filter(i=>i.q>0).length;
+  let active=rows.filter(i=>i.q>0&&lmk(i.lm)>=ASOF_K-12).length;
+  const spv=rows.filter(i=>i.c==='Sp').reduce((s,i)=>s+i.v,0)/1e6; let spD=onh?Math.round(100*spv/onh):0;
+  let inv=rows.filter(i=>i.c==='Invest').reduce((s,i)=>s+i.v,0)/1e6;
+  /* unfiltered view: use the server's authoritative KPIs (the inv_items list can differ by a few rows) */
+  if(!anyActive()){ onh=DATA.kpi.onhandTotal; sku=DATA.kpi.totalSku; active=DATA.kpi.activeItems; spD=DATA.kpi.spDominance; inv=num(DATA.onhandByCat&&DATA.onhandByCat.Invest); }
   const turnover=(seasonOut/DATA.kpi.onhandTotal);
   const kpis=[
-    {v:'EGP '+onh.toFixed(1)+'M',l:'Total On-Hand Value',s:'filtered',c:''},
+    {v:'EGP '+mM(onh),l:'Total On-Hand Value',s:'filtered',c:''},
     {v:active.toLocaleString(),l:'Active Moving Items',s:'moved ≤12m',c:'k-teal'},
     {v:sku.toLocaleString(),l:'Total SKUs',s:'qty > 0',c:'k-orange'},
     {v:spD+'%',l:'Spare Parts Dominance',s:'of value',c:''},
     {v:'EGP '+fmtM(seasonIn)+'M',l:'Season Inbound',s:'all items',c:'k-in'},
     {v:'EGP '+fmtM(seasonOut)+'M',l:'Season Outbound',s:'all items',c:'k-out'},
     {v:turnover.toFixed(1)+'×',l:'Inventory Turnover',s:'season',c:'k-teal'},
-    {v:inv.toFixed(0)+'M',l:'Invest Category',s:'filtered',c:'k-orange'}
+    {v:mM(inv),l:'Invest Category',s:'filtered',c:'k-orange'}
   ];
   document.getElementById('kpiRow').innerHTML=kpis.map(k=>`<div class="kpi ${k.c}"><div class="kpi-val">${k.v}</div><div class="kpi-lbl">${k.l}</div><div class="kpi-sub">${k.s}</div></div>`).join('');
 }
 function renderFiltered(rows){
   const M=v=>v/1e6;
   renderKPIs(rows);
-  const byCat={}; CAT.forEach(c=>byCat[c]=0); rows.forEach(i=>{ if(byCat[i.c]!=null)byCat[i.c]+=i.v; });
-  donut('c-share',CAT,CAT.map(c=>byCat[c]),CAT.map(c=>CATCOLOR[c]));
-  barChart('c-cat-oh',CAT,[{label:'On-hand',data:CAT.map(c=>+M(byCat[c]).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dlv(v=>v.toFixed(1)+'M')}]);
-  donut('c-cat-share',CAT,CAT.map(c=>byCat[c]),CAT.map(c=>CATCOLOR[c]));
-  const bb={}; rows.forEach(i=>{ if(i.b&&i.b!=='(Unbranded)')bb[i.b]=(bb[i.b]||0)+i.v; });
-  const topB=Object.entries(bb).sort((a,b)=>b[1]-a[1]).slice(0,12);
-  barChart('c-brand-oh',topB.map(e=>e[0]),[{label:'On-hand',data:topB.map(e=>+M(e[1]).toFixed(1)),backgroundColor:NAVY,borderRadius:4,datalabels:dlh(v=>v.toFixed(1))}],
-    {indexAxis:'y',scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
+  /* value + qty sums per category so catoh honors its metric on the all/filtered client view */
+  const byCat={},byCatQ={}; CAT.forEach(c=>{byCat[c]=0;byCatQ[c]=0;});
+  rows.forEach(i=>{ if(byCat[i.c]!=null){byCat[i.c]+=i.v;byCatQ[i.c]+=num(i.q);} });
+  donut('c-share',CAT,CAT.map(c=>byCat[c]),CAT.map(c=>CATCOLOR[c]),drillClick('c',function(i){return CAT[i];}));
+  const qc=isQ('catoh');
+  barChart('c-cat-oh',CAT,[{label:'On-hand',data:CAT.map(c=>qc?Math.round(byCatQ[c]):+M(byCat[c]).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:qc?dlv(v=>fmtQ(v)):dlv(v=>mM(v))}],
+    {onClick:drillClick('c',function(i){return CAT[i];}),onHover:drillHover});
+  donut('c-cat-share',CAT,CAT.map(c=>byCat[c]),CAT.map(c=>CATCOLOR[c]),drillClick('c',function(i){return CAT[i];}));
+  const bbM={},bbq={}; rows.forEach(i=>{ if(i.b&&i.b!=='(Unbranded)'){bbM[i.b]=(bbM[i.b]||0)+M(i.v);bbq[i.b]=(bbq[i.b]||0)+num(i.q);} });
+  const qb=isQ('brandoh');
+  const rowsB=brandTop12(bbM,bbq,qb);   /* set = top 12 by EGP value, then show selected metric */
+  const brandLabelsB=rowsB.map(r=>r.b);
+  barChart('c-brand-oh',brandLabelsB,[{label:'On-hand',data:rowsB.map(r=>qb?Math.round(r.qty):+(+r.egp).toFixed(1)),backgroundColor:NAVY,borderRadius:4,datalabels:qb?dlh(v=>fmtQ(v)):dlh(v=>v.toFixed(1))}],
+    {indexAxis:'y',onClick:drillClick('b',function(i){return brandLabelsB[i];}),onHover:drillHover,scales:{x:{beginAtZero:true,grid:{color:'#eef1f6'}},y:{grid:{display:false},ticks:{font:{size:11}}}}});
   const TS=['Fast','Normal','Slow','Dead'];
-  const tv={},tcnt={}; TS.forEach(t=>{tv[t]=0;tcnt[t]=0;}); rows.forEach(i=>{ if(tv[i.t]!=null){tv[i.t]+=i.v;tcnt[i.t]++;} });
-  const svM={}; TS.forEach(t=>svM[t]=M(tv[t])); paintHealth(svM,tcnt);
+  const tv={},tcnt={},tq={}; TS.forEach(t=>{tv[t]=0;tcnt[t]=0;tq[t]=0;}); rows.forEach(i=>{ if(tv[i.t]!=null){tv[i.t]+=i.v;tcnt[i.t]++;tq[i.t]+=num(i.q);} });
+  const svM={}; TS.forEach(t=>svM[t]=M(tv[t])); paintHealth(svM,tcnt,tq);
 }
 
 /* ===== EXPLORER (filters + drill-through) ===== */
@@ -912,9 +1898,9 @@ function renderX(){
   const val=rows.reduce((s,i)=>s+i.v,0), qsum=rows.reduce((s,i)=>s+i.q,0), dead=rows.filter(i=>i.t==='Dead').reduce((s,i)=>s+i.v,0);
   document.getElementById('expKpis').innerHTML=[
     {v:rows.length.toLocaleString(),l:'Items',s:'in current filter',c:''},
-    {v:'EGP '+XM(val).toFixed(1)+'M',l:'On-Hand Value',s:'filtered',c:'k-teal'},
+    {v:'EGP '+mM(XM(val)),l:'On-Hand Value',s:'filtered',c:'k-teal'},
     {v:Math.round(qsum).toLocaleString(),l:'Total Qty',s:'units',c:'k-orange'},
-    {v:'EGP '+XM(dead).toFixed(1)+'M',l:'Deadstock Value',s:'>18m no move',c:'k-out'}
+    {v:'EGP '+mM(XM(dead)),l:'Deadstock Value',s:'>18m no move',c:'k-out'}
   ].map(k=>`<div class="kpi ${k.c}"><div class="kpi-val">${k.v}</div><div class="kpi-lbl">${k.l}</div><div class="kpi-sub">${k.s}</div></div>`).join('');
   const byCat={}; CAT.forEach(c=>byCat[c]=0); rows.forEach(i=>{if(byCat[i.c]==null)byCat[i.c]=0;byCat[i.c]+=i.v;});
   xdraw('c-exp-cat',{type:'bar',data:{labels:CAT,datasets:[{data:CAT.map(c=>+XM(byCat[c]).toFixed(1)),backgroundColor:CAT.map(c=>CATCOLOR[c]),borderRadius:5,datalabels:dlv(v=>v.toFixed(1))}]},options:{responsive:true,maintainAspectRatio:false,onClick:(e,el)=>{if(el.length)toggleX('cat',CAT[el[0].index]);},plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'#eef1f6'}},x:{grid:{display:false}}}}});
@@ -933,13 +1919,24 @@ function renderX(){
 }
 (function(){ const sb=document.getElementById('fSearch'); if(sb){ sb.oninput=e=>{GQ=e.target.value.trim().toLowerCase();}; sb.onkeydown=e=>{if(e.key==='Enter')applyView();}; }
   document.addEventListener('click',e=>{if(!e.target.closest('.ms'))document.querySelectorAll('.ms-dd').forEach(d=>d.classList.remove('open'));});
-  wireRangeControls(); buildFilters(); renderX();
+  /* Explorer items-section search (client-side filter of the item list) */
+  (function(){ var si=document.getElementById('itemSearch'), sb=document.getElementById('itemSearchBtn'), sc=document.getElementById('itemSearchClear');
+    var g=document.getElementById('fSearch');
+    function runIS(){ GQ=si?si.value.trim().toLowerCase():''; if(g)g.value=si?si.value:''; renderX(); }
+    if(sb)sb.onclick=runIS;
+    if(si)si.onkeydown=function(e){ if(e.key==='Enter')runIS(); };
+    if(sc)sc.onclick=function(){ if(si)si.value=''; GQ=''; if(g)g.value=''; renderX(); };
+    var eb=document.getElementById('itemExport'); if(eb)eb.onclick=exportExplorerCSV;
+    var ab=document.getElementById('abcExport'); if(ab)ab.onclick=exportAbcCSV;
+    var rb=document.getElementById('roExport'); if(rb)rb.onclick=exportReorderCSV;
+  })();
+  wireRangeControls(); wireCompare(); wireMetric(); wireABC(); wireReorder(); wireMovement(); wireDrill(); buildFilters(); renderX();
 })();
 
 /* env-aware staging badge (shared convention) — visible only on -dev/ paths */
 if(location.pathname.indexOf('-dev/')>-1){var _sb=document.getElementById('stagingBadge');if(_sb)_sb.style.display='inline-flex';}
 
-window.setTab=setTab;window.toggleDD=toggleDD;window.filterMS=filterMS;window.msPick=msPick;window.msAll=msAll;window.resetFilters=resetFilters;
+window.setTab=setTab;window.toggleDD=toggleDD;window.filterMS=filterMS;window.msPick=msPick;window.msAll=msAll;window.resetFilters=resetFilters;window.toggleInfo=toggleInfo;
 } /* end INIT */
 
 var SB='https://sfyjvgjwvtwkrnqrvqyc.supabase.co';
@@ -949,7 +1946,8 @@ function boot(){
   function rpc(fn){ return fetch(SB+'/rest/v1/rpc/'+fn,{method:'POST',headers:H,body:'{}'}).then(function(r){ if(!r.ok) return r.text().then(function(t){ throw new Error(fn+' '+r.status+': '+t.slice(0,120)); }); return r.json(); }); }
   rpc('inv_dashboard').then(function(d){
     if(!d||!d.kpi) throw new Error((d&&d.message)||'no dashboard data');
-    DATA=d; BRAND={onhandByBrand:d.onhandByBrand,issueSeasonByBrand:d.issueSeasonByBrand,issueMonthByBrand:d.issueMonthByBrand};
+    DATA=d; BRAND={onhandByBrand:d.onhandByBrand,issueSeasonByBrand:d.issueSeasonByBrand,issueMonthByBrand:d.issueMonthByBrand,
+      onhandByBrandQty:d.onhandByBrandQty,issueSeasonByBrandQty:d.issueSeasonByBrandQty,issueMonthByBrandQty:d.issueMonthByBrandQty};
     return rpc('inv_items');
   }).then(function(it){
     ITEMS=(it&&it.items)?it:{items:[]}; INIT();
