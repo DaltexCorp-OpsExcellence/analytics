@@ -219,7 +219,8 @@
       {n:'Labor Budget',href:'labor_budget.html?product=Grapes'}
     ]},
     {group:'Citrus',emo:'🍊',items:[
-      {n:'Shipments',href:'citrus_overview.html'}
+      {n:'Shipments',href:'citrus_overview.html'},
+      {n:'Harvest Funnel',href:'citrus_harvest_funnel.html'}
     ]},
     {group:'Mango',emo:'🥭',items:[
       {n:'Shipments',href:'mango_overview.html'},
